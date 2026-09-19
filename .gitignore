@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# Working directories for campaign production, not part of the library site
+html5/
+properties/
+reports/
