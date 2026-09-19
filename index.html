@@ -3,88 +3,536 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aperture — Deck</title>
+<title>Marketing Library — Aperture Global</title>
+<meta name="description" content="Internal marketing library for Aperture Global Real Estate agents.">
+<meta name="robots" content="noindex, nofollow">
 <style>
   :root {
-    --bg: #faf8f5;
-    --fg: #1c1a17;
-    --muted: #6b6560;
-    --line: #e2dcd4;
+    --bg:        #faf8f5;
+    --surface:   #ffffff;
+    --fg:        #1b1917;
+    --muted:     #6f6862;
+    --faint:     #948c84;
+    --line:      #e4ded6;
+    --line-soft: #efeae3;
+    --accent:    #8a5a2b;
+    --accent-bg: #f3e9dd;
+    --shadow:    0 1px 2px rgba(27,25,23,.05), 0 8px 24px rgba(27,25,23,.05);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #14120f;
-      --fg: #f2ede7;
-      --muted: #9a938b;
-      --line: #2e2a25;
+      --bg:        #141210;
+      --surface:   #1d1a17;
+      --fg:        #f3efe9;
+      --muted:     #a49b91;
+      --faint:     #7d746b;
+      --line:      #302b25;
+      --line-soft: #26221d;
+      --accent:    #d9a066;
+      --accent-bg: #2b2019;
+      --shadow:    0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #14120f;
-    --fg: #f2ede7;
-    --muted: #9a938b;
-    --line: #2e2a25;
+    --bg:#141210; --surface:#1d1a17; --fg:#f3efe9; --muted:#a49b91; --faint:#7d746b;
+    --line:#302b25; --line-soft:#26221d; --accent:#d9a066; --accent-bg:#2b2019;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
   }
+
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--fg);
-    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 56px 16px 80px;
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+  /* ---------- header ---------- */
+  header.site {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
   }
-  header { margin-bottom: 32px; }
+  .site-inner { padding: 22px 0; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 650; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; color: var(--accent); }
+  .brand span { color: var(--faint); }
+  .spacer { flex: 1 1 auto; }
+  .theme-btn {
+    border: 1px solid var(--line); background: transparent; color: var(--muted);
+    border-radius: 7px; padding: 6px 11px; font-size: 13px; cursor: pointer; font-family: inherit;
+  }
+  .theme-btn:hover { color: var(--fg); border-color: var(--faint); }
+
+  .hero { padding: 40px 0 26px; }
   h1 {
-    font-size: clamp(28px, 5vw, 44px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin: 0 0 8px;
-    font-weight: 600;
+    font-size: clamp(30px, 5vw, 42px); line-height: 1.12; letter-spacing: -.025em;
+    margin: 0 0 10px; font-weight: 600;
   }
-  .sub { color: var(--muted); margin: 0; }
-  figure { margin: 0; }
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-    border: 1px solid var(--line);
+  .lede { color: var(--muted); margin: 0; max-width: 62ch; }
+
+  .notice {
+    margin: 22px 0 0; padding: 13px 15px; border-radius: 9px;
+    background: var(--accent-bg); border: 1px solid var(--line);
+    color: var(--fg); font-size: 14px; line-height: 1.55;
   }
-  figcaption {
-    color: var(--muted);
-    font-size: 14px;
-    margin-top: 12px;
+  .notice b { font-weight: 640; }
+
+  /* ---------- controls ---------- */
+  .controls { position: sticky; top: 0; z-index: 20; background: var(--bg); padding: 14px 0 10px; border-bottom: 1px solid var(--line-soft); }
+  .search-row { display: flex; gap: 10px; align-items: center; }
+  .search {
+    flex: 1 1 auto; position: relative;
   }
-  footer {
-    margin-top: 48px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 14px;
+  .search input {
+    width: 100%; padding: 11px 14px 11px 38px; font: inherit; font-size: 15px;
+    border: 1px solid var(--line); border-radius: 9px; background: var(--surface); color: var(--fg);
   }
-  a { color: inherit; }
+  .search input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+  .search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--faint); }
+
+  nav.tabs { display: flex; gap: 6px; margin-top: 12px; overflow-x: auto; scrollbar-width: none; }
+  nav.tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    border: 1px solid transparent; background: transparent; color: var(--muted);
+    padding: 8px 13px; border-radius: 8px; font: inherit; font-size: 14.5px; cursor: pointer;
+    white-space: nowrap; display: inline-flex; align-items: center; gap: 7px;
+  }
+  .tab:hover { color: var(--fg); background: var(--line-soft); }
+  .tab[aria-selected="true"] { background: var(--fg); color: var(--bg); font-weight: 550; }
+  .tab .count {
+    font-size: 11.5px; padding: 1px 6px; border-radius: 20px;
+    background: var(--line-soft); color: var(--faint);
+  }
+  .tab[aria-selected="true"] .count { background: rgba(255,255,255,.18); color: inherit; }
+
+  .chips { display: flex; gap: 7px; margin-top: 12px; flex-wrap: wrap; }
+  .chips[hidden] { display: none; }
+  .chip {
+    border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+    padding: 5px 11px; border-radius: 20px; font: inherit; font-size: 13px; cursor: pointer;
+  }
+  .chip:hover { border-color: var(--faint); color: var(--fg); }
+  .chip[aria-pressed="true"] { background: var(--accent-bg); border-color: var(--accent); color: var(--fg); font-weight: 550; }
+
+  /* ---------- sections ---------- */
+  main { padding: 26px 0 90px; }
+  .section-head { margin: 0 0 4px; font-size: 19px; font-weight: 600; letter-spacing: -.01em; }
+  .section-note { color: var(--muted); font-size: 14px; margin: 0 0 20px; max-width: 70ch; }
+
+  .list { display: grid; gap: 12px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 11px;
+    padding: 16px 18px; display: flex; gap: 16px; align-items: flex-start;
+  }
+  .card:hover { border-color: var(--faint); }
+  .card-icon {
+    flex: 0 0 auto; width: 38px; height: 38px; border-radius: 8px;
+    background: var(--accent-bg); color: var(--accent);
+    display: grid; place-items: center; font-size: 10px; font-weight: 700; letter-spacing: .04em;
+  }
+  .card-body { flex: 1 1 auto; min-width: 0; }
+  .card-title { font-weight: 600; font-size: 16px; margin: 0 0 3px; letter-spacing: -.008em; }
+  .card-desc { color: var(--muted); font-size: 14px; margin: 0 0 9px; }
+  .card-meta { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; font-size: 12.5px; color: var(--faint); }
+  .badge {
+    padding: 2px 8px; border-radius: 5px; background: var(--line-soft); color: var(--muted);
+    font-size: 11.5px; font-weight: 550; letter-spacing: .02em;
+  }
+  .card-actions { display: flex; gap: 7px; flex: 0 0 auto; flex-wrap: wrap; }
+
+  .btn {
+    border: 1px solid var(--line); background: var(--surface); color: var(--fg);
+    padding: 7px 13px; border-radius: 8px; font: inherit; font-size: 13.5px; cursor: pointer;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .btn:hover { border-color: var(--faint); background: var(--line-soft); }
+  .btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .btn.primary:hover { opacity: .88; background: var(--fg); }
+  .btn.copied { background: var(--accent-bg); border-color: var(--accent); color: var(--fg); }
+
+  /* ---------- social grid ---------- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: 16px; }
+  .tile { background: var(--surface); border: 1px solid var(--line); border-radius: 11px; overflow: hidden; display: flex; flex-direction: column; }
+  .tile:hover { border-color: var(--faint); }
+  .thumb { aspect-ratio: 1/1; background: var(--line-soft); position: relative; overflow: hidden; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb .ph {
+    position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+    color: var(--faint); font-size: 12px; padding: 16px; line-height: 1.4;
+  }
+  .tile-body { padding: 13px 14px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1 1 auto; }
+  .tile-title { font-weight: 600; font-size: 14.5px; margin: 0; }
+  .tile-desc { color: var(--muted); font-size: 13px; margin: 0; flex: 1 1 auto; }
+  .caption-box {
+    background: var(--bg); border: 1px solid var(--line-soft); border-radius: 7px;
+    padding: 9px 10px; font-size: 12.5px; color: var(--muted); line-height: 1.5;
+    max-height: 84px; overflow: auto;
+  }
+  .tile-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tile-actions .btn { font-size: 12.5px; padding: 6px 10px; }
+
+  .empty { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .empty h3 { margin: 0 0 6px; font-size: 16px; color: var(--fg); font-weight: 600; }
+  .empty p { margin: 0; font-size: 14px; }
+
+  footer.site { border-top: 1px solid var(--line); padding: 26px 0 50px; color: var(--faint); font-size: 13.5px; }
+  footer.site a { color: var(--muted); }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(14px);
+    background: var(--fg); color: var(--bg); padding: 10px 18px; border-radius: 9px;
+    font-size: 14px; box-shadow: var(--shadow); opacity: 0; pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease; z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 640px) {
+    .card { flex-direction: column; gap: 12px; }
+    .card-actions { width: 100%; }
+    .card-actions .btn { flex: 1 1 auto; justify-content: center; }
+    .hero { padding: 30px 0 20px; }
+  }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Deck</h1>
-      <p class="sub">Big Sky, Montana</p>
-    </header>
 
-    <figure>
-      <img src="deck2.png" alt="Covered wood deck with dining table and chairs overlooking pine forest and mountains at sunset">
-      <figcaption>Covered deck at sunset, looking out over the Gallatin Range.</figcaption>
-    </figure>
-
-    <footer>
-      Published with GitHub Pages.
-    </footer>
+<header class="site">
+  <div class="wrap site-inner">
+    <div class="brand">Aperture Global <span>/ Real Estate</span></div>
+    <div class="spacer"></div>
+    <button class="theme-btn" id="themeBtn" type="button">Dark</button>
   </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>Marketing Library</h1>
+    <p class="lede">
+      Campaign strategy, performance reports, brand assets, and ready-to-post social graphics —
+      everything you need to market a listing under the Aperture Global name.
+    </p>
+    <div class="notice" id="privacyNotice">
+      <b>Before you share:</b> this site is publicly accessible to anyone with the link.
+      Don't post anything here that shouldn't be seen outside the brokerage, and treat every
+      link you copy as public.
+    </div>
+  </section>
+</div>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="search-row">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>
+        </svg>
+        <input type="search" id="search" placeholder="Search the library…" autocomplete="off" aria-label="Search the library">
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" role="tablist"></nav>
+    <div class="chips" id="chips" hidden></div>
+  </div>
+</div>
+
+<main class="wrap" id="main">
+  <div class="empty"><p>Loading…</p></div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    Maintained by the Aperture Global marketing team.
+    Something missing or out of date? Email <a href="mailto:kyle.foreman@lpt.com">kyle.foreman@lpt.com</a>.
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var SECTIONS = [
+    { id: "strategy", label: "Strategy",     heading: "Strategy documents",
+      note: "Campaign playbooks and planning guides. Share these with sellers during listing presentations, or use them to plan your own buys.",
+      channels: ["digital", "billboard", "directmail"] },
+    { id: "reports",  label: "Reports",      heading: "Performance reports",
+      note: "Results from corporate campaigns. Use them as proof points in listing presentations and seller updates.",
+      channels: ["digital", "billboard"] },
+    { id: "brand",    label: "Brand Kit",    heading: "Brand kit",
+      note: "Logos, the brand guide, templates, and marketing samples. Check the brand guide before producing anything that carries the Aperture name.",
+      channels: null },
+    { id: "social",   label: "Social Media", heading: "Social media graphics",
+      note: "Graphics posted on the corporate accounts, cleared for you to download and post from your own. Copy the suggested caption or write your own.",
+      channels: null, layout: "grid" }
+  ];
+
+  var CHANNEL_LABELS = { digital: "Digital Ad", billboard: "Billboard", directmail: "Direct Mail" };
+
+  var state = { section: "strategy", query: "", channel: "all", data: null };
+
+  var els = {
+    tabs:   document.getElementById("tabs"),
+    chips:  document.getElementById("chips"),
+    main:   document.getElementById("main"),
+    search: document.getElementById("search"),
+    toast:  document.getElementById("toast")
+  };
+
+  /* ---------- helpers ---------- */
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c];
+    });
+  }
+
+  function absUrl(rel) {
+    try { return new URL(rel, window.location.href).href; } catch (e) { return rel; }
+  }
+
+  function href(item) { return item.url ? item.url : (item.file ? absUrl(item.file) : null); }
+
+  function ext(item) {
+    if (item.url) return "LINK";
+    var m = /\.([a-z0-9]+)$/i.exec(item.file || "");
+    return m ? m[1].toUpperCase().slice(0, 4) : "FILE";
+  }
+
+  function fmtDate(s) {
+    if (!s) return "";
+    var d = new Date(s + "T00:00:00");
+    if (isNaN(d)) return s;
+    return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+  }
+
+  function toast(msg) {
+    els.toast.textContent = msg;
+    els.toast.classList.add("show");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { els.toast.classList.remove("show"); }, 1900);
+  }
+
+  function copy(text, btn, okLabel) {
+    function done() {
+      toast(okLabel || "Copied");
+      if (btn) {
+        var old = btn.textContent;
+        btn.textContent = "Copied";
+        btn.classList.add("copied");
+        setTimeout(function () { btn.textContent = old; btn.classList.remove("copied"); }, 1600);
+      }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(text, done); });
+    } else {
+      fallback(text, done);
+    }
+  }
+
+  function fallback(text, done) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.cssText = "position:fixed;opacity:0;top:0;left:0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch (e) { toast("Press ⌘C to copy"); }
+    document.body.removeChild(ta);
+  }
+
+  function matches(item, q) {
+    if (!q) return true;
+    var hay = [item.title, item.description, item.caption, item.kind, item.platform,
+               CHANNEL_LABELS[item.channel]].join(" ").toLowerCase();
+    return q.split(/\s+/).every(function (t) { return hay.indexOf(t) !== -1; });
+  }
+
+  function itemsFor(sectionId, applyChannel) {
+    var arr = (state.data && state.data[sectionId]) || [];
+    var q = state.query.trim().toLowerCase();
+    return arr.filter(function (it) {
+      if (!matches(it, q)) return false;
+      if (applyChannel && state.channel !== "all" && it.channel !== state.channel) return false;
+      return true;
+    });
+  }
+
+  /* ---------- rendering ---------- */
+
+  function renderTabs() {
+    els.tabs.innerHTML = SECTIONS.map(function (s) {
+      var n = itemsFor(s.id, false).length;
+      return '<button class="tab" role="tab" data-section="' + s.id + '"' +
+             ' aria-selected="' + (state.section === s.id) + '">' +
+             esc(s.label) + '<span class="count">' + n + '</span></button>';
+    }).join("");
+  }
+
+  function renderChips(section) {
+    if (!section.channels) { els.chips.hidden = true; return; }
+    els.chips.hidden = false;
+    var opts = [["all", "All channels"]].concat(section.channels.map(function (c) {
+      return [c, CHANNEL_LABELS[c]];
+    }));
+    els.chips.innerHTML = opts.map(function (o) {
+      return '<button class="chip" data-channel="' + o[0] + '"' +
+             ' aria-pressed="' + (state.channel === o[0]) + '">' + esc(o[1]) + '</button>';
+    }).join("");
+  }
+
+  function cardHtml(item) {
+    var link = href(item);
+    var isLink = !!item.url;
+    var actions = "";
+
+    if (link) {
+      actions += '<a class="btn primary" href="' + esc(link) + '" target="_blank" rel="noopener"' +
+                 (isLink ? "" : " download") + '>' + (isLink ? "Open" : "Download") + '</a>';
+      actions += '<button class="btn js-copy" data-copy="' + esc(link) + '">Copy link</button>';
+    } else {
+      actions += '<span class="badge">No file yet</span>';
+    }
+
+    var meta = [];
+    if (item.channel) meta.push('<span class="badge">' + esc(CHANNEL_LABELS[item.channel] || item.channel) + '</span>');
+    if (item.kind)    meta.push('<span class="badge">' + esc(item.kind) + '</span>');
+    if (item.updated) meta.push("Updated " + esc(fmtDate(item.updated)));
+
+    return '<article class="card">' +
+      '<div class="card-icon">' + esc(ext(item)) + '</div>' +
+      '<div class="card-body">' +
+        '<h3 class="card-title">' + esc(item.title) + '</h3>' +
+        (item.description ? '<p class="card-desc">' + esc(item.description) + '</p>' : '') +
+        '<div class="card-meta">' + meta.join("") + '</div>' +
+      '</div>' +
+      '<div class="card-actions">' + actions + '</div>' +
+    '</article>';
+  }
+
+  function tileHtml(item) {
+    var link = href(item);
+    var thumb = item.thumb || (/\.(png|jpe?g|gif|webp|svg)$/i.test(item.file || "") ? item.file : null);
+
+    var thumbHtml = '<div class="thumb">' +
+      (thumb ? '<img src="' + esc(thumb) + '" alt="' + esc(item.title) + '" loading="lazy" ' +
+               'onerror="this.style.display=&quot;none&quot;;this.nextElementSibling.hidden=false">' +
+               '<div class="ph" hidden>Graphic not uploaded yet</div>'
+             : '<div class="ph">Graphic not uploaded yet</div>') +
+      '</div>';
+
+    var actions = "";
+    if (link) {
+      actions += '<a class="btn primary" href="' + esc(link) + '" target="_blank" rel="noopener" download>Download</a>';
+      actions += '<button class="btn js-copy" data-copy="' + esc(link) + '">Link</button>';
+    }
+    if (item.caption) {
+      actions += '<button class="btn js-copy" data-copy="' + esc(item.caption) + '" data-label="Caption copied">Caption</button>';
+    }
+
+    return '<article class="tile">' + thumbHtml +
+      '<div class="tile-body">' +
+        '<h3 class="tile-title">' + esc(item.title) + '</h3>' +
+        (item.description ? '<p class="tile-desc">' + esc(item.description) + '</p>' : '') +
+        (item.caption ? '<div class="caption-box">' + esc(item.caption) + '</div>' : '') +
+        '<div class="tile-actions">' + actions + '</div>' +
+      '</div>' +
+    '</article>';
+  }
+
+  function render() {
+    var section = SECTIONS.filter(function (s) { return s.id === state.section; })[0];
+    renderTabs();
+    renderChips(section);
+
+    var items = itemsFor(section.id, !!section.channels);
+    var body;
+
+    if (!items.length) {
+      body = '<div class="empty"><h3>Nothing here yet</h3><p>' +
+             (state.query ? "No results for “" + esc(state.query) + "”."
+                          : "Items added to this section will appear here.") +
+             '</p></div>';
+    } else if (section.layout === "grid") {
+      body = '<div class="grid">' + items.map(tileHtml).join("") + '</div>';
+    } else {
+      body = '<div class="list">' + items.map(cardHtml).join("") + '</div>';
+    }
+
+    els.main.innerHTML =
+      '<h2 class="section-head">' + esc(section.heading) + '</h2>' +
+      '<p class="section-note">' + esc(section.note) + '</p>' + body;
+  }
+
+  /* ---------- events ---------- */
+
+  els.tabs.addEventListener("click", function (e) {
+    var t = e.target.closest(".tab");
+    if (!t) return;
+    state.section = t.dataset.section;
+    state.channel = "all";
+    location.hash = state.section;
+    render();
+  });
+
+  els.chips.addEventListener("click", function (e) {
+    var c = e.target.closest(".chip");
+    if (!c) return;
+    state.channel = c.dataset.channel;
+    render();
+  });
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".js-copy");
+    if (!b) return;
+    copy(b.dataset.copy, b, b.dataset.label || "Link copied");
+  });
+
+  els.search.addEventListener("input", function () {
+    state.query = els.search.value;
+    render();
+  });
+
+  /* theme toggle */
+  var themeBtn = document.getElementById("themeBtn");
+  function prefersDark() { return window.matchMedia("(prefers-color-scheme: dark)").matches; }
+  function currentTheme() {
+    return document.documentElement.getAttribute("data-theme") || (prefersDark() ? "dark" : "light");
+  }
+  function syncThemeBtn() { themeBtn.textContent = currentTheme() === "dark" ? "Light" : "Dark"; }
+  try {
+    var saved = localStorage.getItem("agl-theme");
+    if (saved) document.documentElement.setAttribute("data-theme", saved);
+  } catch (e) {}
+  syncThemeBtn();
+  themeBtn.addEventListener("click", function () {
+    var next = currentTheme() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("agl-theme", next); } catch (e) {}
+    syncThemeBtn();
+  });
+
+  /* ---------- boot ---------- */
+
+  var hash = location.hash.replace("#", "");
+  if (SECTIONS.some(function (s) { return s.id === hash; })) state.section = hash;
+
+  fetch("library.json", { cache: "no-store" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      state.data = data;
+      render();
+    })
+    .catch(function (err) {
+      els.main.innerHTML = '<div class="empty"><h3>Couldn’t load the library</h3>' +
+        '<p>library.json failed to load (' + esc(err.message) + ').<br>' +
+        'If you opened this file directly from your computer, use a local server or view it on the published site.</p></div>';
+    });
+})();
+</script>
 </body>
 </html>
