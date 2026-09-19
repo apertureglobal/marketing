@@ -1,54 +1,61 @@
 {
-  "_readme": "Edit this file to add or remove items. See README.md for field definitions. Every entry needs a title and either a 'file' (path in this repo) or a 'url' (external link). Copy follows guidelines/brand-voice.md: no em or en dashes, numbers spelled out in prose, facts over superlatives, no commands.",
-
-  "strategy": [
+  "_readme": "Edit this file to add or remove items. See README.md for field definitions. Every entry needs a title and either a 'file' (path in this repo) or a 'url' (external link). Campaign items also need 'agent' (the owning agent, or Corporate for brokerage wide material) and 'type' (strategy or report). Copy follows guidelines/brand-voice.md: no em or en dashes, numbers spelled out in prose, facts over superlatives, no commands.",
+  "campaigns": [
     {
       "title": "Digital Ad Campaign Playbook",
       "description": "Targeting, budget tiers, and creative specifications for Meta and Google listing campaigns. Written for seller conversations during a listing presentation.",
       "channel": "digital",
       "updated": "2026-09-01",
-      "file": "assets/strategy/EXAMPLE-digital-ad-playbook.pdf"
+      "file": "assets/campaigns/EXAMPLE-digital-ad-playbook.pdf",
+      "type": "strategy",
+      "agent": "Corporate"
     },
     {
       "title": "Billboard Placement Strategy",
       "description": "Market by market inventory, impression estimates, and design constraints for out of home buys.",
       "channel": "billboard",
       "updated": "2026-08-14",
-      "file": "assets/strategy/EXAMPLE-billboard-strategy.pdf"
+      "file": "assets/campaigns/EXAMPLE-billboard-strategy.pdf",
+      "type": "strategy",
+      "agent": "Corporate"
     },
     {
       "title": "Direct Mail Farming Guide",
       "description": "Geographic farming cadence, mailer sizing, and walk route selection for USPS Every Door Direct Mail.",
       "channel": "directmail",
       "updated": "2026-07-22",
-      "file": "assets/strategy/EXAMPLE-direct-mail-guide.pdf"
+      "file": "assets/campaigns/EXAMPLE-direct-mail-guide.pdf",
+      "type": "strategy",
+      "agent": "Corporate"
     },
     {
       "title": "Listing Launch Timeline",
       "description": "The launch sequence week by week. Hosted externally, so the link always resolves to the current version.",
       "channel": "digital",
       "updated": "2026-09-10",
-      "url": "https://example.com/replace-me"
-    }
-  ],
-
-  "reports": [
+      "url": "https://example.com/replace-me",
+      "type": "strategy",
+      "agent": "Corporate"
+    },
     {
       "title": "Third Quarter Digital Performance Report",
       "description": "Impressions, click through rate, cost per lead, and the strongest performing creative across all digital listing campaigns.",
       "channel": "digital",
       "updated": "2026-09-15",
-      "file": "assets/reports/EXAMPLE-q3-digital-performance.pdf"
+      "file": "assets/campaigns/EXAMPLE-q3-digital-performance.pdf",
+      "type": "report",
+      "agent": "Kyle Foreman"
     },
     {
       "title": "Billboard Impression Study, Summer 2026",
       "description": "Verified impression counts and brand lift survey results from the summer out of home flight.",
       "channel": "billboard",
       "updated": "2026-09-05",
-      "file": "assets/reports/EXAMPLE-billboard-impressions.pdf"
+      "file": "assets/campaigns/EXAMPLE-billboard-impressions.pdf",
+      "type": "report",
+      "agent": "Example Agent"
     }
   ],
-
   "brand": [
     {
       "title": "Aperture Global Brand Guide",
@@ -80,7 +87,6 @@
       "url": "https://example.com/replace-me"
     }
   ],
-
   "social": [
     {
       "title": "Just Listed, Square",

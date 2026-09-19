@@ -20,8 +20,7 @@ Two steps: place the file in the right folder, then add an entry to `library.jso
 
 | Section | Folder |
 | --- | --- |
-| Strategy documents | `assets/strategy/` |
-| Performance reports | `assets/reports/` |
+| Campaign documents | `assets/campaigns/` |
 | Brand kit | `assets/brand/` |
 | Social graphics | `assets/social/` |
 
@@ -38,11 +37,13 @@ Add an object to the matching array in `library.json`.
 {
   "title":       "Fourth Quarter Digital Performance Report",  // required
   "description": "Impressions, click through rate, and cost per lead.",
-  "channel":     "digital",        // strategy and reports: digital | billboard | directmail
+  "agent":       "Kyle Foreman",   // campaigns: owning agent, or Corporate
+  "type":        "report",         // campaigns: strategy | report
+  "channel":     "digital",        // campaigns: digital | billboard | directmail
   "kind":        "Brand guide",    // brand kit: free text, such as Logos or Templates
   "platform":    "Instagram",      // social: free text
   "updated":     "2026-12-15",     // YYYY-MM-DD
-  "file":        "assets/reports/q4-digital-report.pdf",  // a file in this repo
+  "file":        "assets/campaigns/q4-digital-report.pdf",  // a file in this repo
   "url":         "https://...",    // or an external link, one or the other
   "thumb":       "assets/social/preview.png",  // social, defaults to `file` when it is an image
   "caption":     "Just listed in..."           // social, the suggested caption
@@ -51,7 +52,18 @@ Add an object to the matching array in `library.json`.
 
 Each entry needs a `title` and either a `file` or a `url`. The rest is optional.
 
-`directmail` is offered on strategy documents only, not on reports.
+### Campaign documents, grouped by agent
+
+Strategy documents and performance reports share one `campaigns` bucket, grouped on the page by
+the `agent` field and separated by the `type` field.
+
+An entry missing `agent` falls back to Corporate, which is the right home for brokerage wide
+playbooks belonging to no single agent. Corporate sorts first, and every other agent follows
+alphabetically. Agent names are matched as plain strings, so spelling one two ways produces two
+groups.
+
+Both filter rows apply together, and the search box matches agent names as well as titles and
+descriptions.
 
 ### 3. Commit
 

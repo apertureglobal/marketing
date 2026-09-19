@@ -195,8 +195,9 @@
   .tab[aria-selected="true"] { color: var(--text-body); border-bottom-color: var(--text-body); }
   .tab .count { color: var(--accent); font-variant-numeric: tabular-nums; }
 
-  .chips { display: flex; gap: var(--space-5); padding: var(--space-4) 0; }
+  .chips { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4) 0; }
   .chips[hidden] { display: none; }
+  .chip-row { display: flex; gap: var(--space-5); flex-wrap: wrap; }
   .chip {
     font: var(--type-label); letter-spacing: var(--label-tracking);
     text-transform: uppercase; cursor: pointer;
@@ -210,6 +211,16 @@
   main { padding: var(--space-7) 0 var(--space-9); }
   .section-head { font: var(--type-display); margin: 0 0 var(--space-3); }
   .section-note { font: var(--type-body); color: var(--text-secondary); margin: 0 0 var(--space-7); max-width: 62ch; }
+
+  /* Agent groups. The name carries the serif, the tally stays muted so the
+     accent stays reserved for the counts in the hero and the tabs. */
+  .group { margin: 0 0 var(--space-8); }
+  .group-head {
+    display: flex; align-items: baseline; gap: var(--space-4);
+    padding-bottom: var(--space-3);
+  }
+  .group-name { font: var(--type-display-sm); margin: 0; }
+  .group-count { color: var(--text-secondary); }
 
   /* Document rows, separated by hairlines and whitespace. */
   .list { border-top: var(--border-hairline); }
@@ -356,22 +367,32 @@
 (function () {
   "use strict";
 
+  var CHANNEL_LABELS = { digital: "Digital Ad", billboard: "Billboard", directmail: "Direct Mail" };
+  var TYPE_LABELS = { strategy: "Strategy", report: "Report" };
+
   var SECTIONS = [
-    { id: "strategy", label: "Strategy", heading: "Strategy documents",
-      note: "Campaign playbooks and planning guides, suitable for seller conversations during a listing presentation or for planning an individual buy.",
-      channels: ["digital", "billboard", "directmail"] },
-    { id: "reports", label: "Reports", heading: "Performance reports",
-      note: "Results from corporate campaigns, available as proof points in listing presentations and seller updates.",
-      channels: ["digital", "billboard"] },
+    { id: "campaigns", label: "Campaigns", heading: "Campaign documents",
+      note: "Strategy documents and performance reports, grouped by the agent who owns them. Material carrying no single owner sits under Corporate.",
+      groupBy: "agent",
+      filters: [
+        { key: "type", options: ["strategy", "report"], labels: TYPE_LABELS },
+        { key: "channel", options: ["digital", "billboard", "directmail"], labels: CHANNEL_LABELS }
+      ] },
     { id: "brand", label: "Brand Kit", heading: "Brand kit",
       note: "Logos, the brand guide, templates, and marketing samples. The brand guide governs anything carrying the Aperture Global name.",
-      channels: null },
+      filters: null },
     { id: "social", label: "Social", heading: "Social media graphics",
       note: "Graphics from the corporate accounts, cleared for agents to download and post from their own. Each carries a suggested caption.",
-      channels: null, layout: "grid" }
+      filters: null, layout: "grid" }
   ];
 
-  var CHANNEL_LABELS = { digital: "Digital Ad", billboard: "Billboard", directmail: "Direct Mail" };
+  /* Corporate leads, then agents alphabetically. */
+  function compareGroups(a, b) {
+    if (a === b) return 0;
+    if (a === "Corporate") return -1;
+    if (b === "Corporate") return 1;
+    return a.localeCompare(b);
+  }
 
   var ONES = ["zero","one","two","three","four","five","six","seven","eight","nine","ten",
               "eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen",
@@ -388,7 +409,7 @@
     return String(n);
   }
 
-  var state = { section: "strategy", query: "", channel: "all", data: null };
+  var state = { section: "campaigns", query: "", filters: {}, data: null };
 
   var els = {
     tabs: document.getElementById("tabs"),
@@ -461,17 +482,37 @@
   function matches(item, q) {
     if (!q) return true;
     var hay = [item.title, item.description, item.caption, item.kind, item.platform,
+               item.agent, TYPE_LABELS[item.type],
                CHANNEL_LABELS[item.channel]].join(" ").toLowerCase();
     return q.split(/\s+/).every(function (t) { return hay.indexOf(t) !== -1; });
   }
 
-  function itemsFor(sectionId, applyChannel) {
+  function itemsFor(sectionId, applyFilters) {
+    var section = SECTIONS.filter(function (s) { return s.id === sectionId; })[0];
     var arr = (state.data && state.data[sectionId]) || [];
     var q = state.query.trim().toLowerCase();
     return arr.filter(function (it) {
       if (!matches(it, q)) return false;
-      if (applyChannel && state.channel !== "all" && it.channel !== state.channel) return false;
+      if (applyFilters && section && section.filters) {
+        for (var i = 0; i < section.filters.length; i++) {
+          var f = section.filters[i], picked = state.filters[f.key];
+          if (picked && picked !== "all" && it[f.key] !== picked) return false;
+        }
+      }
       return true;
+    });
+  }
+
+  /* Bucket items by the section's groupBy field, preserving order within a group. */
+  function groupItems(items, key) {
+    var map = {}, order = [];
+    items.forEach(function (it) {
+      var g = it[key] || "Corporate";
+      if (!map[g]) { map[g] = []; order.push(g); }
+      map[g].push(it);
+    });
+    return order.sort(compareGroups).map(function (g) {
+      return { name: g, items: map[g] };
     });
   }
 
@@ -493,14 +534,17 @@
   }
 
   function renderChips(section) {
-    if (!section.channels) { els.chips.hidden = true; return; }
+    if (!section.filters) { els.chips.hidden = true; return; }
     els.chips.hidden = false;
-    var opts = [["all", "All"]].concat(section.channels.map(function (c) {
-      return [c, CHANNEL_LABELS[c]];
-    }));
-    els.chips.innerHTML = opts.map(function (o) {
-      return '<button class="chip" data-channel="' + o[0] + '"' +
-             ' aria-pressed="' + (state.channel === o[0]) + '">' + esc(o[1]) + '</button>';
+    els.chips.innerHTML = section.filters.map(function (f) {
+      var picked = state.filters[f.key] || "all";
+      var opts = [["all", "All"]].concat(f.options.map(function (o) {
+        return [o, f.labels[o] || o];
+      }));
+      return '<div class="chip-row">' + opts.map(function (o) {
+        return '<button class="chip" data-key="' + f.key + '" data-value="' + o[0] + '"' +
+               ' aria-pressed="' + (picked === o[0]) + '">' + esc(o[1]) + '</button>';
+      }).join("") + '</div>';
     }).join("");
   }
 
@@ -515,6 +559,7 @@
 
   function rowHtml(item) {
     var meta = [];
+    if (item.type) meta.push('<span class="label">' + esc(TYPE_LABELS[item.type] || item.type) + '</span>');
     if (item.channel) meta.push('<span class="label">' + esc(CHANNEL_LABELS[item.channel] || item.channel) + '</span>');
     if (item.kind) meta.push('<span class="label">' + esc(item.kind) + '</span>');
     if (item.updated) meta.push('<span class="label">' + esc(fmtDate(item.updated)) + '</span>');
@@ -557,7 +602,7 @@
     renderTabs();
     renderChips(section);
 
-    var items = itemsFor(section.id, !!section.channels);
+    var items = itemsFor(section.id, !!section.filters);
     var body;
 
     if (!items.length) {
@@ -566,6 +611,17 @@
                           : "Items added to this section appear here.") + '</p></div>';
     } else if (section.layout === "grid") {
       body = '<div class="grid">' + items.map(tileHtml).join("") + '</div>';
+    } else if (section.groupBy) {
+      body = groupItems(items, section.groupBy).map(function (g) {
+        return '<section class="group">' +
+          '<div class="group-head">' +
+            '<h3 class="group-name">' + esc(g.name) + '</h3>' +
+            '<span class="group-count label">' + esc(spell(g.items.length)) +
+              (g.items.length === 1 ? " document" : " documents") + '</span>' +
+          '</div>' +
+          '<div class="list">' + g.items.map(rowHtml).join("") + '</div>' +
+        '</section>';
+      }).join("");
     } else {
       body = '<div class="list">' + items.map(rowHtml).join("") + '</div>';
     }
@@ -579,7 +635,7 @@
     var t = e.target.closest(".tab");
     if (!t) return;
     state.section = t.dataset.section;
-    state.channel = "all";
+    state.filters = {};
     location.hash = state.section;
     render();
   });
@@ -587,7 +643,7 @@
   els.chips.addEventListener("click", function (e) {
     var c = e.target.closest(".chip");
     if (!c) return;
-    state.channel = c.dataset.channel;
+    state.filters[c.dataset.key] = c.dataset.value;
     render();
   });
 
