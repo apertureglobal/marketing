@@ -1,31 +1,31 @@
 {
-  "_readme": "Edit this file to add or remove items. See README.md for field definitions. Every entry needs a title and either a 'file' (path in this repo) or a 'url' (external link).",
+  "_readme": "Edit this file to add or remove items. See README.md for field definitions. Every entry needs a title and either a 'file' (path in this repo) or a 'url' (external link). Copy follows guidelines/brand-voice.md: no em or en dashes, numbers spelled out in prose, facts over superlatives, no commands.",
 
   "strategy": [
     {
       "title": "Digital Ad Campaign Playbook",
-      "description": "Targeting, budget tiers, and creative specs for Meta and Google listing campaigns. Share with sellers during the listing presentation.",
+      "description": "Targeting, budget tiers, and creative specifications for Meta and Google listing campaigns. Written for seller conversations during a listing presentation.",
       "channel": "digital",
       "updated": "2026-09-01",
       "file": "assets/strategy/EXAMPLE-digital-ad-playbook.pdf"
     },
     {
       "title": "Billboard Placement Strategy",
-      "description": "Market-by-market inventory, impression estimates, and design constraints for out-of-home buys.",
+      "description": "Market by market inventory, impression estimates, and design constraints for out of home buys.",
       "channel": "billboard",
       "updated": "2026-08-14",
       "file": "assets/strategy/EXAMPLE-billboard-strategy.pdf"
     },
     {
       "title": "Direct Mail Farming Guide",
-      "description": "Geographic farming cadence, mailer sizing, and USPS EDDM walk-route selection.",
+      "description": "Geographic farming cadence, mailer sizing, and walk route selection for USPS Every Door Direct Mail.",
       "channel": "directmail",
       "updated": "2026-07-22",
       "file": "assets/strategy/EXAMPLE-direct-mail-guide.pdf"
     },
     {
-      "title": "Listing Launch Timeline (external)",
-      "description": "Week-by-week launch sequence. Hosted doc — always shows the current version.",
+      "title": "Listing Launch Timeline",
+      "description": "The launch sequence week by week. Hosted externally, so the link always resolves to the current version.",
       "channel": "digital",
       "updated": "2026-09-10",
       "url": "https://example.com/replace-me"
@@ -34,15 +34,15 @@
 
   "reports": [
     {
-      "title": "Q3 2026 Digital Performance Report",
-      "description": "Impressions, CTR, cost per lead, and top-performing creative across all digital listing campaigns.",
+      "title": "Third Quarter Digital Performance Report",
+      "description": "Impressions, click through rate, cost per lead, and the strongest performing creative across all digital listing campaigns.",
       "channel": "digital",
       "updated": "2026-09-15",
       "file": "assets/reports/EXAMPLE-q3-digital-performance.pdf"
     },
     {
-      "title": "Billboard Impression Study — Summer 2026",
-      "description": "Verified impression counts and brand-lift survey results from the summer out-of-home flight.",
+      "title": "Billboard Impression Study, Summer 2026",
+      "description": "Verified impression counts and brand lift survey results from the summer out of home flight.",
       "channel": "billboard",
       "updated": "2026-09-05",
       "file": "assets/reports/EXAMPLE-billboard-impressions.pdf"
@@ -52,29 +52,29 @@
   "brand": [
     {
       "title": "Aperture Global Brand Guide",
-      "description": "Logo usage, clear space, color values, typography, and voice. The authoritative reference — check here before producing anything.",
+      "description": "Logo usage, clear space, color values, typography, and voice. This document governs anything produced under the Aperture Global name.",
       "kind": "Brand guide",
       "updated": "2026-06-01",
       "file": "assets/brand/EXAMPLE-brand-guide.pdf"
     },
     {
-      "title": "Logo Pack (SVG, PNG, EPS)",
-      "description": "Primary, stacked, and monogram marks in full color, all-black, and reversed white.",
+      "title": "Logo Pack",
+      "description": "Primary, stacked, and monogram marks in full color, all black, and reversed white. Supplied as SVG, PNG, and EPS.",
       "kind": "Logos",
       "updated": "2026-06-01",
       "file": "assets/brand/EXAMPLE-logo-pack.zip"
     },
     {
       "title": "Listing Photography Sample",
-      "description": "Reference for the photography standard expected on all listing marketing — natural light, twilight exteriors, wide interiors.",
+      "description": "A reference for the photography standard expected on listing marketing: natural light, twilight exteriors, and wide interiors.",
       "kind": "Marketing sample",
       "updated": "2026-09-17",
       "file": "assets/brand/samples/deck2.png",
       "thumb": "assets/brand/samples/deck2.png"
     },
     {
-      "title": "Business Card & Email Signature Templates",
-      "description": "Canva templates for agent business cards and a copy-paste HTML email signature.",
+      "title": "Business Card and Email Signature Templates",
+      "description": "Canva templates for agent business cards, alongside an email signature in HTML.",
       "kind": "Templates",
       "updated": "2026-07-30",
       "url": "https://example.com/replace-me"
@@ -83,40 +83,40 @@
 
   "social": [
     {
-      "title": "Just Listed — Square",
-      "description": "Instagram feed and Facebook. Drop your listing photo into the frame.",
+      "title": "Just Listed, Square",
+      "description": "Sized for the Instagram feed and for Facebook. The frame accepts one listing photograph.",
       "platform": "Instagram",
       "updated": "2026-09-18",
       "file": "assets/social/EXAMPLE-just-listed-square.png",
       "thumb": "assets/social/EXAMPLE-just-listed-square.png",
-      "caption": "Just listed in [NEIGHBORHOOD]. [BEDS] bed, [BATHS] bath, [SQFT] sq ft. DM me for a private showing. #AperturGlobal #JustListed"
+      "caption": "Just listed in [NEIGHBORHOOD]. [BEDS] bed, [BATHS] bath, [SQFT] square feet. Private showings are available by message. #ApertureGlobal #JustListed"
     },
     {
-      "title": "Just Sold — Story",
-      "description": "9:16 vertical for Instagram and Facebook Stories.",
+      "title": "Just Sold, Story",
+      "description": "Vertical at nine by sixteen, for Instagram and Facebook Stories.",
       "platform": "Story",
       "updated": "2026-09-18",
       "file": "assets/social/EXAMPLE-just-sold-story.png",
       "thumb": "assets/social/EXAMPLE-just-sold-story.png",
-      "caption": "Another one closed. Congratulations to my buyers on their new home in [NEIGHBORHOOD]. #AperturGlobal #JustSold"
+      "caption": "Another closing in [NEIGHBORHOOD]. Congratulations to my buyers on their new home. #ApertureGlobal #JustSold"
     },
     {
-      "title": "Open House — Square",
-      "description": "Editable date and time fields. Post 48 hours ahead for best reach.",
+      "title": "Open House, Square",
+      "description": "Date and time fields are editable. Reach is strongest when the post runs forty eight hours ahead.",
       "platform": "Instagram",
       "updated": "2026-09-12",
       "file": "assets/social/EXAMPLE-open-house-square.png",
       "thumb": "assets/social/EXAMPLE-open-house-square.png",
-      "caption": "Open house this [DAY] from [TIME]. [ADDRESS]. Come take a look — I'd love to show you around. #OpenHouse #AperturGlobal"
+      "caption": "Open house this [DAY] from [TIME] at [ADDRESS]. Everyone is welcome. #OpenHouse #ApertureGlobal"
     },
     {
-      "title": "Market Update — Carousel",
-      "description": "Four-slide carousel with editable stat fields. Refreshed monthly by corporate.",
+      "title": "Market Update, Carousel",
+      "description": "Four slides with editable statistic fields. Corporate refreshes the figures each month.",
       "platform": "Instagram",
       "updated": "2026-09-01",
       "file": "assets/social/EXAMPLE-market-update-carousel.png",
       "thumb": "assets/social/EXAMPLE-market-update-carousel.png",
-      "caption": "The [MONTH] numbers are in for [MARKET]. Swipe for the full picture — and reach out if you want to know what it means for your home. #MarketUpdate"
+      "caption": "The [MONTH] figures are in for [MARKET]. Four slides cover pricing, inventory, and days on market, along with what the numbers mean for sellers. #MarketUpdate #ApertureGlobal"
     }
   ]
 }

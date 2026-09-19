@@ -1,81 +1,122 @@
-# Aperture Global — Marketing Library
+# Aperture Global, Marketing Library
 
 Internal marketing library for Aperture Global Real Estate agents, published with GitHub Pages.
 
 **Live site:** https://apertureglobal.github.io/marketing/
 
-> ⚠️ **This site is public.** GitHub Pages on a public repo has no password or access
-> control, and anything committed here is readable by anyone with the URL. The page carries a
-> `noindex` tag, which discourages search engines but does not restrict access. Do not commit
-> commission structures, agent rosters, client data, unreleased listings, or anything else that
-> shouldn't leave the brokerage. See "Making this actually private" below.
+> **This site is public.** GitHub Pages on a public repo carries no password and no access
+> control, so anything committed here is readable by anyone holding the URL. The page sends a
+> `noindex` tag, which discourages search engines without restricting access. Commission
+> structures, agent rosters, client data, and unreleased listings do not belong in this repo.
+> Options for closing that gap appear at the bottom of this file.
 
 ---
 
 ## Adding or updating an item
 
-Two steps: drop the file in the right folder, then add an entry to `library.json`.
+Two steps: place the file in the right folder, then add an entry to `library.json`.
 
 ### 1. Add the file
 
 | Section | Folder |
-|---|---|
+| --- | --- |
 | Strategy documents | `assets/strategy/` |
 | Performance reports | `assets/reports/` |
 | Brand kit | `assets/brand/` |
 | Social graphics | `assets/social/` |
 
-Use lowercase filenames with dashes instead of spaces — `q3-digital-report.pdf`, not
-`Q3 Digital Report.pdf`. Spaces work but produce ugly `%20` links when agents copy them.
+Lowercase filenames with dashes rather than spaces keep the copied links clean:
+`q3-digital-report.pdf` rather than `Q3 Digital Report.pdf`.
 
-You can skip this step entirely for externally hosted items (Google Drive, Canva, Dropbox)
-and just use a `url` instead — see below.
+Externally hosted items on Google Drive, Canva, or Dropbox skip this step and use a `url`.
 
 ### 2. Add the entry
 
-Open `library.json` and add an object to the matching array.
+Add an object to the matching array in `library.json`.
 
 ```jsonc
 {
-  "title":       "Q4 2026 Digital Performance Report",  // required
-  "description": "Impressions, CTR, and cost per lead.", // shown under the title
-  "channel":     "digital",        // strategy + reports only: digital | billboard | directmail
-  "kind":        "Brand guide",    // brand kit only: free-text label, e.g. Logos, Templates
-  "platform":    "Instagram",      // social only: free-text label
+  "title":       "Fourth Quarter Digital Performance Report",  // required
+  "description": "Impressions, click through rate, and cost per lead.",
+  "channel":     "digital",        // strategy and reports: digital | billboard | directmail
+  "kind":        "Brand guide",    // brand kit: free text, such as Logos or Templates
+  "platform":    "Instagram",      // social: free text
   "updated":     "2026-12-15",     // YYYY-MM-DD
-  "file":        "assets/reports/q4-digital-report.pdf",  // file in this repo
-  "url":         "https://...",    // OR an external link — use one or the other
-  "thumb":       "assets/social/preview.png",  // social: defaults to `file` if it's an image
-  "caption":     "Just listed in..."           // social: suggested caption, copyable
+  "file":        "assets/reports/q4-digital-report.pdf",  // a file in this repo
+  "url":         "https://...",    // or an external link, one or the other
+  "thumb":       "assets/social/preview.png",  // social, defaults to `file` when it is an image
+  "caption":     "Just listed in..."           // social, the suggested caption
 }
 ```
 
-Every entry needs a `title` and either a `file` or a `url`. Everything else is optional.
+Each entry needs a `title` and either a `file` or a `url`. The rest is optional.
 
-`directmail` is intentionally only offered on strategy documents, not reports.
+`directmail` is offered on strategy documents only, not on reports.
 
 ### 3. Commit
 
 ```bash
-git add -A && git commit -m "Add Q4 digital report" && git push
+git add -A && git commit -m "Add fourth quarter digital report" && git push
 ```
 
-The live site updates within a minute or two.
+The live site follows within a minute or two.
+
+---
+
+## Copy conventions
+
+Everything visible on the page follows `guidelines/brand-voice.md`: no em or en dashes, numbers
+spelled out in prose, facts ahead of superlatives, no commands, and one verifiable claim per
+block. That applies to titles, descriptions, and the suggested social captions in `library.json`.
+
+The page spells out counts at runtime through a `spell()` helper, so a section holding fourteen
+items reads as "fourteen" rather than as a numeral.
+
+---
+
+## Design system
+
+`index.html` implements `guidelines/tokens-handoff.md`. The token block at the top of the file
+is the single source of truth, and three rules from the handoff sheet shape everything below it:
+
+- **Corners are square.** A global `border-radius: var(--radius-0)` enforces this.
+- **There are no shadows.** Separation comes from hairline rules and whitespace.
+- **Accent blue carries one verifiable claim per block, never decoration.** On this page the blue
+  appears in exactly two places, both of them counts: the tally under the headline and the item
+  count on each section tab. Nothing else uses it, and the logo blues stay reserved for the mark.
+
+Labels are uppercase Archivo at ten pixels with `letter-spacing: var(--label-tracking)`. That
+treatment carries the tabs, filters, metadata, and action controls.
+
+### Fonts
+
+Self hosted from `assets/fonts/`, matching the variable TTFs named in the handoff sheet.
+Browsers download only the faces actually rendered, so declaring all four costs nothing at load.
+
+These are the raw TTFs, roughly two and a half megabytes across the three faces in use.
+Converting them to woff2 would cut that by about seventy percent and needs `fonttools[woff]`,
+which is not installed on this machine.
+
+### Logos
+
+`assets/logos/` is not populated yet. The masthead currently renders a text wordmark. Dropping
+`aperture-color-horizontal.svg` and `aperture-color-horizontal-ondark.svg` into that folder and
+swapping the `.wordmark` element for an `<img>` finishes it.
 
 ---
 
 ## Removing the example content
 
-`library.json` ships with placeholder entries whose filenames start with `EXAMPLE-`. They point
-at files that don't exist, so they render with a "No file yet" badge or an empty thumbnail.
-Delete those entries as you replace them with real assets.
+`library.json` ships with placeholder entries whose filenames begin with `EXAMPLE-`. They point
+at files that do not exist, so they render with a "Not yet uploaded" state. Delete each one as a
+real asset replaces it.
 
 ---
 
 ## Working on the page locally
 
-`index.html` loads `library.json` with `fetch()`, which browsers block on `file://` URLs. Opening
-the file by double-clicking will show a load error. Run a local server instead:
+`index.html` loads `library.json` through `fetch()`, which browsers block on `file://` URLs, so
+opening the file by double clicking shows a load error. Use a local server:
 
 ```bash
 python3 -m http.server 8000
@@ -85,28 +126,28 @@ Then open http://localhost:8000.
 
 ---
 
-## How it's built
+## How it is built
 
-- `index.html` — the entire site. No build step, no dependencies, no framework.
-- `library.json` — all content. This is the only file you need to touch day to day.
-- `assets/` — the actual documents and graphics.
+- `index.html`, the entire site. No build step, no dependencies, no framework.
+- `library.json`, all content. This is the only file that changes day to day.
+- `assets/`, the documents, graphics, and fonts.
 
-Adding a new top-level section means editing the `SECTIONS` array near the top of the script
-block in `index.html`, then adding a matching key to `library.json`.
+Adding a new top level section means editing the `SECTIONS` array in the script block of
+`index.html` and adding a matching key to `library.json`.
 
 ---
 
-## Making this actually private
+## Making this private
 
-Free GitHub Pages cannot be access-controlled. Real options, cheapest first:
+Free GitHub Pages cannot be access controlled. The practical options, cheapest first:
 
-1. **Cloudflare Pages + Cloudflare Access** — free tier covers up to 50 users. Connect this repo,
-   put an Access policy in front requiring an `@apertureglobal.com` email. This is the usual
-   answer and requires no plan change on GitHub.
-2. **Netlify** — password protection or role-based access on paid tiers.
-3. **GitHub Enterprise Cloud** — supports private Pages visible only to org members. Expensive
-   if this is the only reason to upgrade.
-4. **Make the repo private and drop Pages** — agents would use the repo directly, which is a
-   poor fit for non-technical users.
+1. **Cloudflare Pages with Cloudflare Access.** The free tier covers fifty users. Connect this
+   repo and place an Access policy in front requiring an Aperture Global email address. This is
+   the usual answer and asks for no plan change at GitHub.
+2. **Netlify.** Password protection and role based access arrive on the paid tiers.
+3. **GitHub Enterprise Cloud.** Supports private Pages visible to organization members only, and
+   is expensive when this page is the only reason to upgrade.
+4. **A private repo without Pages.** Agents would navigate the repo directly, which suits
+   non technical users poorly.
 
-Until one of those is in place, treat everything committed here as public.
+Until one of those is in place, everything committed here is public.
