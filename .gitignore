@@ -1,8 +1,9 @@
 # macOS
 .DS_Store
 
-# Working directories for campaign production, not part of the library site
-html5/
+# Working directories for campaign production, not part of the library site.
+# html5/ is deliberately tracked — the ad previews are published via GitHub Pages
+# and strategy documents link to them.
 properties/
 reports/
 documents/
