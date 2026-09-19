@@ -54,6 +54,15 @@
       "file": "assets/campaigns/EXAMPLE-billboard-impressions.pdf",
       "type": "report",
       "agent": "Example Agent"
+    },
+    {
+      "title": "Campaign Strategy, 2961 Lakeview Drive",
+      "description": "A seven page strategy for the Lakeview Drive listing, covering audience targeting, a thirty day flight across two audiences, reach within Florida and beyond it, and the display creative as buyers will see it.",
+      "channel": "digital",
+      "updated": "2026-09-19",
+      "file": "assets/campaigns/campaign-strategy-2961-lakeview-drive.pdf",
+      "type": "strategy",
+      "agent": "Cynde Velez"
     }
   ],
   "brand": [
