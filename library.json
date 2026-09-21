@@ -59,7 +59,7 @@
       "title": "Campaign Strategy, 2961 Lakeview Drive",
       "description": "A seven page strategy for the Lakeview Drive listing, covering audience targeting, a thirty day flight across two audiences, reach within Florida and beyond it, and the display creative as buyers will see it.",
       "channel": "digital",
-      "updated": "2026-09-19",
+      "updated": "2026-09-21",
       "file": "assets/campaigns/campaign-strategy-2961-lakeview-drive.pdf",
       "type": "strategy",
       "agent": "Cynde Velez"
@@ -79,6 +79,33 @@
       "channel": "directmail",
       "updated": "2026-09-21",
       "file": "assets/campaigns/direct-mail-strategy-2961-lakeview-drive.pdf",
+      "type": "strategy",
+      "agent": "Cynde Velez"
+    },
+    {
+      "title": "Campaign Strategy, 746 Lake Mills Road",
+      "description": "An eight page strategy for the Lake Mills Road listing, covering audience targeting, a thirty day flight across two audiences, reach within Florida and beyond it, the display creative as buyers will see it, and the month set out in order.",
+      "channel": "digital",
+      "updated": "2026-09-21",
+      "file": "assets/campaigns/campaign-strategy-746-lake-mills-road.pdf",
+      "type": "strategy",
+      "agent": "Cynde Velez"
+    },
+    {
+      "title": "Billboard Strategy, 746 Lake Mills Road",
+      "description": "Digital out of home placement across one television market spanning nine counties, targeted by area rather than by individual board, weighted toward the parts of the market where the equestrian buyer already lives.",
+      "channel": "billboard",
+      "updated": "2026-09-21",
+      "file": "assets/campaigns/billboard-strategy-746-lake-mills-road.pdf",
+      "type": "strategy",
+      "agent": "Cynde Velez"
+    },
+    {
+      "title": "Direct Mail Strategy, 746 Lake Mills Road",
+      "description": "A five hundred piece drop drawn from four audiences, banded on price rather than floored so that acreage and a barn qualify a household, with the footprint zip by zip and the pull as it will be run.",
+      "channel": "directmail",
+      "updated": "2026-09-21",
+      "file": "assets/campaigns/direct-mail-strategy-746-lake-mills-road.pdf",
       "type": "strategy",
       "agent": "Cynde Velez"
     }
