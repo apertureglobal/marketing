@@ -63,6 +63,24 @@
       "file": "assets/campaigns/campaign-strategy-2961-lakeview-drive.pdf",
       "type": "strategy",
       "agent": "Cynde Velez"
+    },
+    {
+      "title": "Billboard Strategy, 2961 Lakeview Drive",
+      "description": "Digital out of home placement across one television market spanning ten counties, targeted by area rather than by individual board, with the market map set out for approval.",
+      "channel": "billboard",
+      "updated": "2026-09-21",
+      "file": "assets/campaigns/billboard-strategy-2961-lakeview-drive.pdf",
+      "type": "strategy",
+      "agent": "Cynde Velez"
+    },
+    {
+      "title": "Direct Mail Strategy, 2961 Lakeview Drive",
+      "description": "A five hundred piece drop drawn from four audiences deduplicated against one another, with the footprint zip by zip, the criteria that qualify a household, and the pull as it will be run.",
+      "channel": "directmail",
+      "updated": "2026-09-21",
+      "file": "assets/campaigns/direct-mail-strategy-2961-lakeview-drive.pdf",
+      "type": "strategy",
+      "agent": "Cynde Velez"
     }
   ],
   "brand": [
