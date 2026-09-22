@@ -1,5 +1,5 @@
 {
-  "_readme": "Edit this file to add or remove items. See README.md for field definitions. Every entry needs a title and either a 'file' (path in this repo) or a 'url' (external link). Campaign items also need 'agent' (the owning agent, or Corporate for brokerage wide material) and 'type' (strategy or report). Copy follows guidelines/brand-voice.md: no em or en dashes, numbers spelled out in prose, facts over superlatives, no commands.",
+  "_readme": "Edit this file to add or remove items. See README.md for field definitions. Every entry needs a title and either a 'file' (path in this repo) or a 'url' (external link). Campaign items also need 'agent' (the owning agent, or Corporate for brokerage wide material) and 'type' (strategy, report, or creative). Use 'creative' with a 'url' for a hosted ad preview page, so the row opens in a new tab instead of downloading. Copy follows guidelines/brand-voice.md: no em or en dashes, numbers spelled out in prose, facts over superlatives, no commands.",
   "campaigns": [
     {
       "title": "Digital Ad Campaign Playbook",
@@ -108,6 +108,69 @@
       "file": "assets/campaigns/direct-mail-strategy-746-lake-mills-road.pdf",
       "type": "strategy",
       "agent": "Cynde Velez"
+    },
+    {
+      "title": "Display Ad Creative, 805 Cammack Court",
+      "description": "Six display units for the 805 Cammack Court listing, one for each placement size, built from four listing photographs with a slow pan and zoom across a fifteen second pass. The page shows every size together and holds on the last frame after two passes.",
+      "channel": "digital",
+      "updated": "2026-09-22",
+      "url": "https://apertureglobal.github.io/marketing/html5/805CammackCt-Nashville-TN/preview.html",
+      "type": "creative",
+      "agent": "Alex Brandau IV"
+    },
+    {
+      "title": "Display Ad Creative, 806 Willowdale Court",
+      "description": "Six display units for the 806 Willowdale Court listing, one for each placement size, built from four listing photographs with a slow pan and zoom across a fifteen second pass. The page shows every size together and holds on the last frame after two passes.",
+      "channel": "digital",
+      "updated": "2026-09-22",
+      "url": "https://apertureglobal.github.io/marketing/html5/806WillowdaleCt-Nashville-TN/preview.html",
+      "type": "creative",
+      "agent": "Alex Brandau IV"
+    },
+    {
+      "title": "Display Ad Creative, 312 Madison Street",
+      "description": "Six display units for the 312 Madison Street listing, one for each placement size, built from four listing photographs with a slow pan and zoom across a fifteen second pass. The page shows every size together and holds on the last frame after two passes.",
+      "channel": "digital",
+      "updated": "2026-09-22",
+      "url": "https://apertureglobal.github.io/marketing/html5/312MadisonSt-Nashville-TN/preview.html",
+      "type": "creative",
+      "agent": "Alex Brandau IV"
+    },
+    {
+      "title": "Display Ad Creative, 11850 North 5th East",
+      "description": "Six display units for the 11850 North 5th East listing, one for each placement size, built from four listing photographs with a slow pan and zoom across a fifteen second pass. The page shows every size together and holds on the last frame after two passes.",
+      "channel": "digital",
+      "updated": "2026-09-22",
+      "url": "https://apertureglobal.github.io/marketing/html5/11850N5thE-IdahoFalls-ID/preview.html",
+      "type": "creative",
+      "agent": "Mel Biggs"
+    },
+    {
+      "title": "Display Ad Creative, 10 Eton Thameside",
+      "description": "Six display units for the 10 Eton Thameside listing, one for each placement size, built from four listing photographs with a slow pan and zoom across a fifteen second pass. The page shows every size together and holds on the last frame after two passes.",
+      "channel": "digital",
+      "updated": "2026-09-22",
+      "url": "https://apertureglobal.github.io/marketing/html5/EtonThameside-Eton-UK/preview.html",
+      "type": "creative",
+      "agent": "Toby Madden"
+    },
+    {
+      "title": "Display Ad Creative, 14 Otters Way",
+      "description": "Six display units for the 14 Otters Way listing, one for each placement size, built from four listing photographs with a slow pan and zoom across a fifteen second pass. The page shows every size together and holds on the last frame after two passes.",
+      "channel": "digital",
+      "updated": "2026-09-22",
+      "url": "https://apertureglobal.github.io/marketing/html5/14OttersWay-Peterborough-UK/preview.html",
+      "type": "creative",
+      "agent": "Krishan Mistry"
+    },
+    {
+      "title": "Display Ad Creative, Parque das Nações",
+      "description": "Six display units for the Parque das Nações listing, one for each placement size, built from four listing photographs with a slow pan and zoom across a fifteen second pass. The page shows every size together and holds on the last frame after two passes.",
+      "channel": "digital",
+      "updated": "2026-09-22",
+      "url": "https://apertureglobal.github.io/marketing/html5/ParqueDasNacoes-Lisbon-PT/preview.html",
+      "type": "creative",
+      "agent": "Liza Falcão de Sá & Charles Andrews"
     }
   ],
   "brand": [

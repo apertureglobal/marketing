@@ -368,14 +368,14 @@
   "use strict";
 
   var CHANNEL_LABELS = { digital: "Digital Ad", billboard: "Billboard", directmail: "Direct Mail" };
-  var TYPE_LABELS = { strategy: "Strategy", report: "Report" };
+  var TYPE_LABELS = { strategy: "Strategy", report: "Report", creative: "Ad Creative" };
 
   var SECTIONS = [
     { id: "campaigns", label: "Campaigns", heading: "Campaign documents",
-      note: "Strategy documents and performance reports, grouped by the agent who owns them. Material carrying no single owner sits under Corporate.",
+      note: "Strategy documents, performance reports, and the display ad creative, grouped by the agent who owns them. Material carrying no single owner sits under Corporate.",
       groupBy: "agent",
       filters: [
-        { key: "type", options: ["strategy", "report"], labels: TYPE_LABELS },
+        { key: "type", options: ["strategy", "report", "creative"], labels: TYPE_LABELS },
         { key: "channel", options: ["digital", "billboard", "directmail"], labels: CHANNEL_LABELS }
       ] },
     { id: "brand", label: "Brand Kit", heading: "Brand kit",
