@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aperture Billboard Strategy &mdash; 806 Willowdale Ct</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #55585A; }
+  * { box-sizing: border-box; }
+
+  .page {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    padding: 0.8in 0.85in 0.55in;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+    background: #F7F6F3;
+    color: #0E1113;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-of-type { page-break-after: auto; break-after: auto; }
+  .dark { background: #0E1113; color: #FFFFFF; }
+
+  .num { font-variant-numeric: lining-nums tabular-nums; }
+  .lining { font-variant-numeric: lining-nums; }
+
+  .eyebrow {
+    font-size: 10.5px; font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  h2.head {
+    margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 45px; line-height: 1.07; letter-spacing: -0.012em;
+    font-variant-numeric: lining-nums;
+  }
+  h2.head em { font-style: italic; font-weight: 300; }
+  .lede {
+    margin: 0; font-size: 13px; font-weight: 300; line-height: 1.9;
+    color: #3A3E41; max-width: 31em; text-wrap: pretty;
+  }
+  .dark .lede { color: rgba(255,255,255,0.7); }
+  .micro {
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .rule { height: 1px; background: #E3DAD1; }
+  .dark .rule { background: rgba(255,255,255,0.14); }
+  .spacer { flex: 1 1 auto; min-height: 0; }
+
+  .foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 13px; border-top: 1px solid #E3DAD1;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .foot { border-top-color: rgba(255,255,255,0.14); }
+  .foot .pg { font-variant-numeric: lining-nums tabular-nums; }
+
+  .body { font-size: 12px; font-weight: 300; line-height: 1.72; color: #3A3E41; }
+  .dark .body { color: rgba(255,255,255,0.7); }
+  .ink { color: #0E1113; }
+  .dark .ink { color: #FFFFFF; }
+
+  .hdrow {
+    display: grid; align-items: baseline; column-gap: 18px;
+    padding-bottom: 9px; border-bottom: 1px solid #0E1113;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .hdrow { border-bottom-color: rgba(255,255,255,0.55); }
+  .row {
+    display: grid; align-items: baseline; column-gap: 18px;
+    border-bottom: 1px solid #E3DAD1;
+    font-size: 11.5px; font-weight: 300; color: #0E1113;
+  }
+  .dark .row { border-bottom-color: rgba(255,255,255,0.14); color: #FFFFFF; }
+
+  .note { border: 1px solid #E3DAD1; background: #EFEDE8; padding: 16px 22px; }
+  .dark .note { border-color: rgba(255,255,255,0.14); background: #181B1D; }
+
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid #B9B2A8; padding-bottom: 2px; }
+  .dark a { border-bottom-color: rgba(255,255,255,0.3); }
+
+  .mk { position: absolute; width: 0; height: 0; }
+  .mk i {
+    position: absolute; left: -2.6px; top: -2.6px; width: 5.2px; height: 5.2px;
+    border-radius: 50%; background: #B2C6D6; display: none;
+  }
+  .mk b {
+    position: absolute; white-space: nowrap; font-size: 8px; font-weight: 400;
+    letter-spacing: 0.17em; text-transform: uppercase; color: #0E1113;
+  }
+  .mk.r b { left: 9px; top: -4.5px; }
+  .mk.l b { right: 9px; top: -4.5px; }
+  .mk.up b { top: -15px; }
+  .mk.dn b { top: 6px; }
+  .mk.subj i { display: block; left: -3.4px; top: -3.4px; width: 6.8px; height: 6.8px; background: #0E1113; }
+  .mk.subj b { font-weight: 500; letter-spacing: 0.15em; color: #0E1113; }
+
+  .cty {
+    columns: 3; column-gap: 15px;
+    font-size: 9.2px; font-weight: 300; line-height: 1.82; color: #0E1113;
+  }
+  .cty div { break-inside: avoid; }
+  .cty .ky { color: #8E8688; }
+</style>
+</head>
+<body>
+
+<!-- ============================ 01  COVER ============================ -->
+<!-- The cover artwork is pre-composited to flat RGB (no alpha): the photograph and its
+     scrim are baked into the pixels. Do NOT add rgba() washes, gradients or hatch
+     overlays to this section: Chrome emits /Pattern and /SMask objects for them,
+     which breaks the flipbook PDF. -->
+<section class="page dark" style="padding:0.8in 0.85in 0.6in">
+  <img src="assets-billboard-806willowdale/willowdale-bb-cover-flat.jpg" alt="The reclaimed brick Colonial at 806 Willowdale Court, seen across its lawn beneath mature trees"
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+
+  <img src="assets-billboard-806willowdale/aperture-logo-white.svg" alt="Aperture Global"
+       style="position:relative;display:block;width:1.75in;height:auto">
+
+  <div class="spacer"></div>
+
+  <div style="position:relative;font-size:10.5px;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#B2B4B5" class="lining">806 Willowdale Ct &middot; Digital Billboard Strategy</div>
+
+  <h1 style="position:relative;margin:22px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:75px;line-height:1.0;letter-spacing:-0.016em;max-width:7.4em;text-wrap:pretty;font-variant-numeric:lining-nums">Two acres inside the county line, <em style="font-style:italic;font-weight:300">shown to the city that drives past it.</em></h1>
+
+  <div style="position:relative;width:56px;height:1px;background:#5B5D5F;margin:34px 0 26px"></div>
+
+  <div style="position:relative;display:grid;grid-template-columns:1.35in 1fr;row-gap:12px;column-gap:20px;align-items:baseline;max-width:5.7in">
+    <div class="micro" style="color:#8A8C8E">Property</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">806 Willowdale Court, Nashville, Tennessee 37220 &middot; Oak Hill, Russellwood Heights</div>
+
+    <div class="micro" style="color:#8A8C8E">List Price</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">&#36;2,300,000</div>
+
+    <div class="micro" style="color:#8A8C8E">The Residence</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Approximately 3,980 square feet &middot; 4 bedrooms &middot; 3 full and 1 half bathrooms</div>
+
+    <div class="micro" style="color:#8A8C8E">The Land</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">1.97 level acres &middot; gunite pool and pool house &middot; no homeowners association</div>
+
+    <div class="micro" style="color:#8A8C8E">Market</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Nashville &middot; forty-nine counties &middot; Davidson County at the centre</div>
+
+    <div class="micro" style="color:#8A8C8E">Campaign Window</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Thirty days, continuous</div>
+  </div>
+
+  <div style="position:relative;margin-top:26px;font-size:9px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:#8A8C8E">Prepared for the owner &middot; The plan for the thirty days ahead</div>
+</section>
+
+<!-- ============================ 02  THE MARKET ============================ -->
+<section class="page">
+  <div class="eyebrow">The Market</div>
+  <h2 class="head" style="margin-top:20px;font-size:41px;max-width:15em">One television market, <em>forty-nine counties wide.</em></h2>
+  <p class="lede" style="margin-top:16px;max-width:37em;font-size:11.5px;line-height:1.72">806 Willowdale Court stands in Russellwood Heights, in Oak Hill, seven miles south of downtown Nashville and inside Davidson County. Advertising of this kind is bought by market rather than by address, and the market this property sits in is Nashville &mdash; forty-nine counties across two states, reaching from the Kentucky line above Hopkinsville down to the Alabama border, and from the Tennessee River in the west to the Cumberland Plateau in the east.</p>
+  <p class="lede" style="margin-top:10px;max-width:37em;font-size:11.5px;line-height:1.72">Davidson County is drawn in blue on the map opposite. The other forty-eight counties of the market are shaded, and the whole footprint is outlined as one shape. The pale counties beyond that line sit outside this market; they are reached by the online advertising instead.</p>
+
+  <div style="display:grid;grid-template-columns:2.55in 1fr;column-gap:0.34in;margin-top:16px;align-items:start">
+    <div>
+      <div style="position:relative">
+        <img src="assets-billboard-806willowdale/nashville-dma-markets.svg" alt="Middle Tennessee and south-central Kentucky with Davidson County marked and the forty-eight other counties of the Nashville market shaded, outlined as a single coverage footprint"
+             style="display:block;width:100%;height:auto">
+        <div style="position:absolute;inset:0">
+          <div class="mk subj r" style="left:46.76%;top:50.64%"><i></i><b>806 Willowdale Ct</b></div>
+          <div class="mk l dn"   style="left:44.71%;top:55.84%"><i></i><b>Franklin</b></div>
+          <div class="mk r dn"   style="left:55.43%;top:59.04%"><i></i><b>Murfreesboro</b></div>
+          <div class="mk l"      style="left:41.12%;top:68.00%"><i></i><b>Columbia</b></div>
+          <div class="mk l"      style="left:33.07%;top:49.80%"><i></i><b>Dickson</b></div>
+          <div class="mk l"      style="left:33.53%;top:32.01%"><i></i><b>Clarksville</b></div>
+          <div class="mk r"      style="left:53.96%;top:37.70%"><i></i><b>Gallatin</b></div>
+          <div class="mk r"      style="left:75.14%;top:46.71%"><i></i><b>Cookeville</b></div>
+          <div class="mk r"      style="left:53.79%;top:14.04%"><i></i><b>Bowling Green</b></div>
+          <div class="mk l"      style="left:30.52%;top:18.79%"><i></i><b>Hopkinsville</b></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:8px;font-size:8px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#8E8688">
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#B2C6D6"></span>Davidson County</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#DED2C4"></span>Rest of the Nashville Market</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#EDE6DE"></span>Outside the Market</span>
+      </div>
+      <div class="body" style="margin-top:11px;font-size:10.5px;line-height:1.7">Davidson County was established from the property&rsquo;s own coordinates rather than inferred from the postcode. The federal address geocoder, the federal census-block service and a point-in-polygon test run against the federal county polygons each return Davidson, county 47037 &mdash; and that same test returns false for Williamson County next door. The forty-nine-county roster was taken from published county-by-market schedules and matched against the federal boundary file, with none unaccounted for. We describe this market by its county count rather than by a national ranking: published rankings disagree with one another and move from year to year, so the honest measure of reach is the ground it covers.</div>
+    </div>
+
+    <div>
+      <div class="hdrow" style="grid-template-columns:1fr auto;column-gap:14px"><span>The Forty-Nine Counties</span><span style="text-align:right">49</span></div>
+      <div class="cty" style="margin-top:9px">
+        <div><b style="font-weight:500">Davidson</b></div><div>Bedford</div><div>Benton</div><div>Cannon</div><div>Cheatham</div><div>Clay</div><div>Coffee</div><div>DeKalb</div><div>Decatur</div><div>Dickson</div><div>Franklin</div><div>Giles</div><div>Henry</div><div>Hickman</div><div>Houston</div><div>Humphreys</div><div>Jackson</div><div>Lawrence</div><div>Lewis</div><div>Macon</div><div>Marshall</div><div>Maury</div><div>Montgomery</div><div>Moore</div><div>Overton</div><div>Perry</div><div>Pickett</div><div>Putnam</div><div>Robertson</div><div>Rutherford</div><div>Smith</div><div>Stewart</div><div>Sumner</div><div>Trousdale</div><div>Van Buren</div><div>Warren</div><div>Wayne</div><div>White</div><div>Williamson</div><div>Wilson</div>
+        <div class="ky">Allen, Ky.</div><div class="ky">Christian, Ky.</div><div class="ky">Clinton, Ky.</div><div class="ky">Cumberland, Ky.</div><div class="ky">Logan, Ky.</div><div class="ky">Monroe, Ky.</div><div class="ky">Simpson, Ky.</div><div class="ky">Todd, Ky.</div><div class="ky">Trigg, Ky.</div>
+      </div>
+      <div class="micro" style="margin-top:11px;line-height:1.8;letter-spacing:0.16em">Forty in Tennessee &middot; nine in Kentucky, set in grey</div>
+
+      <div class="rule" style="margin-top:13px"></div>
+      <div class="micro" style="margin-top:12px;color:#0E1113;letter-spacing:0.2em">Why The Whole Market</div>
+      <div class="body" style="margin-top:9px;font-size:10.5px;line-height:1.7">The buyer for this house is almost certainly already driving these roads. They are in Green Hills or Forest Hills and have run out of garden; they are in Brentwood or Franklin &mdash; which are Williamson County, not Davidson &mdash; and want the shorter run into town without giving up the land; or they are moving to Nashville and believe two level acres with a pool no longer exist inside the county. The whole market is targeted because that is the ground this audience moves across.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>806 Willowdale Ct &middot; Digital Billboard Strategy</span><span class="pg">02 / 05</span></div>
+</section>
+
+<!-- ============================ 03  THE ARGUMENT ============================ -->
+<section class="page dark">
+  <div class="eyebrow">The Argument</div>
+  <h2 class="head" style="margin-top:20px;font-size:41px;color:#FFFFFF;max-width:14em">Land and quiet, <em>without leaving the city.</em></h2>
+  <p class="lede" style="margin-top:14px;max-width:35em;font-size:11.5px;line-height:1.74">Most houses offering two level acres, a pool and no homeowners association ask a buyer to drive out of Davidson County to reach them. This one does not. Radnor Lake is under two miles away in a straight line, the interstate a little over two, Green Hills under four, and downtown Nashville seven. The Williamson County line is one and seven tenths of a mile from the front door &mdash; close enough that the house sits among the schools, shops and commutes people move south for, while the address, the county and the taxes remain Nashville&rsquo;s. That is the whole of the argument, and out-of-home carries it unusually well: the people it is for are, by definition, already in a car somewhere in this market.</p>
+
+  <div class="rule" style="margin-top:16px"></div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">01</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">The land is the headline, not the house</div>
+    <div style="margin-top:7px;font-size:11.5px;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.7)">A four-bedroom brick Colonial is not scarce here. Just under two level acres of it, with a gunite pool, brick terraces and a pool house, inside the Davidson County line and with no association to answer to, is. Every frame leads with the grounds.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">02</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">The audience does not know this exists</div>
+    <div style="margin-top:7px;font-size:11.5px;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.7)">Nobody searches for a thing they believe is gone. That is what out-of-home is good for and a property portal is not: it reaches people who are not looking, as they drive past the sort of lot they had given up on.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">03</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">The geography is Davidson and its ring</div>
+    <div style="margin-top:7px;font-size:11.5px;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.7)">This is a Nashville house for a Nashville buyer. The emphasis is Davidson County and the counties immediately around it, not a national footprint.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">04</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">One idea per screen, one address for all of them</div>
+    <div style="margin-top:7px;font-size:11.5px;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.7)">A driver has a few seconds. Each frame carries the grounds, the acreage, the price and the web address, and nothing else. Every screen ends at the same short address, so a glance from a car can be recovered from a phone that evening.</div></div>
+  </div>
+
+  <div class="note" style="margin-top:12px;padding:13px 22px">
+    <div class="micro" style="color:#C8C6C4;letter-spacing:0.24em">The Property, In Figures</div>
+    <div class="lining" style="margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);row-gap:13px;column-gap:18px">
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">&#36;2,300,000</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">List Price</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">1.97</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Level Acres</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">3,980</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Square Feet, Measured</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">4 &middot; 3.5</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Bedrooms &middot; Bathrooms</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">7.2&#8202;mi</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">To Downtown, Straight Line</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">49</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Counties In The Market</div></div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>806 Willowdale Ct &middot; Digital Billboard Strategy</span><span class="pg">03 / 05</span></div>
+</section>
+
+<!-- ============================ 04  THE TARGETING ============================ -->
+<section class="page">
+  <div class="eyebrow">The Targeting</div>
+  <h2 class="head" style="margin-top:10px;font-size:35px">Chosen by area, <em>not by billboard.</em></h2>
+  <p class="lede" style="margin-top:9px;max-width:38em;font-size:11.5px;line-height:1.7">These screens do not work the way billboards used to. We do not take one sign on one road for a month. They are bought programmatically: we tell the exchange which parts of the market to serve the property into, and it places the advertisement on whatever screens are free there while the campaign runs. There is no list of board addresses in this document, and there will not be one. What we choose is the geography.</p>
+  <p class="lede" style="margin-top:8px;max-width:38em;font-size:11.5px;line-height:1.7">In practice that means roadside and public digital screens across the forty-nine counties on the previous page, weighted towards the five areas below.</p>
+
+  <div class="hdrow" style="grid-template-columns:0.42in 2.05in 1fr;margin-top:8px;column-gap:14px">
+    <span>Area</span><span>Targeted Geography</span><span>Why It Is Included</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">01</span>
+    <span style="font-size:11px;line-height:1.5">Davidson County, southern half &middot; Oak Hill, Forest Hills, Green Hills, Belle Meade, Crieve Hall, Berry Hill<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The county the property is in and the ground its buyer already lives on. Households who know Oak Hill, understand what a level acre is worth here, and can tell in one glance that a lot this size inside the county line is not a normal offering.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">02</span>
+    <span style="font-size:11px;line-height:1.5">Northern Williamson County &middot; Brentwood, Nolensville, Franklin<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">A separate county &mdash; Williamson, not Davidson &mdash; and the wealthiest ground in the market. Weighted heavily because its households moved south for land and now drive the run into Nashville daily. This property offers the land without the drive, one and seven tenths of a mile from their county line.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">03</span>
+    <span style="font-size:11px;line-height:1.5">The rest of Davidson &middot; downtown, the Gulch, East Nashville, Sylvan Park, Donelson<br><span class="micro" style="letter-spacing:0.16em">High priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">City-centre households trading up out of a townhouse or a narrow infill lot, for whom two acres seven miles from work is the thing they have been unable to find.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">04</span>
+    <span style="font-size:11px;line-height:1.5">The commuter ring &middot; Rutherford, Wilson, Sumner, Cheatham, Robertson &mdash; Murfreesboro, Lebanon, Hendersonville<br><span class="micro" style="letter-spacing:0.16em">Moderate priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The counties whose residents drive into Davidson and pass within reach of the property on the way &mdash; people for whom Nashville is already a daily destination.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">05</span>
+    <span style="font-size:11px;line-height:1.5">The balance of the forty-nine, including the nine Kentucky counties<br><span class="micro" style="letter-spacing:0.16em">Steady presence</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The plateau to the east, the river counties to the west, the Kentucky line to the north. A lower share of delivery, so the whole market is covered for the full thirty days rather than in bursts.</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 2.35in;column-gap:0.3in;margin-top:7px;align-items:start">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Where The Emphasis Sits</div>
+      <div class="body" style="margin-top:9px;font-size:10.5px;line-height:1.62">Areas 01 and 02 take the largest share of delivery: one is the ground the house stands on, the other the county whose households most want what it offers. The rest of Davidson takes the next share, the commuter ring a smaller one, and the remaining counties a lower, steady share so that nowhere is dark.</div>
+      <div class="body" style="margin-top:8px;font-size:10.5px;line-height:1.62">We would rather run everywhere in the market for the full thirty days at a measured weight than crowd two weeks and then disappear. One consequence of buying this way is worth saying plainly: we cannot promise a photograph of your house on a named sign at a named junction. What we can say is which parts of Tennessee and Kentucky saw it, and how often.</div>
+    </div>
+    <div>
+      <img src="assets-billboard-806willowdale/willowdale-bb-pool.jpg" alt="The gunite pool, brick terrace, screened sunroom and pool house at the rear of the residence"
+           style="display:block;width:100%;height:1.28in;object-fit:cover;border:1px solid #E3DAD1">
+      <div class="micro" style="margin-top:8px;line-height:1.7;letter-spacing:0.16em">The grounds the advertising leads with</div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:5px"></div>
+  <div style="display:grid;grid-template-columns:1.35in 1fr;column-gap:20px;align-items:baseline;margin-top:7px">
+    <div class="micro" style="color:#0E1113;letter-spacing:0.2em">In A Straight Line</div>
+    <div class="lining" style="font-size:10.5px;font-weight:300;line-height:1.72;color:#3A3E41">Williamson County line 1.7&#8202;mi &middot; Radnor Lake 1.9&#8202;mi &middot; Interstate 65 at Harding Place 2.4&#8202;mi &middot; Green Hills 3.9&#8202;mi &middot; Nashville International Airport 7.1&#8202;mi &middot; Downtown Nashville 7.2&#8202;mi &middot; Franklin 10.6&#8202;mi &middot; Murfreesboro 26.0&#8202;mi &nbsp;&mdash;&nbsp; <span class="micro" style="letter-spacing:0.14em">from the property&rsquo;s coordinates; straight-line, not driving times.</span></div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>806 Willowdale Ct &middot; Digital Billboard Strategy</span><span class="pg">04 / 05</span></div>
+</section>
+
+<!-- ============================ 05  WHAT HAPPENS NEXT ============================ -->
+<section class="page">
+  <div class="eyebrow">What Happens Next</div>
+  <h2 class="head" style="margin-top:17px;font-size:38px">The month ahead, <em>in order.</em></h2>
+  <p class="lede" style="margin-top:15px;max-width:37em;font-size:11.5px;line-height:1.72">The market, the areas inside it and where the emphasis sits are decided; the reasoning is on the pages before this one. What follows is the sequence. The steps in black are settled and ours to run. The two in grey are figures that do not exist yet, left blank rather than estimated.</p>
+
+  <div class="rule" style="margin-top:13px"></div>
+
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">01</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">The Advertisement</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Built from the photography of the grounds, the pool and terraces and the house among its trees, in the Aperture setting used across the rest of the campaign.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">02</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">Your Sign-Off</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">You see the advertisement and approve it before a single screen carries it. That one sign-off is yours.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">03</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">At Launch</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">The campaign opens across all forty-nine counties of the Nashville market at once, weighted to southern Davidson and northern Williamson.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">04</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">Thirty Days</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Continuous through the month that follows, at a measured weight, with no dark weeks and nowhere in the market unlit.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#8E8688">05</span>
+    <span class="micro" style="color:#8E8688;letter-spacing:0.18em">Impressions</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#8E8688">To be confirmed. We will state a figure only once an operator has committed to one in writing, and it will then be the number we are held to.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#8E8688">06</span>
+    <span class="micro" style="color:#8E8688;letter-spacing:0.18em">Performance</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#8E8688">Nothing measured. The campaign has not begun, so there is nothing here to read yet.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">07</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">At The Close</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Once the thirty days are run, a report: which parts of Tennessee and Kentucky saw the property, and how often &mdash; whatever the operators are able to verify.</span>
+  </div>
+
+  <div class="note" style="margin-top:12px;padding:10px 18px">
+    <div class="micro" style="letter-spacing:0.2em;color:#0E1113">Two Things That Will Never Appear</div>
+    <div class="body" style="margin-top:8px;font-size:10.5px;line-height:1.66">No individual board and no screen count, at any stage. These are not applicable to a campaign bought this way: screens are served programmatically across the targeted areas, and which ones carry the advertisement varies hour by hour with what the exchange has available. We cannot promise a photograph of your house on a named sign; we can tell you the geography it ran in.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.34in;margin-top:13px">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The Property, Online</div>
+      <div style="margin-top:11px;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;font-variant-numeric:lining-nums"><a href="https://www.apertureglobal.com/806willowdalect">apertureglobal.com/806willowdalect</a></div>
+      <div class="body" style="margin-top:9px;font-size:10.5px;line-height:1.7;color:#8E8688">Where every screen resolves.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The Rest Of The Campaign</div>
+      <div class="body" style="margin-top:11px;font-size:11px;line-height:1.7;color:#3A3E41">Online advertising and a direct mail campaign run into the same part of Tennessee across the same thirty days; each is set out in its own document.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="rule"></div>
+  <div style="display:grid;grid-template-columns:1fr auto;column-gap:24px;align-items:end;padding-top:19px">
+    <div>
+      <div class="micro" style="letter-spacing:0.24em">Your Agent</div>
+      <div style="margin-top:13px;font-size:12.5px;font-weight:300;letter-spacing:0.01em;color:#0E1113">Alex Brandau IV</div>
+      <div class="micro" style="margin-top:8px;letter-spacing:0.22em">Aperture Global Real Estate</div>
+      <div class="lining" style="margin-top:10px;font-size:11.5px;font-weight:200;line-height:1.85;color:#3A3E41">+1 615 335 5600<br>Alex.Brandau@ApertureGlobal.com</div>
+    </div>
+    <img src="assets-billboard-806willowdale/aperture-logo-black.svg" alt="Aperture Global"
+         style="display:block;width:1.5in;height:auto">
+  </div>
+
+  <div style="flex:0 0 auto;height:0.1in"></div>
+  <div class="foot"><span>806 Willowdale Ct &middot; Digital Billboard Strategy</span><span class="pg">05 / 05</span></div>
+</section>
+
+</body>
+</html>

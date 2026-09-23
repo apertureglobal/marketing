@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aperture Billboard Strategy &mdash; 746 Lake Mills Road</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #55585A; }
+  * { box-sizing: border-box; }
+
+  .page {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    padding: 0.8in 0.85in 0.55in;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+    background: #F7F6F3;
+    color: #0E1113;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-of-type { page-break-after: auto; break-after: auto; }
+  .dark { background: #0E1113; color: #FFFFFF; }
+
+  .num { font-variant-numeric: lining-nums tabular-nums; }
+  .lining { font-variant-numeric: lining-nums; }
+
+  .eyebrow {
+    font-size: 10.5px; font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  h2.head {
+    margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 45px; line-height: 1.07; letter-spacing: -0.012em;
+    font-variant-numeric: lining-nums;
+  }
+  h2.head em { font-style: italic; font-weight: 300; }
+  .lede {
+    margin: 0; font-size: 13px; font-weight: 300; line-height: 1.9;
+    color: #3A3E41; max-width: 31em; text-wrap: pretty;
+  }
+  .dark .lede { color: rgba(255,255,255,0.7); }
+  .micro {
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .rule { height: 1px; background: #E3DAD1; }
+  .dark .rule { background: rgba(255,255,255,0.14); }
+  .spacer { flex: 1 1 auto; min-height: 0; }
+
+  .foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 13px; border-top: 1px solid #E3DAD1;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .foot { border-top-color: rgba(255,255,255,0.14); }
+  .foot .pg { font-variant-numeric: lining-nums tabular-nums; }
+
+  .body { font-size: 12px; font-weight: 300; line-height: 1.72; color: #3A3E41; }
+  .dark .body { color: rgba(255,255,255,0.7); }
+  .ink { color: #0E1113; }
+  .dark .ink { color: #FFFFFF; }
+
+  .hdrow {
+    display: grid; align-items: baseline; column-gap: 18px;
+    padding-bottom: 9px; border-bottom: 1px solid #0E1113;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .hdrow { border-bottom-color: rgba(255,255,255,0.55); }
+  .row {
+    display: grid; align-items: baseline; column-gap: 18px;
+    border-bottom: 1px solid #E3DAD1;
+    font-size: 11.5px; font-weight: 300; color: #0E1113;
+  }
+  .dark .row { border-bottom-color: rgba(255,255,255,0.14); color: #FFFFFF; }
+
+  .note {
+    border: 1px solid #E3DAD1; background: #EFEDE8; padding: 16px 22px;
+  }
+  .dark .note { border-color: rgba(255,255,255,0.14); background: #181B1D; }
+
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid #B9B2A8; padding-bottom: 2px; }
+  .dark a { border-bottom-color: rgba(255,255,255,0.3); }
+
+  .mk { position: absolute; width: 0; height: 0; }
+  .mk i {
+    position: absolute; left: -2.6px; top: -2.6px; width: 5.2px; height: 5.2px;
+    border-radius: 50%; background: #B2C6D6; display: none;
+  }
+  .mk b {
+    position: absolute; white-space: nowrap; font-size: 8px; font-weight: 400;
+    letter-spacing: 0.17em; text-transform: uppercase; color: #0E1113;
+  }
+  .mk.r b { left: 9px; top: -4.5px; }
+  .mk.l b { right: 9px; top: -4.5px; }
+  .mk.up b { top: -15px; }
+  .mk.dn b { top: 6px; }
+  .mk.subj i { display: block; left: -3.4px; top: -3.4px; width: 6.8px; height: 6.8px; background: #0E1113; }
+  .mk.subj b { font-weight: 500; letter-spacing: 0.15em; color: #0E1113; }
+</style>
+</head>
+<body>
+
+<!-- ============================ 01  COVER ============================ -->
+<!-- The cover artwork is pre-composited to flat RGB (200 dpi, JPEG q88, no alpha).
+     Do NOT add rgba() washes, gradients or hatch overlays to this section: Chrome
+     emits /Pattern and /SMask objects for them, which breaks the flipbook PDF. -->
+<section class="page dark" style="padding:0.8in 0.85in 0.6in">
+  <img src="assets-billboard-lakemills/lakemills-bb-cover-flat.jpg" alt="The estate, its paddocks and its Lake Mills frontage from the air"
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+
+  <img src="assets-billboard-lakemills/aperture-logo-white.svg" alt="Aperture Global"
+       style="position:relative;display:block;width:1.75in;height:auto">
+
+  <div class="spacer"></div>
+
+  <div style="position:relative;font-size:10.5px;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#B2B4B5" class="lining">746 Lake Mills Road &middot; Digital Billboard Strategy</div>
+
+  <h1 style="position:relative;margin:22px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:75px;line-height:1.0;letter-spacing:-0.016em;max-width:7.6em;text-wrap:pretty;font-variant-numeric:lining-nums">Four stalls and fifteen acres, <em style="font-style:italic;font-weight:300">seventeen miles from Orlando.</em></h1>
+
+  <div style="position:relative;width:56px;height:1px;background:#5B5D5F;margin:34px 0 26px"></div>
+
+  <div style="position:relative;display:grid;grid-template-columns:1.35in 1fr;row-gap:12px;column-gap:20px;align-items:baseline;max-width:5.7in">
+    <div class="micro" style="color:#8A8C8E">Property</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">746 Lake Mills Road, Oviedo, Florida 32766</div>
+
+    <div class="micro" style="color:#8A8C8E">List Price</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">&#36;3,500,000</div>
+
+    <div class="micro" style="color:#8A8C8E">The Residence</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">5,776 square feet &middot; 6 bedrooms &middot; 8 bathrooms</div>
+
+    <div class="micro" style="color:#8A8C8E">The Land</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">15.06 acres, two contiguous parcels &middot; 296 ft on Lake Mills</div>
+
+    <div class="micro" style="color:#8A8C8E">Market</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Orlando&ndash;Daytona Beach&ndash;Melbourne &middot; nine counties</div>
+
+    <div class="micro" style="color:#8A8C8E">Campaign Window</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">21 September &ndash; 21 October 2026 &middot; thirty days</div>
+  </div>
+
+  <div style="position:relative;margin-top:26px;font-size:9px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:#8A8C8E">Prepared for the owner &middot; The plan for the thirty days ahead</div>
+</section>
+
+<!-- ============================ 02  THE MARKET ============================ -->
+<section class="page">
+  <div class="eyebrow">The Market</div>
+  <h2 class="head" style="margin-top:20px;font-size:41px;max-width:15em">One television market, <em>nine counties wide.</em></h2>
+  <p class="lede" style="margin-top:16px;max-width:37em;font-size:11.5px;line-height:1.72">746 Lake Mills Road stands on the eastern edge of Seminole County, where the built-up side of Orlando gives way to pasture and the St.&nbsp;Johns. For advertising bought by market rather than by address, that places the property in the Orlando&ndash;Daytona Beach&ndash;Melbourne market &mdash; nine counties wide, running from the horse farms of Marion in the north-west to the Space Coast in the south-east. Seminole is one of those nine; the other eight are drawn darker on the map opposite: Orange, Osceola, Lake, Sumter, Marion, Volusia, Flagler and Brevard.</p>
+  <p class="lede" style="margin-top:10px;max-width:37em;font-size:11.5px;line-height:1.72">The paler counties are the second ring. They are close by, but they sit outside the market this campaign is targeted in, and they are reached by the online advertising instead.</p>
+
+  <div style="display:grid;grid-template-columns:2.55in 1fr;column-gap:0.34in;margin-top:16px;align-items:start">
+    <div>
+      <div style="position:relative">
+        <img src="assets-billboard-lakemills/orlando-dma-markets.svg" alt="Central Florida with Seminole County marked and the eight other counties of the Orlando&ndash;Daytona Beach&ndash;Melbourne market shaded, outlined as a single coverage footprint"
+             style="display:block;width:100%;height:auto">
+        <div style="position:absolute;inset:0">
+          <div class="mk subj r" style="left:63.40%;top:51.17%"><i></i><b>746 Lake Mills Rd</b></div>
+          <div class="mk l"      style="left:53.14%;top:54.86%"><i></i><b>Orlando</b></div>
+          <div class="mk l up"   style="left:57.25%;top:44.10%"><i></i><b>Sanford</b></div>
+          <div class="mk r"      style="left:66.95%;top:27.24%"><i></i><b>Daytona Beach</b></div>
+          <div class="mk r"      style="left:23.64%;top:28.21%"><i></i><b>Ocala</b></div>
+          <div class="mk l"      style="left:29.55%;top:39.99%"><i></i><b>The Villages</b></div>
+          <div class="mk l"      style="left:52.03%;top:64.98%"><i></i><b>Kissimmee</b></div>
+          <div class="mk l"      style="left:83.02%;top:73.54%"><i></i><b>Melbourne</b></div>
+          <div class="mk r"      style="left:59.78%;top:11.87%"><i></i><b>Palm Coast</b></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:8px;font-size:8px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#8E8688">
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#B2C6D6"></span>Seminole County</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#DED2C4"></span>Rest of the Orlando Market</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#EDE6DE"></span>Second Ring</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="hdrow" style="grid-template-columns:1fr auto;column-gap:14px"><span>County</span><span style="text-align:right">Ring</span></div>
+      <div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Seminole</span><span style="text-align:right" class="num">01</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Orange</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Osceola</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Lake</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Sumter</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Marion</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Volusia</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Flagler</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Brevard</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>St. Johns</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Putnam</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Alachua</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Levy</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Citrus</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Hernando</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Pasco</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Polk</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Highlands</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Okeechobee</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:1.6px 0;font-size:10.5px"><span>Indian River</span><span style="text-align:right" class="num">03</span></div>
+      <div class="micro" style="margin-top:11px;line-height:1.8;letter-spacing:0.16em">Ring 01 the residence &middot; 02 the Orlando market &middot; 03 adjacent</div>
+      <div class="body" style="margin-top:11px;font-size:10.5px;line-height:1.7">Seminole County was established from the property&rsquo;s coordinates, not inferred from the postcode: two separate federal records return Seminole, and the coordinates fall inside the Seminole boundary when tested against all sixty-seven Florida counties. The nine-county roster was taken from the federal county-by-market schedule.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>746 Lake Mills Road &middot; Digital Billboard Strategy</span><span class="pg">02 / 05</span></div>
+</section>
+
+<!-- ============================ 03  THE ARGUMENT ============================ -->
+<section class="page dark">
+  <div class="eyebrow">The Argument</div>
+  <h2 class="head" style="margin-top:20px;font-size:41px;color:#FFFFFF;max-width:14em">The buyer keeps horses <em>and works in Orlando.</em></h2>
+  <p class="lede" style="margin-top:18px;max-width:35em;font-size:11.5px;line-height:1.74">Most people who want a barn, four paddocks and a sand arena accept that they will be driving an hour to anything. This property does not ask that. Downtown Orlando is seventeen miles away in a straight line, the airport eighteen, the university five and a half. A working equestrian place inside the ring of a major city, on a lake, with a dock, is rare enough that the buyer will not find it by searching. They have to be shown it, in the market they already live in.</p>
+
+  <div class="rule" style="margin-top:22px"></div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">01</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">Reach the market, not just the postcode</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">The targeting favours the parts of the market that already contain both money and horses &mdash; the north-east arc of Orlando, and the farm country around Ocala &mdash; rather than only the area immediately around the property.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">02</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">The barn is the argument, not a footnote</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">A lakefront house at this price is not unusual in central Florida. A lakefront house with four stalls, four paddocks and an arena this close to the city is. The advertising leads with the land and the barn, because that is what is scarce.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">03</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">One idea per screen</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">A driver has a few seconds. Each frame carries the land, the price, the address and nothing else. No feature lists, no agent portrait, no logos competing with the property.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">04</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">One address, everywhere</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">Every screen ends at the same short web address as the rest of the campaign, so that a glance from a car can be recovered from a phone that evening.</div></div>
+  </div>
+
+  <div class="note" style="margin-top:18px">
+    <div class="micro" style="color:#C8C6C4;letter-spacing:0.24em">The Property, In Figures</div>
+    <div class="lining" style="margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);row-gap:16px;column-gap:18px">
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">&#36;3,500,000</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">List Price</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">15.06</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Acres &middot; Two Parcels</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">5,776</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Square Feet</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">6 &middot; 8</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Bedrooms &middot; Bathrooms</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">4 &middot; 4</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Stalls &middot; Paddocks</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">296&#8202;ft</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Lake Mills Frontage</div></div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>746 Lake Mills Road &middot; Digital Billboard Strategy</span><span class="pg">03 / 05</span></div>
+</section>
+
+<!-- ============================ 04  THE TARGETING ============================ -->
+<section class="page">
+  <div class="eyebrow">The Targeting</div>
+  <h2 class="head" style="margin-top:15px;font-size:35px">Chosen by area, <em>not by billboard.</em></h2>
+  <p class="lede" style="margin-top:13px;max-width:38em;font-size:11.5px;line-height:1.7">It is worth being clear about how these screens work, because it is not how billboards used to work. We do not rent one sign on one road for a month. These are digital screens bought programmatically: we tell the exchange which parts of the market to serve the property into, and it places the advertisement on whatever digital screens are available there while the campaign runs. So there is no list of board addresses in this document, and there will not be one. What we choose is the geography.</p>
+  <p class="lede" style="margin-top:9px;max-width:38em;font-size:11.5px;line-height:1.7">In practice that means roadside and public digital screens across the nine counties on the previous page, weighted towards the five areas below.</p>
+
+  <div class="hdrow" style="grid-template-columns:0.42in 2.05in 1fr;margin-top:13px;column-gap:14px">
+    <span>Area</span><span>Targeted Geography</span><span>Why It Is Included</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:4.5px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">01</span>
+    <span style="font-size:11px;line-height:1.5">Seminole County &middot; Oviedo, Chuluota, Geneva, Sanford, Lake Mary<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The county the property is in, and the one part of metropolitan Orlando where large fenced acreage is normal. These are the people who know Lake Mills by name and mention a place like this to someone who wants it.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:4.5px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">02</span>
+    <span style="font-size:11px;line-height:1.5">Marion County &middot; Ocala and the farm belt<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The reason this market suits the property. Marion sits inside the same nine counties and holds the densest concentration of horse farms in the country &mdash; seventy-three miles away in a straight line, and no separate campaign needed to reach it.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:4.5px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">03</span>
+    <span style="font-size:11px;line-height:1.5">Orange County &middot; Downtown Orlando, Winter Park, Lake Nona<br><span class="micro" style="letter-spacing:0.16em">High priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The largest concentration of income in the market, and the offices the buyer most likely drives to. Targeting here is about the property looking reachable from the city.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:4.5px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">04</span>
+    <span style="font-size:11px;line-height:1.5">Volusia and Flagler &middot; DeLand, Ormond, Palm Coast<br><span class="micro" style="letter-spacing:0.16em">Moderate priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The St.&nbsp;Johns side of the market, where equestrian acreage and coastal money already sit together. Buyers here understand land.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:4.5px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">05</span>
+    <span style="font-size:11px;line-height:1.5">Brevard &middot; Osceola &middot; Lake &middot; Sumter<br><span class="micro" style="letter-spacing:0.16em">Steady presence</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The Space Coast, the ranch country south of the city, the lake and retirement country west of it. A lower share of delivery, so the whole nine-county footprint is covered for the full thirty days rather than in bursts.</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 2.35in;column-gap:0.3in;margin-top:14px;align-items:start">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Where The Emphasis Sits</div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.68">Areas 01 and 02 take the largest share of delivery: one is where a buyer may already live, the other is where the people who want a barn already are. Orange County takes the next largest share. The remaining counties run at a lower, steady share so that nowhere in the market is dark.</div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.68">We would rather run everywhere in the market for the full thirty days at a measured weight than crowd two weeks and then disappear. And one consequence of buying this way is worth saying plainly: we cannot promise you a photograph of your barn on a named sign at a named junction. What we can say is which parts of Florida saw it, and how often, once the month is over.</div>
+    </div>
+    <div>
+      <img src="assets-billboard-lakemills/lakemills-bb-barn.jpg" alt="The brick-paved breezeway of the four-stall barn"
+           style="display:block;width:100%;height:1.35in;object-fit:cover;border:1px solid #E3DAD1">
+      <div class="micro" style="margin-top:8px;line-height:1.7;letter-spacing:0.16em">The barn the advertising leads with</div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:8px"></div>
+  <div style="display:grid;grid-template-columns:1.35in 1fr;column-gap:20px;align-items:baseline;margin-top:10px">
+    <div class="micro" style="color:#0E1113;letter-spacing:0.2em">In A Straight Line</div>
+    <div class="lining" style="font-size:10.5px;font-weight:300;line-height:1.72;color:#3A3E41">University of Central Florida 5.5&#8202;mi &middot; Downtown Orlando 17.2&#8202;mi &middot; Orlando International Airport 18.0&#8202;mi &middot; Ocala 73.1&#8202;mi &nbsp;&mdash;&nbsp; <span class="micro" style="letter-spacing:0.14em">from the property&rsquo;s coordinates; straight-line, not driving times.</span></div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>746 Lake Mills Road &middot; Digital Billboard Strategy</span><span class="pg">04 / 05</span></div>
+</section>
+
+<!-- ============================ 05  WHAT HAPPENS NEXT ============================ -->
+<section class="page">
+  <div class="eyebrow">What Happens Next</div>
+  <h2 class="head" style="margin-top:17px;font-size:38px">The month ahead, <em>in order.</em></h2>
+  <p class="lede" style="margin-top:15px;max-width:37em;font-size:11.5px;line-height:1.72">The market, the areas inside it and where the emphasis sits are decided; the reasoning is on the pages before this one. What follows is the sequence. The steps in black are settled and ours to run. The two in grey are figures that do not exist yet, left blank rather than estimated.</p>
+
+  <div class="rule" style="margin-top:13px"></div>
+
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">01</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">The Advertisement</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Built from the photography of the land, the barn and the lake frontage, in the Aperture setting used across the rest of the campaign.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">02</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">Your Sign-Off</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">You see the advertisement and approve it before a single screen carries it. That one sign-off is yours.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">03</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">21 September 2026</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">The campaign opens across the nine counties of the Orlando&ndash;Daytona Beach&ndash;Melbourne market, weighted to Seminole and Marion.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">04</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">Thirty Days</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Continuous to 21 October 2026, at a measured weight, with no dark weeks and nowhere in the market unlit.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#8E8688">05</span>
+    <span class="micro" style="color:#8E8688;letter-spacing:0.18em">Impressions</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#8E8688">To be confirmed. We will state a figure only once an operator has committed to one in writing, and it will then be the number we are held to.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#8E8688">06</span>
+    <span class="micro" style="color:#8E8688;letter-spacing:0.18em">Performance</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#8E8688">Nothing measured. The campaign has not begun, so there is nothing here to read yet.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">07</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">After 21 October</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">A report, with which parts of Florida saw the property and how often &mdash; whatever the operators are able to verify.</span>
+  </div>
+
+  <div class="note" style="margin-top:13px;padding:11px 18px">
+    <div class="micro" style="letter-spacing:0.2em;color:#0E1113">Two Things That Will Never Appear</div>
+    <div class="body" style="margin-top:8px;font-size:10.5px;line-height:1.68">No individual board and no screen count, at any stage. Screens are served programmatically across the targeted areas, and the number of them varies day to day with what the exchange has available. We cannot promise a photograph of your barn on a named sign; we can tell you the geography it ran in.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.34in;margin-top:13px">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The Property, Online</div>
+      <div style="margin-top:11px;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;font-variant-numeric:lining-nums"><a href="https://www.apertureglobal.com/746lakemillsroad">apertureglobal.com/746lakemillsroad</a></div>
+      <div class="body" style="margin-top:9px;font-size:10.5px;line-height:1.7;color:#8E8688">Where every screen resolves.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The Rest Of The Campaign</div>
+      <div class="body" style="margin-top:11px;font-size:11px;line-height:1.7;color:#3A3E41">A direct mail campaign into the same part of Florida runs in the same thirty days; its distribution is set out in its own document.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="rule"></div>
+  <div style="display:grid;grid-template-columns:1fr auto;column-gap:24px;align-items:end;padding-top:19px">
+    <div>
+      <div class="micro" style="letter-spacing:0.24em">Your Agent</div>
+      <div style="margin-top:13px;font-size:12.5px;font-weight:300;letter-spacing:0.01em;color:#0E1113">Cynde Velez</div>
+      <div class="micro" style="margin-top:8px;letter-spacing:0.22em">Aperture Global Real Estate</div>
+      <div class="lining" style="margin-top:10px;font-size:11.5px;font-weight:200;line-height:1.85;color:#3A3E41">+1 407 619 5869<br>Cynde.Velez@ApertureGlobal.com</div>
+    </div>
+    <img src="assets-billboard-lakemills/aperture-logo-black.svg" alt="Aperture Global"
+         style="display:block;width:1.5in;height:auto">
+  </div>
+
+  <div style="flex:0 0 auto;height:0.16in"></div>
+  <div class="foot"><span>746 Lake Mills Road &middot; Digital Billboard Strategy</span><span class="pg">05 / 05</span></div>
+</section>
+
+</body>
+</html>

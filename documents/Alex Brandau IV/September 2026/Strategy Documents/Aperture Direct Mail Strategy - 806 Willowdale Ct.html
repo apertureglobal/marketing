@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aperture Direct Mail Strategy &mdash; 806 Willowdale Ct</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #55585A; }
+  * { box-sizing: border-box; }
+
+  .page {
+    position: relative; width: 8.5in; height: 11in;
+    padding: 0.8in 0.85in 0.55in;
+    display: flex; flex-direction: column; overflow: hidden;
+    font-family: Inter, sans-serif;
+    background: #F7F6F3; color: #0E1113;
+    page-break-after: always; break-after: page;
+  }
+  .page:last-of-type { page-break-after: auto; break-after: auto; }
+  .dark { background: #0E1113; color: #FFFFFF; }
+
+  .num { font-variant-numeric: lining-nums tabular-nums; }
+  .lining { font-variant-numeric: lining-nums; }
+
+  .eyebrow { font-size: 10.5px; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: #8E8688; }
+  h2.head {
+    margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 45px; line-height: 1.07; letter-spacing: -0.012em;
+    font-variant-numeric: lining-nums;
+  }
+  h2.head em { font-style: italic; font-weight: 300; }
+  .lede { margin: 0; font-size: 13px; font-weight: 300; line-height: 1.9; color: #3A3E41; max-width: 31em; text-wrap: pretty; }
+  .dark .lede { color: #B7B8B8; }
+  .micro { font-size: 9px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: #8E8688; }
+  .rule { height: 1px; background: #E3DAD1; }
+  .dark .rule { background: #303234; }
+  .spacer { flex: 1 1 auto; min-height: 0; }
+
+  .foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 13px; border-top: 1px solid #E3DAD1;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: #8E8688;
+  }
+  .dark .foot { border-top-color: #303234; }
+  .foot .pg { font-variant-numeric: lining-nums tabular-nums; }
+
+  .body { font-size: 12px; font-weight: 300; line-height: 1.72; color: #3A3E41; }
+  .dark .body { color: #B7B8B8; }
+
+  .hdrow {
+    display: grid; align-items: baseline; column-gap: 18px;
+    padding-bottom: 9px; border-bottom: 1px solid #0E1113;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: #8E8688;
+  }
+  .dark .hdrow { border-bottom-color: #90908F; }
+  .row {
+    display: grid; align-items: baseline; column-gap: 18px;
+    border-bottom: 1px solid #E3DAD1;
+    font-size: 11.5px; font-weight: 300; color: #0E1113;
+  }
+  .dark .row { border-bottom-color: #303234; color: #FFFFFF; }
+
+  .note { border: 1px solid #E3DAD1; background: #EFEDE8; padding: 16px 22px; }
+  .dark .note { border-color: #303234; background: #181B1D; }
+
+  .mk { position: absolute; width: 0; height: 0; }
+  .mk b {
+    position: absolute; white-space: nowrap; font-size: 8px; font-weight: 400;
+    letter-spacing: 0.17em; text-transform: uppercase; color: #0E1113;
+  }
+  .mk.r b { left: 10px; top: -4.5px; }
+  .mk.l b { right: 10px; top: -4.5px; }
+  .mk.up b { top: -15px; }
+  .mk.up2 b { top: -26px; }
+  .mk.dn b { top: 6px; }
+  .mk.dn2 b { top: 17px; }
+  .mk.subj b { font-weight: 500; letter-spacing: 0.15em; }
+  .mk.out b { color: #8E8688; }
+
+  /* converging-path diagram, page 03 */
+  .stem { border-left: 1px solid #303234; padding-left: 20px; }
+  .stemhead { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 25px; line-height: 1.15; color: #FFFFFF; font-variant-numeric: lining-nums; }
+  .stemhead em { font-style: italic; }
+  .beat { padding: 9px 0; border-top: 1px solid #303234; font-size: 11px; font-weight: 300; line-height: 1.62; color: #B7B8B8; }
+
+  /* allocation bars, page 04 */
+  .bar { height: 9px; background: #B2C6D6; }
+  .bartrack { background: #E7E2DA; height: 9px; }
+
+  /* filter blocks, page 06 */
+  .spec { font-size: 10.5px; font-weight: 300; line-height: 1.66; color: #3A3E41; }
+  .spec b { font-weight: 500; color: #0E1113; }
+  .key { font-size: 9px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: #8E8688; }
+</style>
+</head>
+<body>
+
+<!-- ============================ 01  COVER ============================ -->
+<section class="page dark" style="padding:0.8in 0.85in 0.6in">
+  <img src="assets/directmail-806willowdale/aperture-logo-white.svg" alt="Aperture Global"
+       style="position:relative;display:block;width:1.75in;height:auto">
+
+  <div class="spacer"></div>
+
+  <div class="lining" style="font-size:10.5px;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#B1B2B3">806 Willowdale Court &middot; Direct Mail Distribution Strategy</div>
+
+  <h1 style="margin:26px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:57px;line-height:1.04;letter-spacing:-0.012em;max-width:8.8em;text-wrap:pretty;font-variant-numeric:lining-nums">Five hundred households who read a lot size, <em style="font-style:italic;font-weight:300">not a list price.</em></h1>
+
+  <div style="width:56px;height:1px;background:#5B5C5D;margin:34px 0 26px"></div>
+
+  <div style="display:grid;grid-template-columns:1.35in 1fr;row-gap:12px;column-gap:20px;align-items:baseline;max-width:5.9in">
+    <div class="micro" style="color:#868889">Property</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">806 Willowdale Ct, Nashville, Tennessee 37220 &middot; Oak Hill, Russellwood Heights</div>
+    <div class="micro" style="color:#868889">Prepared For</div>
+    <div style="font-size:12.5px;font-weight:300;color:#F0F1F1">Alex Brandau IV &middot; Aperture Global Real Estate</div>
+    <div class="micro" style="color:#868889">Channel</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Direct Mail &middot; 500 pieces, single drop</div>
+    <div class="micro" style="color:#868889">Package</div>
+    <div style="font-size:12.5px;font-weight:300;color:#F0F1F1">Opal</div>
+  </div>
+
+  <div style="flex:0 0 auto;height:0.40in"></div>
+  <div style="font-size:9.5px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:#949596">Apertureglobal.com</div>
+</section>
+
+<!-- ============================ 02  THE COUNTY LINE ============================ -->
+<section class="page">
+  <div class="eyebrow">The Footprint</div>
+  <h2 class="head" style="margin-top:24px;max-width:15em">Two acres, and still <em>inside the city.</em></h2>
+  <p class="lede" style="margin-top:18px;max-width:38em;font-size:12.5px;line-height:1.76">Land at this scale almost always means crossing into Williamson County and accepting a homeowners association with it. Your house does neither. One point nine seven level acres, no association, seven miles from the downtown core, and every foot of it inside Davidson County. That fact sets the boundary of the mailing before any filter is written: the footprint is drawn on the Davidson side of the line, across the established south and west neighbourhoods where the comparable houses actually sit.</p>
+
+  <div style="display:grid;grid-template-columns:4.5in 1fr;column-gap:0.24in;margin-top:14px;align-items:start">
+    <div>
+      <div style="position:relative">
+      <img src="assets/directmail-806willowdale/willowdale-county.svg" alt="Davidson County with the Williamson County boundary adjacent, distance rings drawn from 806 Willowdale Court, and the mailing markets marked"
+           style="display:block;width:100%;height:auto;border:1px solid #E3DAD1">
+      <div style="position:absolute;inset:0">
+        <div class="mk subj r"  style="left:55.16%;top:57.74%"><b>806 Willowdale Ct</b></div>
+        <div class="mk l up"    style="left:53.14%;top:54.13%"><b>Oak Hill</b></div>
+        <div class="mk r up"    style="left:61.06%;top:56.36%"><b>Crieve Hall</b></div>
+        <div class="mk l dn"    style="left:46.11%;top:56.81%"><b>Forest Hills</b></div>
+        <div class="mk r dn"    style="left:47.92%;top:47.23%"><b>Green Hills</b></div>
+        <div class="mk l dn2"    style="left:39.99%;top:48.79%"><b>Belle Meade</b></div>
+        <div class="mk l dn2"       style="left:37.47%;top:45.22%"><b>Hillwood</b></div>
+        <div class="mk l dn"   style="left:34.77%;top:44.55%"><b>West Meade</b></div>
+        <div class="mk r"    style="left:56.56%;top:45.67%"><b>Berry Hill</b></div>
+        <div class="mk l"       style="left:52.42%;top:43.22%"><b>12South</b></div>
+        <div class="mk l up"    style="left:50.80%;top:41.43%"><b>Belmont-Hillsboro</b></div>
+        <div class="mk l up"    style="left:43.59%;top:37.43%"><b>Sylvan Park</b></div>
+        <div class="mk r"       style="left:59.98%;top:30.97%"><b>East Nashville</b></div>
+        <div class="mk r up"    style="left:54.94%;top:34.97%"><b>Downtown Core</b></div>
+        <div class="mk r dn out" style="left:53.68%;top:77.30%"><b>Brentwood &mdash; not mailed</b></div>
+        <div class="mk r out"   style="left:38.19%;top:87.32%"><b>Franklin &mdash; not mailed</b></div>
+      </div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:center;margin-top:6px;font-size:8px;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:#8E8688">
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:6.8px;height:6.8px;border-radius:50%;background:#0E1113"></span>The Property</span>
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:5.2px;height:5.2px;border-radius:50%;background:#B2C6D6"></span>Mailed</span>
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:5.2px;height:5.2px;border-radius:50%;background:#F7F6F3;border:1px solid #A9A19A"></span>Excluded</span>
+        <span>Solid outline: Davidson</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="hdrow" style="grid-template-columns:1fr auto;column-gap:9px">
+        <span>Market</span><span style="text-align:right">Miles</span>
+      </div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Oak Hill</span><span style="text-align:right">1.3</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Crieve Hall</span><span style="text-align:right">1.9</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Forest Hills</span><span style="text-align:right">2.8</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Berry Hill</span><span style="text-align:right">3.8</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Green Hills</span><span style="text-align:right">4.0</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>12South</span><span style="text-align:right">4.6</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Belmont&#8209;Hillsboro</span><span style="text-align:right">5.2</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Belle Meade</span><span style="text-align:right">5.5</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Hillwood</span><span style="text-align:right">6.7</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Downtown Core</span><span style="text-align:right">7.1</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>Sylvan Park</span><span style="text-align:right">7.3</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>West Meade</span><span style="text-align:right">7.5</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0"><span>East Nashville</span><span style="text-align:right">8.4</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0;color:#8E8688"><span>Brentwood</span><span style="text-align:right">6.1</span></div>
+      <div class="row num" style="grid-template-columns:1fr auto;column-gap:9px;padding:2.6px 0;color:#8E8688"><span>Franklin</span><span style="text-align:right">10.6</span></div>
+      <div class="micro" style="margin-top:10px;line-height:1.75;letter-spacing:0.13em">Straight&#8209;line miles<br>from the property&rsquo;s<br>own coordinates.<br>Grey rows sit in<br>Williamson County<br>and are excluded.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="rule"></div>
+  <div class="body" style="margin-top:12px;font-size:12.5px;line-height:1.74;max-width:41em">Brentwood is closer than downtown and is still not mailed. Williamson County is where association&#8209;governed large&#8209;lot product lives &mdash; it is the alternative this buyer is declining, not the pool they arrive from. A precision list, not a volume play. Mail fewer, mail better, track response by market.</div>
+
+  <div style="flex:0 0 auto;height:0.16in"></div>
+  <div class="foot"><span>806 Willowdale Court &middot; Direct Mail Strategy</span><span class="pg">02 / 07</span></div>
+</section>
+
+<!-- ============================ 03  TWO WAYS TO ARRIVE ============================ -->
+<section class="page dark">
+  <div class="eyebrow">Who This Is For</div>
+  <h2 class="head" style="margin-top:24px;color:#FFFFFF;max-width:15em">Lot size sorts this list <em>better than price does.</em></h2>
+  <p class="lede" style="margin-top:18px;max-width:37em;font-size:12.5px;line-height:1.76">Two and a third million buys a great many houses in Davidson County. It buys very few that come with two level acres, a gunite pool, brick terraces, a pool house and no association to answer to. A list sorted on assessed value alone is therefore sorted on the wrong axis: it finds households who can afford the house without telling us whether they want what the house is. Land is the variable, and the mailing runs down two paths because of it.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.42in;margin-top:26px">
+    <div class="stem">
+      <div class="micro" style="color:#B2C6D6;letter-spacing:0.24em">Path One</div>
+      <div class="stemhead" style="margin-top:12px">They already hold land <em>and will not give it up.</em></div>
+      <div style="margin-top:16px">
+        <div class="beat">Owners on three quarters of an acre and up, across Forest Hills, Oak Hill, Green Hills, Belle Meade, Hillwood and West Meade</div>
+        <div class="beat">They read acreage correctly on sight, because they live on it already</div>
+        <div class="beat">Moving means matching the land, not just the house &mdash; which is exactly the short list this property sits on</div>
+        <div class="beat" style="border-bottom:1px solid #303234">A level lot with an existing pool and terraces removes the work they know they would otherwise take on</div>
+      </div>
+    </div>
+    <div class="stem">
+      <div class="micro" style="color:#B2C6D6;letter-spacing:0.24em">Path Two</div>
+      <div class="stemhead" style="margin-top:12px">They have the house <em>and none of the ground.</em></div>
+      <div style="margin-top:16px">
+        <div class="beat">Owners on a third of an acre or less in 12South, Belmont&#8209;Hillsboro, Berry Hill, Sylvan Park and East Nashville</div>
+        <div class="beat">They have already bought at this price point, on a lot a fraction of this size</div>
+        <div class="beat">The upgrade they cannot buy in place is ground &mdash; and leaving the county is the usual price of getting it</div>
+        <div class="beat" style="border-bottom:1px solid #303234">Seven miles to the core keeps the commute and the schools they moved for intact</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:14px;margin-top:18px">
+    <div style="flex:1;height:1px;background:#303234"></div>
+    <div class="micro" style="color:#B2C6D6;letter-spacing:0.24em;white-space:nowrap">Both Paths Converge</div>
+    <div style="flex:1;height:1px;background:#303234"></div>
+  </div>
+
+  <div class="note" style="margin-top:16px">
+    <div class="body" style="color:#B7B8B8;font-size:12px;line-height:1.72;max-width:44em">The two paths are screened on opposite sides of the same measurement. Path one qualifies on a large lot, path two on a small one, and nothing else in the stack changes. That single inversion is what lets five hundred pieces cover both the households who understand the asset and the households shopping for exactly what it offers.</div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="rule"></div>
+  <div class="body" style="margin-top:12px;font-size:12.5px;line-height:1.74;color:#B7B8B8;max-width:41em">A third audience is mailed on neither test. The immediate neighbourhood receives the card unscreened, because its job is referral rather than purchase, and a value filter only removes the neighbours who talk.</div>
+  <div style="flex:0 0 auto;height:0.16in"></div>
+  <div class="foot"><span>806 Willowdale Court &middot; Direct Mail Strategy</span><span class="pg">03 / 07</span></div>
+</section>
+
+<!-- ============================ 04  THE ALLOCATION ============================ -->
+<section class="page">
+  <div class="eyebrow">The Allocation</div>
+  <h2 class="head" style="margin-top:22px">Five hundred pieces, <em>four jobs.</em></h2>
+  <p class="lede" style="margin-top:16px;max-width:40em;font-size:12.5px;line-height:1.74">The drop is one mailing, weighted across four tiers. Weighting is a decision, made here and made on purpose: the two qualifying paths carry the majority of the delivery between them, the neighbourhood tier is kept deliberately small because it is a referral instrument, and a fourth tier reaches south&#8209;side households who already own ground and would be stepping up rather than across.</p>
+
+  <div style="margin-top:22px">
+    <div class="hdrow" style="grid-template-columns:22px 1.85in 1fr 44px;column-gap:14px">
+      <span>Tier</span><span>Audience</span><span>Share of Delivery</span><span style="text-align:right">Pieces</span>
+    </div>
+
+    <div class="row num" style="grid-template-columns:22px 1.85in 1fr 44px;column-gap:14px;padding:11px 0">
+      <span>01</span><span style="font-weight:400">The Neighbourhood</span>
+      <span class="bartrack"><span class="bar" style="display:block;width:66.7%"></span></span>
+      <span style="text-align:right">110</span>
+    </div>
+    <div class="row num" style="grid-template-columns:22px 1.85in 1fr 44px;column-gap:14px;padding:11px 0">
+      <span>02</span><span style="font-weight:400">The Acreage Belt</span>
+      <span class="bartrack"><span class="bar" style="display:block;width:100%"></span></span>
+      <span style="text-align:right">165</span>
+    </div>
+    <div class="row num" style="grid-template-columns:22px 1.85in 1fr 44px;column-gap:14px;padding:11px 0">
+      <span>03</span><span style="font-weight:400">The Small&#8209;Lot Trade&#8209;Up</span>
+      <span class="bartrack"><span class="bar" style="display:block;width:100%"></span></span>
+      <span style="text-align:right">165</span>
+    </div>
+    <div class="row num" style="grid-template-columns:22px 1.85in 1fr 44px;column-gap:14px;padding:11px 0;border-bottom:1px solid #0E1113">
+      <span>04</span><span style="font-weight:400">The South&#8209;Side Step&#8209;Up</span>
+      <span class="bartrack"><span class="bar" style="display:block;width:36.4%"></span></span>
+      <span style="text-align:right">60</span>
+    </div>
+    <div class="num" style="display:grid;grid-template-columns:22px 1.85in 1fr 44px;column-gap:14px;padding:11px 0;font-size:11.5px;font-weight:400">
+      <span></span><span>Total, single drop</span><span></span><span style="text-align:right">500</span>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:4px"></div>
+
+  <div style="margin-top:22px">
+    <div class="micro" style="letter-spacing:0.24em">The Footprint, Zip By Zip</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.42in;margin-top:14px">
+      <div>
+        <div class="hdrow" style="grid-template-columns:52px 1fr 46px;column-gap:10px">
+          <span>Zip</span><span>Principal Neighbourhoods</span><span style="text-align:right">Tier</span>
+        </div>
+        <div class="row num" style="grid-template-columns:52px 1fr 46px;column-gap:10px;padding:5px 0"><span>37220</span><span>Oak Hill, Crieve Hall</span><span style="text-align:right;white-space:nowrap">01&nbsp;&middot;&nbsp;02</span></div>
+        <div class="row num" style="grid-template-columns:52px 1fr 46px;column-gap:10px;padding:5px 0"><span>37215</span><span>Green Hills, Forest Hills</span><span style="text-align:right">02</span></div>
+        <div class="row num" style="grid-template-columns:52px 1fr 46px;column-gap:10px;padding:5px 0"><span>37205</span><span>Belle Meade, Hillwood, West Meade</span><span style="text-align:right">02</span></div>
+        <div class="row num" style="grid-template-columns:52px 1fr 46px;column-gap:10px;padding:5px 0"><span>37204</span><span>12South, Berry Hill, Melrose</span><span style="text-align:right">03</span></div>
+      </div>
+      <div>
+        <div class="hdrow" style="grid-template-columns:52px 1fr 46px;column-gap:10px">
+          <span>Zip</span><span>Principal Neighbourhoods</span><span style="text-align:right">Tier</span>
+        </div>
+        <div class="row num" style="grid-template-columns:52px 1fr 46px;column-gap:10px;padding:5px 0"><span>37212</span><span>Belmont&#8209;Hillsboro, Hillsboro Village</span><span style="text-align:right">03</span></div>
+        <div class="row num" style="grid-template-columns:52px 1fr 46px;column-gap:10px;padding:5px 0"><span>37209</span><span>Sylvan Park, The Nations</span><span style="text-align:right">03</span></div>
+        <div class="row num" style="grid-template-columns:52px 1fr 46px;column-gap:10px;padding:5px 0"><span>37206</span><span>East Nashville, Lockeland Springs</span><span style="text-align:right">03</span></div>
+        <div class="row num" style="grid-template-columns:52px 1fr 46px;column-gap:10px;padding:5px 0"><span>37211</span><span>Crieve Hall south, Woodbine</span><span style="text-align:right">04</span></div>
+      </div>
+    </div>
+    <div class="micro" style="margin-top:12px;letter-spacing:0.14em;line-height:1.8;max-width:46em">Zip 37220 carries two tiers. The four lists are deduplicated against one another before the drop, so no household receives two cards and the neighbourhood tier takes precedence inside its radius.</div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="rule"></div>
+  <div class="body" style="margin-top:12px;font-size:12.5px;line-height:1.74;max-width:41em">Bar widths show the share of the five hundred pieces assigned to each tier. They are an allocation, not a measured count of available households &mdash; no household figures are claimed anywhere in this document.</div>
+  <div style="flex:0 0 auto;height:0.16in"></div>
+  <div class="foot"><span>806 Willowdale Court &middot; Direct Mail Strategy</span><span class="pg">04 / 07</span></div>
+</section>
+
+<!-- ============================ 05  THE ARITHMETIC ============================ -->
+<section class="page dark">
+  <div class="eyebrow">Qualification</div>
+  <h2 class="head" style="margin-top:24px;color:#FFFFFF;max-width:14em">Banded on the asking price, <em>bracketed on the land.</em></h2>
+  <p class="lede" style="margin-top:18px;max-width:37em;font-size:12.5px;line-height:1.76">Every threshold below is arithmetic on two published figures and nothing else: the asking price of two million three hundred thousand dollars, and the lot at one point nine seven acres. An open floor &mdash; anything above a million, anything above an acre &mdash; drags in estates far above this house that will never trade down into it. So both screens are bracketed at each end.</p>
+
+  <div class="rule" style="margin-top:24px"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.42in;margin-top:20px">
+    <div>
+      <div class="micro" style="color:#B2C6D6;letter-spacing:0.24em">Value, From The Asking Price</div>
+      <div class="num" style="margin-top:14px">
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;font-size:11.5px;font-weight:300;color:#B7B8B8"><span>Anchor &mdash; list price</span><span style="color:#FFFFFF">$2,300,000</span></div>
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;font-size:11.5px;font-weight:300;color:#B7B8B8"><span>0.6&times; anchor</span><span>$1,380,000</span></div>
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;font-size:11.5px;font-weight:300;color:#B7B8B8"><span>1.6&times; anchor</span><span>$3,680,000</span></div>
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;font-size:11.5px;font-weight:400;color:#FFFFFF"><span>Core band, rounded</span><span>$1,400,000 &ndash; $3,700,000</span></div>
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;font-size:11.5px;font-weight:300;color:#B7B8B8"><span>0.45&times; and 0.9&times; anchor</span><span>$1,035,000 &ndash; $2,070,000</span></div>
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;border-bottom:1px solid #303234;font-size:11.5px;font-weight:400;color:#FFFFFF"><span>Step&#8209;up band, rounded</span><span>$1,000,000 &ndash; $2,100,000</span></div>
+      </div>
+      <div class="micro" style="margin-top:12px;letter-spacing:0.14em;line-height:1.8">Tier 01 carries no value screen<br>at all. Tiers 02 and 03 use the<br>core band; tier 04 uses the<br>step&#8209;up band.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#B2C6D6;letter-spacing:0.24em">Land, From The Lot</div>
+      <div class="num" style="margin-top:14px">
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;font-size:11.5px;font-weight:300;color:#B7B8B8"><span>Anchor &mdash; subject lot</span><span style="color:#FFFFFF">1.97 acres</span></div>
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;font-size:11.5px;font-weight:400;color:#FFFFFF"><span>Tier 02 floor &mdash; 0.38&times;</span><span>0.75 acre and above</span></div>
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;font-size:11.5px;font-weight:400;color:#FFFFFF"><span>Tier 03 ceiling &mdash; 0.18&times;</span><span>0.35 acre and below</span></div>
+        <div style="display:grid;grid-template-columns:1fr auto;padding:8px 0;border-top:1px solid #303234;border-bottom:1px solid #303234;font-size:11.5px;font-weight:400;color:#FFFFFF"><span>Tier 04 floor &mdash; 0.25&times;</span><span>0.50 acre and above</span></div>
+      </div>
+      <div class="body" style="margin-top:16px;font-size:11.5px;line-height:1.7;color:#B7B8B8">Three quarters of an acre is the point at which a Davidson County household is buying ground rather than a garden, so it reads two acres as more of what it already has. A third of an acre is small enough that the gap is the whole proposition. Between the two sits a middle that responds to neither argument, and five hundred pieces cannot carry it.</div>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:22px">
+    <div class="body" style="color:#B7B8B8;font-size:11.5px;line-height:1.7;max-width:46em">Household income is set above two hundred and fifty thousand dollars across every filtered tier &mdash; the top band the data provider offers &mdash; with property type limited to single family and condominium and residence restricted to owner&#8209;occupied throughout. If the asking price moves, these bands are re&#8209;derived from the new figure rather than rescaled.</div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="rule"></div>
+  <div class="body" style="margin-top:12px;font-size:12.5px;line-height:1.74;color:#B7B8B8;max-width:41em">A precision list, not a volume play. Mail fewer, mail better, track response by market.</div>
+  <div style="flex:0 0 auto;height:0.16in"></div>
+  <div class="foot"><span>806 Willowdale Court &middot; Direct Mail Strategy</span><span class="pg">05 / 07</span></div>
+</section>
+
+<!-- ============================ 06  THE PULL ============================ -->
+<section class="page">
+  <div class="eyebrow">The List Pull</div>
+  <h2 class="head" style="margin-top:16px">The pull, <em>as it will be run.</em></h2>
+  <p class="lede" style="margin-top:14px;max-width:44em;font-size:12px;line-height:1.7">Written so it can be executed against the Melissa Data consumer file without interpretation. Every tier pulls wide and is then ranked and cut &mdash; the ranking is the selection decision, not the thresholds, because a pull of this shape over&#8209;returns heavily against a target of a few hundred.</p>
+
+  <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;column-gap:0.34in;row-gap:13px">
+
+    <div style="border-top:1px solid #0E1113;padding-top:11px">
+      <div class="key">Tier 01 &mdash; The Neighbourhood &middot; 110</div>
+      <div class="spec" style="margin-top:8px">Geography: radius <b>1.5 miles</b> from 806 Willowdale Ct.<br>Owner&#8209;occupied: <b>yes</b>. Property type: <b>single family</b>.<br>Value screen: <b>none</b>. Income screen: <b>none</b>.<br>Rank: <b>length of residence, descending</b>. Cap 110.</div>
+    </div>
+
+    <div style="border-top:1px solid #0E1113;padding-top:11px">
+      <div class="key">Tier 02 &mdash; The Acreage Belt &middot; 165</div>
+      <div class="spec" style="margin-top:8px">Zips: <b>37220, 37215, 37205</b>.<br>Lot size: <b>0.75 acre and above</b>.<br>Estimated home value: <b>$1,400,000 &ndash; $3,700,000</b>.<br>Household income: <b>$250,000+</b>. Owner&#8209;occupied: <b>yes</b>.<br>Property type: <b>single family</b>. Length of residence: <b>5 years+</b>.<br>Rank: <b>length of residence, then home value, descending</b>. Cap 165.</div>
+    </div>
+
+    <div style="border-top:1px solid #0E1113;padding-top:11px">
+      <div class="key">Tier 03 &mdash; The Small&#8209;Lot Trade&#8209;Up &middot; 165</div>
+      <div class="spec" style="margin-top:8px">Zips: <b>37204, 37212, 37209, 37206</b>.<br>Lot size: <b>0.35 acre and below</b>.<br>Estimated home value: <b>$1,400,000 &ndash; $3,700,000</b>.<br>Household income: <b>$250,000+</b>. Owner&#8209;occupied: <b>yes</b>.<br>Property type: <b>single family, condominium</b>. Length of residence: <b>4 years+</b>.<br>Rank: <b>length of residence, then home value, descending</b>. Cap 165.</div>
+    </div>
+
+    <div style="border-top:1px solid #0E1113;padding-top:11px">
+      <div class="key">Tier 04 &mdash; The South&#8209;Side Step&#8209;Up &middot; 60</div>
+      <div class="spec" style="margin-top:8px">Zips: <b>37211, 37220</b> &mdash; south of Harding Place only.<br>Lot size: <b>0.50 acre and above</b>.<br>Estimated home value: <b>$1,000,000 &ndash; $2,100,000</b>.<br>Household income: <b>$250,000+</b>. Owner&#8209;occupied: <b>yes</b>.<br>Property type: <b>single family</b>. Length of residence: <b>7 years+</b>.<br>Rank: <b>length of residence, then home value, descending</b>. Cap 60.</div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:17px"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.34in;margin-top:15px">
+    <div>
+      <div class="key">Suppression &mdash; Applied To Every Tier</div>
+      <div class="spec" style="margin-top:9px">Suppress <b>806 Willowdale Ct</b> and every adjoining parcel; the listing agent&rsquo;s own residential address; the Aperture Global office address; and all records flagged <b>vacant</b>, <b>deceased</b> or <b>undeliverable</b>. Without this the seller receives their own postcard &mdash; the subject property sits inside the tier 01 radius by definition.</div>
+    </div>
+    <div>
+      <div class="key">Deduplication &amp; Geographic Exclusion</div>
+      <div class="spec" style="margin-top:9px">The four lists are <b>deduplicated against one another</b> in tier order, 01 first, so a household appearing in two tiers is mailed once. Zip 37220 spans tiers 01, 02 and 04 and is the principal overlap. All <b>Williamson County</b> records are excluded, including any 37027 record that surfaces through a radius pull.</div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:15px"></div>
+
+  <div style="margin-top:14px">
+    <div class="key">Appended For Segmentation</div>
+    <div class="spec" style="margin-top:9px;max-width:47em">Occupation detail &middot; property type &middot; lot size &middot; income rank &middot; purchase amount range &middot; length of residence. Appended on every record so response can be segmented by tier and by market after the drop rather than reported as a single undifferentiated figure.</div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="rule"></div>
+  <div class="body" style="margin-top:12px;font-size:12.5px;line-height:1.74;max-width:41em">Pulls at this specification over&#8209;return by a wide margin, which is the intended behaviour. The cap does the final work, and the ranking decides which households survive it.</div>
+  <div style="flex:0 0 auto;height:0.16in"></div>
+  <div class="foot"><span>806 Willowdale Court &middot; Direct Mail Strategy</span><span class="pg">06 / 07</span></div>
+</section>
+
+<!-- ============================ 07  WHAT HAPPENS NEXT ============================ -->
+<section class="page dark">
+  <div class="eyebrow">What Happens Next</div>
+  <h2 class="head" style="margin-top:24px;color:#FFFFFF">Mail fewer, <em>mail better.</em></h2>
+  <p class="lede" style="margin-top:18px;max-width:37em;font-size:12.5px;line-height:1.76">The footprint, the tiering and the filters above are set. What follows is sequence &mdash; the order in which the drop is executed inside the campaign window, and the two figures that are genuinely not yet fixed.</p>
+
+  <div style="margin-top:28px">
+    <div style="display:grid;grid-template-columns:34px 1fr;column-gap:20px;padding:13px 0;border-top:1px solid #303234">
+      <span class="num micro" style="color:#B2C6D6">01</span>
+      <span style="font-size:12px;font-weight:300;line-height:1.66;color:#FFFFFF">The four tier pulls are run to the specification on the previous page, ranked, capped and deduplicated in tier order.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:34px 1fr;column-gap:20px;padding:13px 0;border-top:1px solid #303234">
+      <span class="num micro" style="color:#B2C6D6">02</span>
+      <span style="font-size:12px;font-weight:300;line-height:1.66;color:#FFFFFF">Suppression is applied last and checked by hand against the subject address and its adjoining parcels before the file is released.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:34px 1fr;column-gap:20px;padding:13px 0;border-top:1px solid #303234">
+      <span class="num micro" style="color:#B2C6D6">03</span>
+      <span style="font-size:12px;font-weight:300;line-height:1.66;color:#FFFFFF">Card artwork is produced from the property photography and sent to you for approval. Nothing goes to print until you have seen it.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:34px 1fr;column-gap:20px;padding:13px 0;border-top:1px solid #303234">
+      <span class="num micro" style="color:#B2C6D6">04</span>
+      <span style="font-size:12px;font-weight:300;line-height:1.66;color:#FFFFFF">The single drop is scheduled inside the thirty&#8209;day campaign window, set against print and list lead times.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:34px 1fr;column-gap:20px;padding:13px 0;border-top:1px solid #303234;border-bottom:1px solid #303234">
+      <span class="num micro" style="color:#B2C6D6">05</span>
+      <span style="font-size:12px;font-weight:300;line-height:1.66;color:#FFFFFF">Response is logged against the appended tier and market fields, so enquiry can be read back to the neighbourhoods that produced it.</span>
+    </div>
+  </div>
+
+  <div style="margin-top:26px">
+    <div class="micro" style="letter-spacing:0.24em">Pending, And Deliberately Unstated</div>
+    <div style="display:grid;grid-template-columns:1.6in 1fr;row-gap:11px;column-gap:20px;margin-top:14px;align-items:baseline">
+      <div class="micro" style="color:#6E6C6D">Drop Date</div>
+      <div style="font-size:11.5px;font-weight:300;color:#8E8688">To be confirmed &mdash; set against print and list lead times inside the campaign window.</div>
+      <div class="micro" style="color:#6E6C6D">Household Counts</div>
+      <div style="font-size:11.5px;font-weight:300;color:#8E8688">Not stated. Available counts per tier are known only once the pulls are run; no figure is estimated here.</div>
+      <div class="micro" style="color:#6E6C6D">Response</div>
+      <div style="font-size:11.5px;font-weight:300;color:#8E8688">Nothing measured. The campaign has not begun.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="rule"></div>
+  <div class="body" style="margin-top:12px;font-size:12.5px;line-height:1.74;color:#B7B8B8;max-width:41em">County confirmed as Davidson from the property&rsquo;s own coordinates by point&#8209;in&#8209;polygon against the federal county boundary &mdash; not from its postcode, and not from proximity to Brentwood.</div>
+  <div style="flex:0 0 auto;height:0.16in"></div>
+  <div class="foot"><span>806 Willowdale Court &middot; Direct Mail Strategy</span><span class="pg">07 / 07</span></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aperture Billboard Strategy &mdash; 2961 Lakeview Drive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #55585A; }
+  * { box-sizing: border-box; }
+
+  .page {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    padding: 0.8in 0.85in 0.55in;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+    background: #F7F6F3;
+    color: #0E1113;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-of-type { page-break-after: auto; break-after: auto; }
+  .dark { background: #0E1113; color: #FFFFFF; }
+
+  .num { font-variant-numeric: lining-nums tabular-nums; }
+  .lining { font-variant-numeric: lining-nums; }
+
+  .eyebrow {
+    font-size: 10.5px; font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  h2.head {
+    margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 45px; line-height: 1.07; letter-spacing: -0.012em;
+    font-variant-numeric: lining-nums;
+  }
+  h2.head em { font-style: italic; font-weight: 300; }
+  .lede {
+    margin: 0; font-size: 13px; font-weight: 300; line-height: 1.9;
+    color: #3A3E41; max-width: 31em; text-wrap: pretty;
+  }
+  .dark .lede { color: rgba(255,255,255,0.7); }
+  .micro {
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .rule { height: 1px; background: #E3DAD1; }
+  .dark .rule { background: rgba(255,255,255,0.14); }
+  .spacer { flex: 1 1 auto; min-height: 0; }
+
+  .foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 13px; border-top: 1px solid #E3DAD1;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .foot { border-top-color: rgba(255,255,255,0.14); }
+  .foot .pg { font-variant-numeric: lining-nums tabular-nums; }
+
+  .body { font-size: 12px; font-weight: 300; line-height: 1.72; color: #3A3E41; }
+  .dark .body { color: rgba(255,255,255,0.7); }
+  .ink { color: #0E1113; }
+  .dark .ink { color: #FFFFFF; }
+
+  .hdrow {
+    display: grid; align-items: baseline; column-gap: 18px;
+    padding-bottom: 9px; border-bottom: 1px solid #0E1113;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .hdrow { border-bottom-color: rgba(255,255,255,0.55); }
+  .row {
+    display: grid; align-items: baseline; column-gap: 18px;
+    border-bottom: 1px solid #E3DAD1;
+    font-size: 11.5px; font-weight: 300; color: #0E1113;
+  }
+  .dark .row { border-bottom-color: rgba(255,255,255,0.14); color: #FFFFFF; }
+
+  .note {
+    border: 1px solid #E3DAD1; background: #EFEDE8; padding: 16px 22px;
+  }
+  .dark .note { border-color: rgba(255,255,255,0.14); background: #181B1D; }
+
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid #B9B2A8; padding-bottom: 2px; }
+  .dark a { border-bottom-color: rgba(255,255,255,0.3); }
+
+  .mk { position: absolute; width: 0; height: 0; }
+  .mk i {
+    position: absolute; left: -2.6px; top: -2.6px; width: 5.2px; height: 5.2px;
+    border-radius: 50%; background: #B2C6D6; display: block;
+  }
+  .mk b {
+    position: absolute; white-space: nowrap; font-size: 8px; font-weight: 400;
+    letter-spacing: 0.17em; text-transform: uppercase; color: #0E1113;
+  }
+  .mk.r b { left: 9px; top: -4.5px; }
+  .mk.l b { right: 9px; top: -4.5px; }
+  .mk.up b { top: -15px; }
+  .mk.dn b { top: 6px; }
+  .mk i { display: none; }
+  .mk.subj i { left: -3.4px; top: -3.4px; width: 6.8px; height: 6.8px; background: #0E1113; }
+  .mk.subj b { font-weight: 500; letter-spacing: 0.15em; color: #0E1113; }
+</style>
+</head>
+<body>
+
+<!-- ============================ 01  COVER ============================ -->
+<section class="page dark" style="padding:0.8in 0.85in 0.6in">
+  <img src="assets-billboard/lakeview-bb-cover.jpg" alt=""
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+  <div style="position:absolute;inset:0;background:rgba(10,13,15,0.58)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,15,0.42) 0%,rgba(10,13,15,0.10) 38%,rgba(10,13,15,0.86) 100%)"></div>
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,0.028) 0 1px,transparent 1px 9px)"></div>
+
+  <img src="assets-billboard/aperture-logo-white.svg" alt="Aperture Global"
+       style="position:relative;display:block;width:1.75in;height:auto">
+
+  <div class="spacer"></div>
+
+  <div style="position:relative;font-size:10.5px;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.68)" class="lining">2961 Lakeview Drive &middot; Digital Billboard Strategy</div>
+
+  <h1 style="position:relative;margin:22px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:75px;line-height:1.0;letter-spacing:-0.016em;max-width:7.4em;text-wrap:pretty;font-variant-numeric:lining-nums">A house on the ridge, shown <em style="font-style:italic;font-weight:300">where its buyer already drives.</em></h1>
+
+  <div style="position:relative;width:56px;height:1px;background:rgba(255,255,255,0.32);margin:36px 0 28px"></div>
+
+  <div style="position:relative;display:grid;grid-template-columns:1.35in 1fr;row-gap:13px;column-gap:20px;align-items:baseline;max-width:5.6in">
+    <div class="micro" style="color:rgba(255,255,255,0.5)">Property</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:rgba(255,255,255,0.94)">2961 Lakeview Drive, Sebring, Florida 33870</div>
+    <div class="micro" style="color:rgba(255,255,255,0.5)">Prepared For</div>
+    <div style="font-size:12.5px;font-weight:300;color:rgba(255,255,255,0.94)">Cynde Velez &middot; Aperture Global Real Estate</div>
+    <div class="micro" style="color:rgba(255,255,255,0.5)">Package</div>
+    <div style="font-size:12.5px;font-weight:300;color:rgba(255,255,255,0.94)">Diamond Black</div>
+    <div class="micro" style="color:rgba(255,255,255,0.5)">Campaign Window</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:rgba(255,255,255,0.94)">21 September &ndash; 21 October 2026</div>
+    <div class="micro" style="color:rgba(255,255,255,0.5)">Status</div>
+    <div style="font-size:12.5px;font-weight:300;color:rgba(255,255,255,0.94)">Plan for approval &mdash; before the campaign goes live</div>
+  </div>
+
+  <div style="flex:0 0 auto;height:0.42in"></div>
+  <div style="position:relative;font-size:9.5px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.55)">Apertureglobal.com</div>
+</section>
+
+<!-- ============================ 02  THE MARKET ============================ -->
+<section class="page">
+  <div class="eyebrow">The Market</div>
+  <h2 class="head" style="margin-top:20px;font-size:41px;max-width:15em">One television market, <em>ten counties wide.</em></h2>
+  <p class="lede" style="margin-top:16px;max-width:37em;font-size:11.5px;line-height:1.72">2961 Lakeview Drive stands in Highlands County, on the Lake Wales Ridge at the centre of the Florida peninsula. For every kind of advertising that is bought by market rather than by address, that places the house in the Tampa&ndash;St.&nbsp;Petersburg (Sarasota) market &mdash; the eleventh largest in the country, and ten counties across. Highlands is one of those ten. The other nine are drawn darker on the map opposite, and they are where the roadside screens belong: Hillsborough, Pinellas, Polk, Pasco, Hernando, Citrus, Manatee, Sarasota and Hardee.</p>
+  <p class="lede" style="margin-top:11px;max-width:37em;font-size:11.5px;line-height:1.72">The paler counties are the second ring &mdash; Orlando and its suburbs, the ridge and lake country to the north, and the interior south. They matter because none of them is far from this dock, but they sit outside the market this campaign is bought in, and they are reached by the online advertising instead.</p>
+
+  <div style="display:grid;grid-template-columns:2.55in 1fr;column-gap:0.34in;margin-top:16px;align-items:start">
+    <div>
+      <div style="position:relative">
+        <img src="assets-billboard/florida-ooh-markets.svg" alt="The Florida peninsula with Highlands County marked and the nine other counties of the Tampa&ndash;St. Petersburg (Sarasota) market shaded"
+             style="display:block;width:100%;height:auto">
+        <div style="position:absolute;inset:0">
+          <div class="mk subj r" style="left:56.89%;top:55.37%"><i></i><b>2961 Lakeview Dr</b></div>
+          <div class="mk l"      style="left:19.89%;top:45.00%"><i></i><b>Tampa</b></div>
+          <div class="mk l dn"   style="left:13.06%;top:49.28%"><i></i><b>St. Petersburg</b></div>
+          <div class="mk l dn"   style="left:17.15%;top:59.34%"><i></i><b>Sarasota</b></div>
+          <div class="mk l up"   style="left:38.82%;top:42.92%"><i></i><b>Lakeland</b></div>
+          <div class="mk r dn"   style="left:46.90%;top:43.32%"><i></i><b>Winter Haven</b></div>
+          <div class="mk r up"   style="left:60.10%;top:31.20%"><i></i><b>Orlando</b></div>
+          <div class="mk l"      style="left:59.04%;top:36.99%"><i></i><b>Kissimmee</b></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:8px;font-size:8px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#8E8688">
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#B2C6D6"></span>Highlands County</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#DED2C4"></span>Rest of the Tampa Market</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#EDE6DE"></span>Second Ring</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="hdrow" style="grid-template-columns:1fr auto;column-gap:14px"><span>County</span><span style="text-align:right">Ring</span></div>
+      <div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Highlands</span><span style="text-align:right" class="num">01</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Polk</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Hardee</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Hillsborough</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Pinellas</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Pasco</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Hernando</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Citrus</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Manatee</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Sarasota</span><span style="text-align:right" class="num">02</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Orange</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Osceola</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Seminole</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Lake</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Sumter</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>Marion</span><span style="text-align:right" class="num">03</span></div><div class="row" style="grid-template-columns:1fr auto;column-gap:14px;padding:2.6px 0;font-size:10.5px"><span>DeSoto</span><span style="text-align:right" class="num">03</span></div>
+      <div class="micro" style="margin-top:14px;line-height:1.85;letter-spacing:0.16em">Ring 01 the residence &middot; 02 the Tampa market &middot; 03 adjacent</div>
+      <div class="body" style="margin-top:14px;font-size:11px;line-height:1.75">Highlands County and the Tampa market membership were checked against the federal county record for the coordinates on the listing, not inferred from the postcode.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>2961 Lakeview Drive &middot; Digital Billboard Strategy</span><span class="pg">02 / 05</span></div>
+</section>
+
+<!-- ============================ 03  THE ARGUMENT ============================ -->
+<section class="page dark">
+  <div class="eyebrow">The Argument</div>
+  <h2 class="head" style="margin-top:20px;font-size:41px;color:#FFFFFF;max-width:14em">The road is the only place <em>this house is unavoidable.</em></h2>
+  <p class="lede" style="margin-top:18px;max-width:35em;font-size:11.5px;line-height:1.74">A ten&#8209;thousand&#8209;square&#8209;foot estate on two hundred and fifty feet of Lake Jackson is not a house people search for. Nobody types &lsquo;Sebring&rsquo; into a property portal hoping for this. The buyer is somewhere on the Gulf coast or in the Orlando suburbs, is not looking inland, and has to be told that fresh water at this scale exists less than seventy miles inland. Print and portals wait to be opened. A screen over a commuter road does not wait.</p>
+
+  <div class="rule" style="margin-top:22px"></div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">01</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">Reach the market, not just the postcode</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">The targeting favours the parts of the market that send people inland towards the ridge, rather than only the area immediately around the house. Sebring itself is covered, but the people already in Sebring are mainly the direct mail campaign&rsquo;s job.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">02</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">One idea per screen</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">A driver has a few seconds. Each frame carries the water, the price, the address and nothing else. No feature lists, no agent portrait, no logos competing with the house.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">03</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">Run with the rest of the campaign</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">The same month carries five hundred cards into central and coastal Florida and six advertisement sizes online. The screens are the layer that makes the other two feel familiar rather than cold.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">04</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">One address, everywhere</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">Every screen ends at the same short web address as the cards and the advertisements, so that a glance from a car can be recovered from a phone that evening.</div></div>
+  </div>
+
+  <div class="note" style="margin-top:22px">
+    <div class="micro" style="color:#C8C6C4;letter-spacing:0.24em">The House, In Figures</div>
+    <div class="lining" style="margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);row-gap:16px;column-gap:18px">
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">&#36;4,850,000</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">List Price</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">10,648</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Square Feet</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">250&#8202;ft</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Lake Jackson Frontage</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">5 &middot; 10</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Bedrooms &middot; Baths</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">1.74</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Acre Lot</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">2004</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Built &middot; Mediterranean</div></div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>2961 Lakeview Drive &middot; Digital Billboard Strategy</span><span class="pg">03 / 05</span></div>
+</section>
+
+<!-- ============================ 04  THE TARGETING ============================ -->
+<section class="page">
+  <div class="eyebrow">The Targeting</div>
+  <h2 class="head" style="margin-top:18px;font-size:38px">Chosen by area, <em>not by billboard.</em></h2>
+  <p class="lede" style="margin-top:14px;max-width:38em;font-size:11.5px;line-height:1.7">It is worth being clear about how these screens are bought, because it is not how billboards used to work. We do not rent one particular sign on one particular road for a month. We buy digital screens programmatically &mdash; we tell the exchange which parts of the market to serve the house into, and it places the advertisement on whatever digital screens are available in those areas while the campaign runs. So there is no list of board addresses in this document, and there will not be one. What we choose, and what this document sets out, is the geography.</p>
+  <p class="lede" style="margin-top:10px;max-width:38em;font-size:11.5px;line-height:1.7">In practice that means roadside and public digital screens across the ten counties on the previous page, weighted towards the five areas below.</p>
+
+  <div class="hdrow" style="grid-template-columns:0.42in 2.05in 1fr;margin-top:15px;column-gap:14px">
+    <span>Area</span><span>Targeted Geography</span><span>Why It Is Included</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">01</span>
+    <span style="font-size:11px;line-height:1.5">Polk County &middot; Lakeland and Winter Haven<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The lake country immediately north of the ridge, and the closest large concentration of households at this price. Sixty&#8209;eight miles of the drive from Tampa passes through it.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">02</span>
+    <span style="font-size:11px;line-height:1.5">Highlands County &middot; Sebring and the ridge<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The area the house is actually in. Screens serving here reach the people most likely to know Lake Jackson by name and to mention the house to someone who wants it.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">03</span>
+    <span style="font-size:11px;line-height:1.5">Hillsborough and Pinellas &middot; Tampa and St. Petersburg<br><span class="micro" style="letter-spacing:0.16em">High priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The largest concentration of wealth in the market. Targeting here is about the price looking credible in the market&rsquo;s biggest city, not about proximity.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">04</span>
+    <span style="font-size:11px;line-height:1.5">Sarasota and Manatee<br><span class="micro" style="letter-spacing:0.16em">High priority</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">Coastal owners who already pay a premium for water. This house offers a great deal more of it, inland and away from the salt.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">05</span>
+    <span style="font-size:11px;line-height:1.5">Pasco &middot; Hernando &middot; Citrus &middot; Hardee<br><span class="micro" style="letter-spacing:0.16em">Steady presence</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The rest of the market. Included at a lower share of delivery so that the whole ten&#8209;county footprint is covered for the full thirty days rather than in bursts.</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 2.35in;column-gap:0.3in;margin-top:18px;align-items:start">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Where The Emphasis Sits</div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.68">Areas 01 and 02 take the largest share of delivery, because they are where a buyer for a lake estate on the ridge is most likely to already be. Tampa, St.&nbsp;Petersburg and the Sarasota coast take the next largest share, for reach and for standing. The remaining counties run at a lower, steady share so that nowhere in the market is dark.</div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.68">We would rather run everywhere in the market for the full thirty days at a measured weight than crowd two weeks and then disappear. A roadside frame does its work by being there again on Thursday.</div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.68">One consequence of buying this way is worth saying plainly: we cannot promise you a photograph of your house on a named sign at a named junction. What we can say is which parts of Florida saw it, and how often, once the month is over.</div>
+    </div>
+    <div>
+      <img src="assets-billboard/lakeview-bb-back.jpg" alt="The residence and its Lake Jackson frontage"
+           style="display:block;width:100%;height:1.55in;object-fit:cover;border:1px solid #E3DAD1">
+      <div class="micro" style="margin-top:9px;line-height:1.7;letter-spacing:0.16em">The frame every screen is built around</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>2961 Lakeview Drive &middot; Digital Billboard Strategy</span><span class="pg">04 / 05</span></div>
+</section>
+
+<!-- ============================ 05  WHAT HAPPENS NEXT ============================ -->
+<section class="page">
+  <div class="eyebrow">What Happens Next</div>
+  <h2 class="head" style="margin-top:15px;font-size:38px">The month ahead, <em>in order.</em></h2>
+  <p class="lede" style="margin-top:13px;max-width:37em;font-size:11.5px;line-height:1.68">The market, the targeted areas and the emphasis are settled &mdash; that is the work in the pages before this one, and it is the judgement you are paying us for. What remains is the sequence, and two figures that do not exist yet. Where a number is missing below it is missing on purpose: an estimate offered now would be a guess wearing a suit, and this house is not marketed on guesses.</p>
+
+  <div class="rule" style="margin-top:15px"></div>
+  <div style="display:grid;grid-template-columns:1.95in 1fr;column-gap:22px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Now</div>
+    <div class="body lining" style="font-size:11px;line-height:1.62">The advertisement is built from the photography of the house and the lake frontage, in the Aperture setting used on the cards and online. You will see it and approve it before a single screen carries it.</div></div>
+  <div style="display:grid;grid-template-columns:1.95in 1fr;column-gap:22px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <div class="micro" style="color:#0E1113;letter-spacing:0.2em">21 September</div>
+    <div class="body lining" style="font-size:11px;line-height:1.62">The campaign goes live across the ten counties of the Tampa&ndash;St.&nbsp;Petersburg (Sarasota) market, weighted into the five areas set out on the previous page.</div></div>
+  <div style="display:grid;grid-template-columns:1.95in 1fr;column-gap:22px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Through The Month</div>
+    <div class="body lining" style="font-size:11px;line-height:1.62">Steady delivery for the full thirty days rather than two crowded weeks. Polk and Highlands carry the largest share throughout, Tampa, St.&nbsp;Petersburg and the Sarasota coast the next, and no part of the market goes dark.</div></div>
+  <div style="display:grid;grid-template-columns:1.95in 1fr;column-gap:22px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <div class="micro" style="color:#0E1113;letter-spacing:0.2em">21 October</div>
+    <div class="body lining" style="font-size:11px;line-height:1.62">The campaign closes. A report follows, covering where in Florida the house was shown and for how long, with whatever the exchange and its operators are able to verify.</div></div>
+  <div style="display:grid;grid-template-columns:1.95in 1fr;column-gap:22px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <div class="micro" style="color:#8E8688;letter-spacing:0.2em">Impressions</div>
+    <div class="body lining" style="font-size:11px;line-height:1.62">A delivery figure we do not have yet. We will state one only when an operator has committed to it in writing, and it will then be the number we are answerable for. Nothing estimated appears in this document.</div></div>
+  <div style="display:grid;grid-template-columns:1.95in 1fr;column-gap:22px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <div class="micro" style="color:#8E8688;letter-spacing:0.2em">Performance</div>
+    <div class="body lining" style="font-size:11px;line-height:1.62">Nothing has been measured, because nothing has run. Every figure of that kind belongs to the report after the window, not to this document.</div></div>
+  <div style="display:grid;grid-template-columns:1.95in 1fr;column-gap:22px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <div class="micro" style="color:#8E8688;letter-spacing:0.2em">Individual Screens</div>
+    <div class="body lining" style="font-size:11px;line-height:1.62">Not applicable, now or later. Screens are served programmatically across the targeted areas; no single board is picked out.</div></div>
+  <div style="display:grid;grid-template-columns:1.95in 1fr;column-gap:22px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E3DAD1">
+    <div class="micro" style="color:#8E8688;letter-spacing:0.2em">Screen Count</div>
+    <div class="body lining" style="font-size:11px;line-height:1.62">Not applicable for the same reason. The number of screens carrying the house varies day to day with what the exchange has available in the targeted areas.</div></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.34in;margin-top:20px">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The Residence, Online</div>
+      <div style="margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;font-variant-numeric:lining-nums"><a href="https://www.apertureglobal.com/2961lakeviewdrive">apertureglobal.com/2961lakeviewdrive</a></div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.7;color:#8E8688">Where every screen resolves.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The Rest Of The Campaign</div>
+      <div class="body" style="margin-top:12px;font-size:11px;line-height:1.7;color:#3A3E41">Five hundred cards into central and coastal Florida, and six advertisement sizes online, in the same thirty days.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="rule"></div>
+  <div style="display:grid;grid-template-columns:1fr auto;column-gap:24px;align-items:end;padding-top:22px">
+    <div>
+      <div class="micro" style="letter-spacing:0.24em">Your Agent</div>
+      <div style="margin-top:14px;font-size:12.5px;font-weight:300;letter-spacing:0.01em;color:#0E1113">Cynde Velez</div>
+      <div class="micro" style="margin-top:8px;letter-spacing:0.22em">Aperture Global Real Estate</div>
+      <div class="lining" style="margin-top:11px;font-size:11.5px;font-weight:200;line-height:1.85;color:#3A3E41">+1 407 619 5869<br>Cynde.Velez@ApertureGlobal.com</div>
+    </div>
+    <img src="assets-billboard/aperture-logo-black.svg" alt="Aperture Global"
+         style="display:block;width:1.5in;height:auto">
+  </div>
+
+  <div style="flex:0 0 auto;height:0.26in"></div>
+  <div class="foot"><span>2961 Lakeview Drive &middot; Digital Billboard Strategy</span><span class="pg">05 / 05</span></div>
+</section>
+
+</body>
+</html>
