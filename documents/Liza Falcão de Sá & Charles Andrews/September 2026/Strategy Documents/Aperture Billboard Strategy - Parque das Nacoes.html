@@ -105,6 +105,9 @@
   .mk.dn b { top: 6px; }
   .mk.subj i { display: block; left: -3.4px; top: -3.4px; width: 6.8px; height: 6.8px; background: #0E1113; }
   .mk.subj b { font-weight: 500; letter-spacing: 0.15em; color: #0E1113; }
+  /* Map labels are set a shade smaller than the house 8px so that the longest
+     name in frame stays inside the map column and does not spill into the gutter. */
+  .mkwrap .mk b { font-size: 7px; letter-spacing: 0.14em; }
 
   .cty {
     columns: 3; column-gap: 15px;
@@ -171,18 +174,13 @@
       <div style="position:relative">
         <img src="assets-billboard-parquedasnacoes/lisbon-metropolitan-area.svg" alt="The eighteen municipalities of the Lisbon Metropolitan Area outlined as a single shape, with the municipality of Lisbon shaded and the Parque das Nacoes parish marked on the east bank of the Tagus"
              style="display:block;width:100%;height:auto">
-        <div style="position:absolute;inset:0">
+        <div class="mkwrap" style="position:absolute;inset:0">
           <div class="mk subj r" style="left:42.74%;top:46.32%"><i></i><b>Parque das Na&ccedil;&otilde;es</b></div>
-          <div class="mk l"      style="left:25.49%;top:22.76%"><i></i><b>Mafra</b></div>
-          <div class="mk r"      style="left:50.40%;top:20.35%"><i></i><b>Vila Franca de Xira</b></div>
+          <div class="mk r"      style="left:25.49%;top:22.76%"><i></i><b>Mafra</b></div>
+          <div class="mk l"      style="left:50.40%;top:20.35%"><i></i><b>Vila Franca de Xira</b></div>
           <div class="mk l"      style="left:20.73%;top:41.04%"><i></i><b>Sintra</b></div>
-          <div class="mk l"      style="left:37.21%;top:37.24%"><i></i><b>Loures</b></div>
-          <div class="mk l"      style="left:32.64%;top:46.90%"><i></i><b>Amadora</b></div>
-          <div class="mk l"      style="left:18.50%;top:55.29%"><i></i><b>Cascais</b></div>
-          <div class="mk dn r"   style="left:26.74%;top:55.43%"><i></i><b>Oeiras</b></div>
+          <div class="mk r up"   style="left:18.50%;top:55.29%"><i></i><b>Cascais</b></div>
           <div class="mk l"      style="left:37.97%;top:57.86%"><i></i><b>Almada</b></div>
-          <div class="mk r"      style="left:44.32%;top:59.98%"><i></i><b>Barreiro</b></div>
-          <div class="mk r"      style="left:57.04%;top:72.70%"><i></i><b>Palmela</b></div>
           <div class="mk r"      style="left:57.65%;top:78.85%"><i></i><b>Set&uacute;bal</b></div>
         </div>
       </div>

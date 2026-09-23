@@ -16,10 +16,14 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "atlantic.svg")
 if not os.path.exists(CACHE):
     urllib.request.urlretrieve(NE_URL, CACHE)
 
-# Latitude is pinned by the markets themselves: London at 51.5N and Sao Paulo at
-# 23.6S, so the frame cannot be shallower than this. Longitude is then set to the
-# widest span that still keeps London and Paris apart as two readable dots.
-LON0, LON1 = -108.0, 44.0
+# Latitude is pinned by the markets: London at 51.5N and Sao Paulo at 23.6S, so the
+# frame cannot be shallower than this. That fixes the aspect, because legibility fixes
+# the scale: London and Paris are 2.5 deg apart and must stay two readable dots, which
+# needs ~4.4 px/deg, which makes the map ~425px tall whatever width it is drawn at.
+# So longitude is set to the narrowest window that still clears every marker, and the
+# map is placed at the page width that window implies rather than full bleed - a wider
+# frame at this scale buys nothing but empty ocean and Africa.
+LON0, LON1 = -90.0, 18.0
 LAT0, LAT1 = -28.0, 57.0
 WIDTH = 1000.0
 
@@ -88,7 +92,7 @@ for n, la, lo in MARKETS:
 # True on-page separation. The percentages are of DIFFERENT axes, so they must be
 # converted to pixels before they can be compared - mixing them understates how
 # close two dots really are.
-PRINT_W = 6.8 * 96                      # content width in CSS px
+PRINT_W = 480.0                         # drawn width in CSS px (not full bleed)
 PRINT_H = PRINT_W * HEIGHT / WIDTH
 pair, closest = None, 1e9
 for (na, a), (nb, b) in itertools.combinations(zip([m[0] for m in MARKETS], pts), 2):
