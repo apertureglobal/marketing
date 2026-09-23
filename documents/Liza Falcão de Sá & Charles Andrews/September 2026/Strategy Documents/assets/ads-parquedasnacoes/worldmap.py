@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""North Atlantic frame for this campaign: eastern North America, the Atlantic and
-western Europe in one picture, because the markets span two continents. Natural Earth
+"""Atlantic frame for this campaign: the Americas, the Atlantic and western Europe
+in one picture, because the markets span three continents - Toronto in the north,
+Sao Paulo in the south, Zurich in the east. Natural Earth
 110m country polygons, Mercator, land FILLED (never stroked - outlines are illegible
 once a map this wide sits at page width). Also prints the marker percentages for the
 HTML overlay and warns if a marker falls outside the frame."""
@@ -10,13 +11,16 @@ NE_URL = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master
           "geojson/ne_110m_admin_0_countries.geojson")
 # Cached outside the repo: the country data is an input, not a deliverable.
 CACHE = os.path.join(tempfile.gettempdir(), "ne_110m_admin_0_countries.geojson")
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "north-atlantic.svg")
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "atlantic.svg")
 
 if not os.path.exists(CACHE):
     urllib.request.urlretrieve(NE_URL, CACHE)
 
-LON0, LON1 = -95.0, 20.0
-LAT0, LAT1 = 28.0, 60.0
+# Latitude is pinned by the markets themselves: London at 51.5N and Sao Paulo at
+# 23.6S, so the frame cannot be shallower than this. Longitude is then set to the
+# widest span that still keeps London and Paris apart as two readable dots.
+LON0, LON1 = -108.0, 44.0
+LAT0, LAT1 = -28.0, 57.0
 WIDTH = 1000.0
 
 def merc(lat):
@@ -67,12 +71,13 @@ with open(OUT, "w") as fh:
 print(f"{OUT.split('/')[-1]}  {WIDTH:.0f}x{HEIGHT:.0f}  {len(paths)} filled rings")
 
 # --- markers ----------------------------------------------------------------
-MARKETS = [("Lisbon (the property)", 38.7629, -9.0958),
+MARKETS = [("Lisbon (the property)", 38.7629,  -9.0958),
            ("London",                51.5074,  -0.1278),
            ("Paris",                 48.8566,   2.3522),
            ("Zurich",                47.3769,   8.5417),
            ("New York",              40.7128, -74.0060),
-           ("Toronto",               43.6532, -79.3832)]
+           ("Toronto",               43.6532, -79.3832),
+           ("Sao Paulo",            -23.5505, -46.6333)]
 pts = []
 for n, la, lo in MARKETS:
     l, t = pct(la, lo)
@@ -80,10 +85,19 @@ for n, la, lo in MARKETS:
     print(f"{n:<24} left:{l:6.2f}%  top:{t:6.2f}%{flag}")
     pts.append((l, t))
 
-closest = min(((a[0]-b[0])**2 + (a[1]-b[1])**2) ** 0.5
-              for a, b in itertools.combinations(pts, 2))
-print(f"closest pair: {closest:.2f}% of frame width "
-      f"({closest/100*6.8*72:.1f}px at 6.8in) -> dots only, keyed to the table")
+# True on-page separation. The percentages are of DIFFERENT axes, so they must be
+# converted to pixels before they can be compared - mixing them understates how
+# close two dots really are.
+PRINT_W = 6.8 * 96                      # content width in CSS px
+PRINT_H = PRINT_W * HEIGHT / WIDTH
+pair, closest = None, 1e9
+for (na, a), (nb, b) in itertools.combinations(zip([m[0] for m in MARKETS], pts), 2):
+    d = (((a[0]-b[0])/100*PRINT_W)**2 + ((a[1]-b[1])/100*PRINT_H)**2) ** 0.5
+    if d < closest:
+        closest, pair = d, (na, nb)
+print(f"map on page: {PRINT_W:.0f} x {PRINT_H:.0f} px")
+print(f"closest pair: {pair[0]} / {pair[1]} at {closest:.1f}px "
+      f"-> {'dots only, keyed to the table' if closest < 60 else 'far enough to label'}")
 print("".join(
     f'<div style="position:absolute;left:{l:.2f}%;top:{t:.2f}%">'
     f'<div style="position:absolute;left:-2.5px;top:-2.5px;width:5px;height:5px;'
