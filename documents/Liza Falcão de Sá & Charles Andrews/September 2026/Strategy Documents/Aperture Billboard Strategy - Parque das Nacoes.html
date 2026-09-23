@@ -108,6 +108,9 @@
   /* Map labels are set a shade smaller than the house 8px so that the longest
      name in frame stays inside the map column and does not spill into the gutter. */
   .mkwrap .mk b { font-size: 7px; letter-spacing: 0.14em; }
+  /* Cascais sits hard against the west edge of the frame; its leader is pulled in
+     so the label finishes inside the map rather than in the gutter. */
+  .mkwrap .mk.l.tight b { right: 5px; }
 
   .cty {
     columns: 3; column-gap: 15px;
@@ -177,9 +180,9 @@
         <div class="mkwrap" style="position:absolute;inset:0">
           <div class="mk subj r" style="left:42.74%;top:46.32%"><i></i><b>Parque das Na&ccedil;&otilde;es</b></div>
           <div class="mk r"      style="left:25.49%;top:22.76%"><i></i><b>Mafra</b></div>
-          <div class="mk l"      style="left:50.40%;top:20.35%"><i></i><b>Vila Franca de Xira</b></div>
+          <div class="mk r"      style="left:50.40%;top:20.35%"><i></i><b>Vila Franca de Xira</b></div>
           <div class="mk l"      style="left:20.73%;top:41.04%"><i></i><b>Sintra</b></div>
-          <div class="mk r up"   style="left:18.50%;top:55.29%"><i></i><b>Cascais</b></div>
+          <div class="mk l tight" style="left:18.50%;top:55.29%"><i></i><b>Cascais</b></div>
           <div class="mk l"      style="left:37.97%;top:57.86%"><i></i><b>Almada</b></div>
           <div class="mk r"      style="left:57.65%;top:78.85%"><i></i><b>Set&uacute;bal</b></div>
         </div>
