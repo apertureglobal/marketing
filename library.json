@@ -165,10 +165,10 @@
     },
     {
       "title": "Display Ad Creative, Parque das Nações",
-      "description": "Twenty four display units for the Parque das Nações listing, six sizes in English and Portuguese, each built as a video version and a carousel version. The download holds every unit alongside a review page that shows them together.",
+      "description": "Twenty four display units for the Parque das Nações listing, six sizes in English and Portuguese, each built as a video version and a carousel version. The page shows every unit together, and each card links to that unit on its own.",
       "channel": "digital",
       "updated": "2026-09-16",
-      "file": "assets/campaigns/display-ad-creative-parque-das-nacoes.zip",
+      "file": "assets/campaigns/display-ad-creative-parque-das-nacoes.html",
       "type": "creative",
       "agent": "Liza Falcão de Sá & Charles Andrews"
     }
