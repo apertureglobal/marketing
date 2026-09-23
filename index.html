@@ -551,8 +551,12 @@
   function actionsFor(item, linkLabel) {
     var link = href(item), out = "";
     if (!link) return '<span class="act muted">Not yet uploaded</span>';
+    // Ad creative previews are HTML meant to be looked at. Forcing a download
+    // saves the file instead of showing the ads, so only PDFs and archives
+    // get the download attribute.
+    var viewable = !!item.url || /\.x?html?$/i.test(item.file || "");
     out += '<a class="act" href="' + esc(link) + '" target="_blank" rel="noopener"' +
-           (item.url ? "" : " download") + '>' + (item.url ? "Open" : "Download") + '</a>';
+           (viewable ? "" : " download") + '>' + (viewable ? "Open" : "Download") + '</a>';
     out += '<button class="act js-copy" data-copy="' + esc(link) + '">' + (linkLabel || "Copy link") + '</button>';
     return out;
   }
