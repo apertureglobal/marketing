@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Aperture Billboard Strategy &mdash; 10 Eton Thameside</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #55585A; }
+  * { box-sizing: border-box; }
+
+  .page {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    padding: 0.8in 0.85in 0.55in;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+    background: #F7F6F3;
+    color: #0E1113;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-of-type { page-break-after: auto; break-after: auto; }
+  .dark { background: #0E1113; color: #FFFFFF; }
+
+  .num { font-variant-numeric: lining-nums tabular-nums; }
+  .lining { font-variant-numeric: lining-nums; }
+
+  .eyebrow {
+    font-size: 10.5px; font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  h2.head {
+    margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 45px; line-height: 1.07; letter-spacing: -0.012em;
+    font-variant-numeric: lining-nums;
+  }
+  h2.head em { font-style: italic; font-weight: 300; }
+  .lede {
+    margin: 0; font-size: 13px; font-weight: 300; line-height: 1.9;
+    color: #3A3E41; max-width: 31em; text-wrap: pretty;
+  }
+  .dark .lede { color: rgba(255,255,255,0.7); }
+  .micro {
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .rule { height: 1px; background: #E3DAD1; }
+  .dark .rule { background: rgba(255,255,255,0.14); }
+  .spacer { flex: 1 1 auto; min-height: 0; }
+
+  .foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 13px; border-top: 1px solid #E3DAD1;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .foot { border-top-color: rgba(255,255,255,0.14); }
+  .foot .pg { font-variant-numeric: lining-nums tabular-nums; }
+
+  .body { font-size: 12px; font-weight: 300; line-height: 1.72; color: #3A3E41; }
+  .dark .body { color: rgba(255,255,255,0.7); }
+  .ink { color: #0E1113; }
+  .dark .ink { color: #FFFFFF; }
+
+  .hdrow {
+    display: grid; align-items: baseline; column-gap: 18px;
+    padding-bottom: 9px; border-bottom: 1px solid #0E1113;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .hdrow { border-bottom-color: rgba(255,255,255,0.55); }
+  .row {
+    display: grid; align-items: baseline; column-gap: 18px;
+    border-bottom: 1px solid #E3DAD1;
+    font-size: 11.5px; font-weight: 300; color: #0E1113;
+  }
+  .dark .row { border-bottom-color: rgba(255,255,255,0.14); color: #FFFFFF; }
+
+  .note { border: 1px solid #E3DAD1; background: #EFEDE8; padding: 16px 22px; }
+  .dark .note { border-color: rgba(255,255,255,0.14); background: #181B1D; }
+
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid #B9B2A8; padding-bottom: 2px; }
+  .dark a { border-bottom-color: rgba(255,255,255,0.3); }
+
+  .mk { position: absolute; width: 0; height: 0; }
+  .mk i {
+    position: absolute; left: -2.6px; top: -2.6px; width: 5.2px; height: 5.2px;
+    border-radius: 50%; background: #B2C6D6; display: none;
+  }
+  .mk b {
+    position: absolute; white-space: nowrap; font-size: 8px; font-weight: 400;
+    letter-spacing: 0.17em; text-transform: uppercase; color: #0E1113;
+  }
+  .mk.r b { left: 9px; top: -4.5px; }
+  .mk.l b { right: 9px; top: -4.5px; }
+  .mk.up b { top: -15px; }
+  .mk.dn b { top: 6px; }
+  .mk.subj i { display: block; left: -3.4px; top: -3.4px; width: 6.8px; height: 6.8px; background: #0E1113; }
+  .mk.subj b { font-weight: 500; letter-spacing: 0.15em; color: #0E1113; }
+
+  .auth {
+    display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px;
+    font-size: 9.4px; font-weight: 300; line-height: 1.72; color: #0E1113;
+  }
+  .auth .grp {
+    color: #8E8688; letter-spacing: 0.15em; text-transform: uppercase;
+    font-size: 7.8px; line-height: 1.5; padding-bottom: 5px;
+    border-bottom: 1px solid #E3DAD1; margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================ 01  COVER ============================ -->
+<!-- No listing photography was obtainable for this property, so this cover is set in
+     flat colour and type only. It is therefore flipbook-safe by construction: no
+     photograph, no rgba() wash, no gradient, so Chrome emits no /Pattern, /Shading,
+     /SMask or /Transparency. If a photograph is dropped in later it must be
+     pre-composited to flat RGB (200 dpi, JPEG q88, no alpha) before it is placed. -->
+<section class="page dark" style="padding:0.8in 0.85in 0.6in">
+  <img src="assets-billboard-etonthameside/aperture-logo-white.svg" alt="Aperture Global"
+       style="position:relative;display:block;width:1.75in;height:auto">
+
+  <div class="spacer"></div>
+
+  <div style="position:relative;font-size:10.5px;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#B2B4B5" class="lining">10 Eton Thameside &middot; Digital Billboard Strategy</div>
+
+  <h1 style="position:relative;margin:22px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:75px;line-height:1.0;letter-spacing:-0.016em;max-width:7.6em;text-wrap:pretty;font-variant-numeric:lining-nums">Twenty miles from Mayfair, <em style="font-style:italic;font-weight:300">with Windsor Castle across the water.</em></h1>
+
+  <div style="position:relative;width:56px;height:1px;background:#5B5D5F;margin:34px 0 26px"></div>
+
+  <div style="position:relative;display:grid;grid-template-columns:1.45in 1fr;row-gap:12px;column-gap:20px;align-items:baseline;max-width:5.9in">
+    <div class="micro" style="color:#8A8C8E">Property</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">10 Eton Thameside, 15 Brocas Street, Eton, SL4 6FB &middot; United Kingdom</div>
+
+    <div class="micro" style="color:#8A8C8E">Guide Price</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">&pound;2,150,000</div>
+
+    <div class="micro" style="color:#8A8C8E">The Residence</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">A riverside duplex of 1,887 square feet &middot; 3 bedrooms &middot; 3.5 bathrooms &middot; EPC C</div>
+
+    <div class="micro" style="color:#8A8C8E">The Setting</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Directly on the Thames, with wraparound water views toward Windsor Castle</div>
+
+    <div class="micro" style="color:#8A8C8E">Where It Is Shown</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Berkshire, the Thames Valley and the west of London &middot; eighteen local authorities</div>
+
+    <div class="micro" style="color:#8A8C8E">Duration</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Thirty days, continuous</div>
+  </div>
+
+  <div style="position:relative;margin-top:26px;font-size:9px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:#8A8C8E">Prepared for the owner &middot; The plan for the thirty days ahead</div>
+</section>
+
+<!-- ============================ 02  THE GEOGRAPHY ============================ -->
+<section class="page">
+  <div class="eyebrow">The Geography</div>
+  <h2 class="head" style="margin-top:13px;font-size:37px;max-width:16em">Berkshire, the Thames Valley <em>and the west of London.</em></h2>
+  <p class="lede" style="margin-top:11px;max-width:46em;font-size:11px;line-height:1.62">Advertising of this kind is bought by geography rather than by address. The geography chosen for this property is the corridor that runs east along the Thames and the M4 from Eton into west and central London &mdash; eighteen local authorities, shaded on the map below and outlined as one shape. The Royal Borough of Windsor and Maidenhead, the authority the property itself stands in, is drawn in blue.</p>
+  <p class="lede" style="margin-top:7px;max-width:46em;font-size:11px;line-height:1.62">That corridor is not a guess. The Office for National Statistics groups this postcode into the Slough and Heathrow travel-to-work area, a geography it draws from where people actually live and work rather than from any administrative line. The shape on the map takes that finding and extends it in the one direction the property&rsquo;s own buyer comes from: along the river and the railway, into London.</p>
+
+  <div style="position:relative;margin-top:12px">
+    <img src="assets-billboard-etonthameside/etonthameside-market.svg" alt="Berkshire, north-west Surrey and west London, with the eighteen targeted local authorities shaded, the Royal Borough of Windsor and Maidenhead in blue, and the whole footprint outlined as one shape"
+         style="display:block;width:100%;height:auto;border:1px solid #E3DAD1">
+    <div style="position:absolute;inset:0">
+      <div class="mk subj l dn" style="left:64.61%;top:42.26%"><i></i><b>10 Eton Thameside</b></div>
+      <div class="mk r up"      style="left:65.65%;top:36.36%"><i></i><b>Slough</b></div>
+      <div class="mk l"         style="left:57.89%;top:32.81%"><i></i><b>Maidenhead</b></div>
+      <div class="mk l"         style="left:55.98%;top:59.88%"><i></i><b>Bracknell</b></div>
+      <div class="mk r dn"      style="left:60.62%;top:61.43%"><i></i><b>Ascot</b></div>
+      <div class="mk l"         style="left:42.42%;top:50.44%"><i></i><b>Reading</b></div>
+      <div class="mk r"         style="left:21.12%;top:64.12%"><i></i><b>Newbury</b></div>
+      <div class="mk r"         style="left:74.45%;top:46.10%"><i></i><b>Heathrow</b></div>
+      <div class="mk l"         style="left:70.60%;top:55.55%"><i></i><b>Staines</b></div>
+      <div class="mk r"         style="left:73.81%;top:71.23%"><i></i><b>Weybridge</b></div>
+      <div class="mk r dn"      style="left:84.19%;top:53.86%"><i></i><b>Richmond</b></div>
+      <div class="mk l"         style="left:91.58%;top:41.75%"><i></i><b>Chelsea</b></div>
+      <div class="mk l up"      style="left:92.88%;top:36.16%"><i></i><b>Central London</b></div>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px 20px;align-items:center;margin-top:7px;font-size:8px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#8E8688">
+    <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#B2C6D6"></span>Windsor and Maidenhead</span>
+    <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#DED2C4"></span>The Rest Of The Targeted Footprint</span>
+    <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#EDE6DE"></span>Outside The Footprint</span>
+    <span style="margin-left:auto;letter-spacing:0.14em">Boundaries: ONS local authority districts, 2025 edition</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 2.45in;column-gap:0.34in;margin-top:11px;align-items:start">
+    <div>
+      <div class="hdrow" style="grid-template-columns:1fr auto;column-gap:14px"><span>The Eighteen Local Authorities</span><span style="text-align:right">18</span></div>
+      <div class="auth" style="margin-top:10px">
+        <div>
+          <div class="grp">Berkshire &mdash; six</div>
+          <div style="font-weight:500">Windsor and Maidenhead</div><div>Slough</div><div>Bracknell Forest</div><div>Wokingham</div><div>Reading</div><div>West Berkshire</div>
+        </div>
+        <div>
+          <div class="grp">North-west Surrey &mdash; four</div>
+          <div>Runnymede</div><div>Spelthorne</div><div>Elmbridge</div><div>Surrey Heath</div>
+        </div>
+        <div>
+          <div class="grp">West and central London &mdash; eight</div>
+          <div>Hillingdon</div><div>Hounslow</div><div>Richmond upon Thames</div><div>Ealing</div><div>Hammersmith and Fulham</div><div>Kensington and Chelsea</div><div>Westminster</div><div>Wandsworth</div>
+        </div>
+      </div>
+      <div class="micro" style="margin-top:11px;line-height:1.8;letter-spacing:0.16em">Together, 3,384,777 usual residents &mdash; ONS, Census 2021, table TS001</div>
+    </div>
+
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">How The Location Was Checked</div>
+      <div class="body" style="margin-top:8px;font-size:9.6px;line-height:1.58">The property&rsquo;s authority was established from the national record rather than taken on trust. The ONS Postcode Directory places SL4&nbsp;6FB in the Royal Borough of Windsor and Maidenhead, in the Eton and Castle ward, in the parish of Eton. Testing the same coordinates against the ONS boundary polygons independently returns the same authority and the same ward. Two separate sources, one answer.</div>
+      <div class="body" style="margin-top:8px;font-size:9.6px;line-height:1.58">The directory returns no administrative county, which is correct rather than missing: Windsor and Maidenhead is a unitary authority, and the six unitary authorities covering Berkshire each stand on their own in the national geography. The campaign is therefore built on named authorities rather than on a county line.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>10 Eton Thameside &middot; Digital Billboard Strategy</span><span class="pg">02 / 05</span></div>
+</section>
+
+<!-- ============================ 03  THE ARGUMENT ============================ -->
+<section class="page dark">
+  <div class="eyebrow">The Argument</div>
+  <h2 class="head" style="margin-top:20px;font-size:41px;color:#FFFFFF;max-width:15em">The buyer is already <em>on this stretch of river.</em></h2>
+  <p class="lede" style="margin-top:15px;max-width:39em;font-size:11.5px;line-height:1.68">A house of this kind is not sold to the whole country, and it is not sold abroad. It is sold to someone who already knows what it is worth to stand on a balcony above the Thames and look at Windsor Castle &mdash; and that person is, overwhelmingly, someone who already moves through Windsor, Slough, Maidenhead, Ascot and the M4 towns, or who lives in the west of London and comes out this way. The advertising does not need to travel far. It needs to be present, and repeatedly so, in the ordinary movement of one corridor.</p>
+
+  <div class="rule" style="margin-top:22px"></div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">01</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">A regional campaign, decided as one</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">This runs across one corridor rather than across the country. A screen in Manchester or Leeds reaches people who will never buy a duplex in Eton; the same delivery concentrated between Newbury and Westminster reaches people who might. Everything outside the eighteen authorities is left to the online advertising, which can afford to cast wider.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">02</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">The view is the advertisement</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">Three-bedroom homes near Windsor are not scarce. A duplex standing directly on the Thames, with two bedrooms opening onto private balconies over the water and the castle in the frame, is. The advertising leads with the water and the castle, because that is the part nothing else along this river can answer.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">03</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">One idea per screen</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">A driver or a passer-by has a few seconds. Each frame carries the house, the price, the address and nothing else. No lists of features, no portrait of the agent, no logos competing with the property.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">04</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">One address, everywhere</div>
+    <div style="margin-top:8px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">Every screen ends at the same short web address as the rest of the campaign, so that a glance from a train or a car can be picked up again on a phone that evening.</div></div>
+  </div>
+
+  <div class="note" style="margin-top:14px">
+    <div class="micro" style="color:#C8C6C4;letter-spacing:0.24em">The Property And The Footprint, In Figures</div>
+    <div class="lining" style="margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);row-gap:16px;column-gap:18px">
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">&pound;2,150,000</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Guide Price</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">1,887</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Square Feet</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">3 &middot; 3.5</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Bedrooms &middot; Bathrooms</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">18</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Local Authorities Targeted</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">3,384,777</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Residents In The Footprint</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">0.4&#8202;mi</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">To Windsor, Across The Bridge</div></div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>10 Eton Thameside &middot; Digital Billboard Strategy</span><span class="pg">03 / 05</span></div>
+</section>
+
+<!-- ============================ 04  THE TARGETING ============================ -->
+<section class="page">
+  <div class="eyebrow">The Targeting</div>
+  <h2 class="head" style="margin-top:10px;font-size:35px">Chosen by area, <em>not by billboard.</em></h2>
+  <p class="lede" style="margin-top:9px;max-width:47em;font-size:11px;line-height:1.6">These screens do not work the way poster sites used to. We do not take one sign on one road for a month. They are bought programmatically: we tell the exchange which parts of the corridor to serve the property into, and it places the advertisement on whatever digital screens are available there while the campaign runs. There is no list of screen addresses in this document, and there will not be one. What we choose is the geography.</p>
+  <p class="lede" style="margin-top:7px;max-width:47em;font-size:11px;line-height:1.6">In practice that means roadside, retail and transport digital screens across the eighteen authorities on the previous page, weighted towards the five areas below.</p>
+
+  <div class="hdrow" style="grid-template-columns:0.42in 2.15in 1fr;margin-top:9px;column-gap:14px">
+    <span>Area</span><span>Targeted Geography</span><span>Why It Is Included</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.15in 1fr;column-gap:13px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">01</span>
+    <span style="font-size:10.3px;line-height:1.44">Windsor and Maidenhead with Slough &middot; Eton, Windsor, Datchet, Maidenhead, Bray, Ascot<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:10.3px;line-height:1.52;color:#3A3E41">The authority the property stands in, and the one next to it. This is the ground where the house is already a known address, where Eton High Street and Eton Bridge are part of daily life, and where a household moving within the area is most likely to be looking. Ascot sits inside the same borough, five point nine miles south.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.15in 1fr;column-gap:13px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">02</span>
+    <span style="font-size:10.3px;line-height:1.44">West and central London &middot; Kensington and Chelsea, Westminster, Hammersmith and Fulham, Wandsworth, Richmond upon Thames<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:10.3px;line-height:1.52;color:#3A3E41">The single most likely origin of this buyer: the London household that wants river, space and a castle out of the window without giving up a direct train. Knightsbridge is under nineteen miles away in a straight line and Mayfair twenty, which is close enough that this is a move, not an emigration.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.15in 1fr;column-gap:13px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">03</span>
+    <span style="font-size:10.3px;line-height:1.44">The Heathrow and Thames crossing &middot; Hillingdon, Hounslow, Ealing, Spelthorne, Runnymede<br><span class="micro" style="letter-spacing:0.16em">High priority</span></span>
+    <span style="font-size:10.3px;line-height:1.52;color:#3A3E41">The ground between Eton and London, and the airport seven miles from the property. The national statistics office draws its Slough and Heathrow travel-to-work area across exactly this ground, because this is where the daily movement is. Presence here is about being seen on the way through.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.15in 1fr;column-gap:13px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">04</span>
+    <span style="font-size:10.3px;line-height:1.44">The wider Thames Valley &middot; Wokingham, Bracknell Forest, Reading, West Berkshire, Elmbridge, Surrey Heath<br><span class="micro" style="letter-spacing:0.16em">Moderate priority</span></span>
+    <span style="font-size:10.3px;line-height:1.52;color:#3A3E41">The rest of Berkshire and the wealthier edge of Surrey, strung along the M4 and the Waterloo line. Lower weight than the inner areas, because a Newbury household is thirty-one miles out &mdash; but not absent, because that is a household that already lives in this valley and already trades within it.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.15in 1fr;column-gap:13px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">05</span>
+    <span style="font-size:10.3px;line-height:1.44">Southern Buckinghamshire, by postcode district &middot; HP9 and SL9<br><span class="micro" style="letter-spacing:0.16em">Steady presence</span></span>
+    <span style="font-size:10.3px;line-height:1.52;color:#3A3E41">Beaconsfield and Gerrards Cross, nine and seven miles north. Buckinghamshire is one very large authority reaching far beyond this corridor, so rather than take the whole of it we target only these two postcode districts. It is a small addition, and it is the clearest illustration of how finely this can be drawn.</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 2.35in;column-gap:0.3in;margin-top:9px;align-items:start">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Where The Emphasis Sits</div>
+      <div class="body" style="margin-top:8px;font-size:10px;line-height:1.6">Areas 01 and 02 take the largest share of delivery: one is the property&rsquo;s own borough, the other is where the buyer most likely lives today. The Heathrow crossing takes the next share, and the wider valley runs at a lower, steady share so that nowhere in the footprint goes dark.</div>
+      <div class="body" style="margin-top:8px;font-size:10px;line-height:1.6">We would rather run across the whole corridor for the full thirty days at a measured weight than crowd two weeks and then vanish. One consequence of buying this way is worth saying plainly: we cannot promise you a photograph of your home on a named screen at a named junction. What we can tell you, once the month is over, is which parts of Berkshire, Surrey and London saw it, and how often.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Drawn Finely Where It Matters</div>
+      <div class="body" style="margin-top:8px;font-size:9.6px;line-height:1.58">Where a whole authority is the wrong shape, the targeting is set by postcode district instead: SL4 for Windsor and Eton, SL6 for Maidenhead, SL5 for Ascot and Sunningdale, HP9 and SL9 for Beaconsfield and Gerrards Cross, TW20 for Egham and Englefield Green, SW1X, SW3 and W1K for Knightsbridge, Chelsea and Mayfair.</div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:7px"></div>
+  <div style="display:grid;grid-template-columns:1.35in 1fr;column-gap:20px;align-items:baseline;margin-top:8px">
+    <div class="micro" style="color:#0E1113;letter-spacing:0.2em">In A Straight Line</div>
+    <div class="lining" style="font-size:10px;font-weight:300;line-height:1.62;color:#3A3E41">Windsor 0.4&#8202;mi &middot; Slough 1.8&#8202;mi &middot; Maidenhead 5.4&#8202;mi &middot; Staines-upon-Thames 5.5&#8202;mi &middot; Ascot 5.9&#8202;mi &middot; Heathrow 7.0&#8202;mi &middot; Gerrards Cross 7.4&#8202;mi &middot; Bracknell 7.7&#8202;mi &middot; Beaconsfield 8.7&#8202;mi &middot; Reading 15.8&#8202;mi &middot; Knightsbridge 18.8&#8202;mi &middot; Mayfair 20.0&#8202;mi &middot; Newbury 31.3&#8202;mi &nbsp;&mdash;&nbsp; <span class="micro" style="letter-spacing:0.14em">measured from the property&rsquo;s own coordinates; straight-line, not journey times.</span></div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>10 Eton Thameside &middot; Digital Billboard Strategy</span><span class="pg">04 / 05</span></div>
+</section>
+
+<!-- ============================ 05  WHAT HAPPENS NEXT ============================ -->
+<section class="page">
+  <div class="eyebrow">What Happens Next</div>
+  <h2 class="head" style="margin-top:17px;font-size:38px">The month ahead, <em>in order.</em></h2>
+  <p class="lede" style="margin-top:15px;max-width:40em;font-size:11.5px;line-height:1.72">The corridor, the authorities inside it and where the emphasis sits are decided; the reasoning is on the pages before this one. What follows is the sequence. The steps in black are settled and ours to run. The two in grey are figures that do not exist yet, left blank rather than estimated.</p>
+
+  <div class="rule" style="margin-top:13px"></div>
+
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">01</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">The Advertisement</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Built from the photography of the river frontage, the balconies over the water and the castle beyond, in the Aperture setting used across the rest of the campaign.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">02</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">Your Sign-Off</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">You see the advertisement and approve it before a single screen carries it. That one sign-off is yours.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">03</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">At The Opening</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">The campaign opens across all eighteen authorities at once, weighted to Windsor and Maidenhead, Slough and west London.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">04</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">Thirty Days</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Continuous through the month that follows, at a measured weight, with no dark weeks and nowhere in the corridor unlit.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#8E8688">05</span>
+    <span class="micro" style="color:#8E8688;letter-spacing:0.18em">Impressions</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#8E8688">To be confirmed. We will state a figure only once an operator has committed to one in writing, and it will then be the number we are held to.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#8E8688">06</span>
+    <span class="micro" style="color:#8E8688;letter-spacing:0.18em">Performance</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#8E8688">Nothing measured. The campaign has not begun, so there is nothing here to read yet.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">07</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">At The Close</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Once the thirty days are run, a report: which parts of Berkshire, Surrey and London saw the property, and how often &mdash; whatever the operators are able to verify.</span>
+  </div>
+
+  <div class="note" style="margin-top:12px;padding:10px 18px">
+    <div class="micro" style="letter-spacing:0.2em;color:#0E1113">Two Things That Will Never Appear</div>
+    <div class="body" style="margin-top:8px;font-size:10.5px;line-height:1.68">No individual screen and no screen count, at any stage. These are not applicable to a campaign bought this way: screens are served programmatically across the targeted areas, and which ones carry the advertisement varies hour by hour with whatever the exchange has available. We cannot promise a photograph of your home on a named sign; we can tell you the geography it ran in.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.34in;margin-top:13px">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The Property, Online</div>
+      <div style="margin-top:11px;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;font-variant-numeric:lining-nums"><a href="https://www.apertureglobal.com/10etonthameside">apertureglobal.com/10etonthameside</a></div>
+      <div class="body" style="margin-top:9px;font-size:10.5px;line-height:1.7;color:#8E8688">Where every screen resolves.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The Rest Of The Campaign</div>
+      <div class="body" style="margin-top:11px;font-size:11px;line-height:1.7;color:#3A3E41">Online advertising runs into the same corridor across the same thirty days; it is set out in its own document.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="rule"></div>
+  <div style="display:grid;grid-template-columns:1fr auto;column-gap:24px;align-items:end;padding-top:19px">
+    <div>
+      <div class="micro" style="letter-spacing:0.24em">Your Estate Agent</div>
+      <div style="margin-top:13px;font-size:12.5px;font-weight:300;letter-spacing:0.01em;color:#0E1113">Toby Madden</div>
+      <div class="micro" style="margin-top:8px;letter-spacing:0.22em">Aperture Global</div>
+      <div class="lining" style="margin-top:10px;font-size:11.5px;font-weight:200;line-height:1.85;color:#3A3E41">+44 7548 796758<br>Toby.Madden@ApertureGlobal.com</div>
+    </div>
+    <img src="assets-billboard-etonthameside/aperture-logo-black.svg" alt="Aperture Global"
+         style="display:block;width:1.5in;height:auto">
+  </div>
+
+  <div style="flex:0 0 auto;height:0.12in"></div>
+  <div class="foot"><span>10 Eton Thameside &middot; Digital Billboard Strategy</span><span class="pg">05 / 05</span></div>
+</section>
+
+</body>
+</html>

@@ -57,7 +57,7 @@ rows = np.arange(H) / (H - 1)
 print("cover:")
 arr = np.asarray(ImageEnhance.Color(load("33.jpg")).enhance(0.72), dtype=np.float64)
 arr = arr * 0.92
-prof = 0.28 + 0.62 * np.clip((rows - 0.16) / 0.84, 0, 1) ** 1.30
+prof = 0.26 + 0.70 * np.clip((rows - 0.14) / 0.86, 0, 1) ** 0.80
 arr = inset_rule(hatch(scrim(arr, prof)))
 finish(arr, f"{OUT}/cover-flat.jpg")
 
@@ -67,6 +67,6 @@ print("back cover:")
 arr = np.asarray(ImageEnhance.Color(load("48.jpg")).enhance(0.80), dtype=np.float64)
 arr = arr * 0.93
 prof = 0.34 + 0.44 * np.exp(-((rows - 0.52) ** 2) / (2 * 0.26 ** 2))
-prof = np.clip(prof + 0.16 * np.clip((rows - 0.80) / 0.20, 0, 1), 0, 0.93)
+prof = np.clip(prof + 0.30 * np.clip((rows - 0.70) / 0.22, 0, 1), 0, 0.93)
 arr = inset_rule(hatch(scrim(arr, prof)))
 finish(arr, f"{OUT}/backpage-flat.jpg")

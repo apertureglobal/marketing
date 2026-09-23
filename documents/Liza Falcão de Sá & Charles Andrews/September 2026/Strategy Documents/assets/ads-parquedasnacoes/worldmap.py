@@ -4,11 +4,16 @@ western Europe in one picture, because the markets span two continents. Natural 
 110m country polygons, Mercator, land FILLED (never stroked - outlines are illegible
 once a map this wide sits at page width). Also prints the marker percentages for the
 HTML overlay and warns if a marker falls outside the frame."""
-import json, math, itertools, os
+import json, math, itertools, os, tempfile, urllib.request
 
-SCRATCH = ("/private/tmp/claude-501/-Users-kyleforeman-Documents-GitHub-APERTUREREPO-"
-           "Untitled/89605ee2-e0e2-42b1-a533-95bf6685f64a/scratchpad/ne110.json")
+NE_URL = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/"
+          "geojson/ne_110m_admin_0_countries.geojson")
+# Cached outside the repo: the country data is an input, not a deliverable.
+CACHE = os.path.join(tempfile.gettempdir(), "ne_110m_admin_0_countries.geojson")
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "north-atlantic.svg")
+
+if not os.path.exists(CACHE):
+    urllib.request.urlretrieve(NE_URL, CACHE)
 
 LON0, LON1 = -95.0, 20.0
 LAT0, LAT1 = 28.0, 60.0
@@ -40,7 +45,7 @@ def rings(geom):
     return []
 
 paths = []
-for feat in json.load(open(SCRATCH))["features"]:
+for feat in json.load(open(CACHE))["features"]:
     for ring in rings(feat["geometry"]):
         pts = [xy(la, lo) for lo, la in ring]
         if not pts:

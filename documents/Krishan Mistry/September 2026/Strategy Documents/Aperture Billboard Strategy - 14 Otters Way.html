@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Aperture Billboard Strategy &mdash; 14 Otters Way</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #55585A; }
+  * { box-sizing: border-box; }
+
+  .page {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    padding: 0.8in 0.85in 0.55in;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+    background: #F7F6F3;
+    color: #0E1113;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-of-type { page-break-after: auto; break-after: auto; }
+  .dark { background: #0E1113; color: #FFFFFF; }
+
+  .num { font-variant-numeric: lining-nums tabular-nums; }
+  .lining { font-variant-numeric: lining-nums; }
+
+  .eyebrow {
+    font-size: 10.5px; font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  h2.head {
+    margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 45px; line-height: 1.07; letter-spacing: -0.012em;
+    font-variant-numeric: lining-nums;
+  }
+  h2.head em { font-style: italic; font-weight: 300; }
+  .lede {
+    margin: 0; font-size: 13px; font-weight: 300; line-height: 1.9;
+    color: #3A3E41; max-width: 31em; text-wrap: pretty;
+  }
+  .dark .lede { color: rgba(255,255,255,0.7); }
+  .micro {
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .rule { height: 1px; background: #E3DAD1; }
+  .dark .rule { background: rgba(255,255,255,0.14); }
+  .spacer { flex: 1 1 auto; min-height: 0; }
+
+  .foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 13px; border-top: 1px solid #E3DAD1;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .foot { border-top-color: rgba(255,255,255,0.14); }
+  .foot .pg { font-variant-numeric: lining-nums tabular-nums; }
+
+  .body { font-size: 12px; font-weight: 300; line-height: 1.72; color: #3A3E41; }
+  .dark .body { color: rgba(255,255,255,0.7); }
+  .ink { color: #0E1113; }
+  .dark .ink { color: #FFFFFF; }
+
+  .hdrow {
+    display: grid; align-items: baseline; column-gap: 18px;
+    padding-bottom: 9px; border-bottom: 1px solid #0E1113;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .hdrow { border-bottom-color: rgba(255,255,255,0.55); }
+  .row {
+    display: grid; align-items: baseline; column-gap: 18px;
+    border-bottom: 1px solid #E3DAD1;
+    font-size: 11.5px; font-weight: 300; color: #0E1113;
+  }
+  .dark .row { border-bottom-color: rgba(255,255,255,0.14); color: #FFFFFF; }
+
+  .note {
+    border: 1px solid #E3DAD1; background: #EFEDE8; padding: 16px 22px;
+  }
+  .dark .note { border-color: rgba(255,255,255,0.14); background: #181B1D; }
+
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid #B9B2A8; padding-bottom: 2px; }
+  .dark a { border-bottom-color: rgba(255,255,255,0.3); }
+
+  .mk { position: absolute; width: 0; height: 0; }
+  .mk i {
+    position: absolute; left: -2.6px; top: -2.6px; width: 5.2px; height: 5.2px;
+    border-radius: 50%; background: #B2C6D6; display: none;
+  }
+  .mk b {
+    position: absolute; white-space: nowrap; font-size: 8.2px; font-weight: 400;
+    letter-spacing: 0.14em; text-transform: uppercase; color: #0E1113;
+  }
+  .mk.r b { left: 8px; top: -4.5px; }
+  .mk.up b { top: -14px; }
+  .mk.dn b { top: 5px; }
+  .mk.l b { right: 8px; top: -4.5px; }
+  .mk.subj i { display: block; left: -3.4px; top: -3.4px; width: 6.8px; height: 6.8px; background: #0E1113; }
+  .mk.subj b { font-weight: 500; letter-spacing: 0.13em; color: #0E1113; }
+
+  .cty {
+    columns: 2; column-gap: 16px;
+    font-size: 9.4px; font-weight: 300; line-height: 1.86; color: #0E1113;
+  }
+  .cty div { break-inside: avoid; }
+  .cty .pt { color: #8E8688; }
+</style>
+</head>
+<body>
+
+<!-- ============================ 01  COVER ============================ -->
+<!-- The cover artwork is pre-composited to flat RGB (200 dpi, JPEG q88, no alpha): the
+     photograph, the top scrim and the fade into ink are all baked into the pixels.
+     Do NOT add rgba() washes, gradients or hatch overlays to this section: Chrome
+     emits /Pattern and /SMask objects for them, which breaks the flipbook PDF. -->
+<section class="page dark" style="padding:0.8in 0.85in 0.6in">
+  <img src="assets-billboard-14ottersway/14ottersway-bb-cover-flat.jpg" alt="The house at dusk, its cedar-clad gable lit from within, with the double garage and driveway alongside"
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+
+  <img src="assets-billboard-14ottersway/aperture-logo-white.svg" alt="Aperture Global"
+       style="position:relative;display:block;width:1.75in;height:auto">
+
+  <div class="spacer"></div>
+
+  <div style="position:relative;font-size:10.5px;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#B2B4B5" class="lining">14 Otters Way &middot; Digital Billboard Strategy</div>
+
+  <h1 style="position:relative;margin:20px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:75px;line-height:1.0;letter-spacing:-0.016em;max-width:7.4em;text-wrap:pretty;font-variant-numeric:lining-nums">A house on the city&rsquo;s southern edge, <em style="font-style:italic;font-weight:300">shown to the city that surrounds it.</em></h1>
+
+  <div style="position:relative;width:56px;height:1px;background:#5B5D5F;margin:28px 0 22px"></div>
+
+  <div style="position:relative;display:grid;grid-template-columns:1.35in 1fr;row-gap:11px;column-gap:20px;align-items:baseline;max-width:5.9in">
+    <div class="micro" style="color:#8A8C8E">Property</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Otters Way, Hampton Water, Peterborough, PE7&nbsp;8TX</div>
+
+    <div class="micro" style="color:#8A8C8E">Asking Price</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">&pound;1,050,000</div>
+
+    <div class="micro" style="color:#8A8C8E">The House</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">2,793 sq ft (259 sq m) &middot; 5 bedrooms &middot; 3 bathrooms &middot; 2 reception rooms</div>
+
+    <div class="micro" style="color:#8A8C8E">Where It Is Shown</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Peterborough and the ten local authority areas around it</div>
+
+    <div class="micro" style="color:#8A8C8E">Duration</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Thirty days, continuous</div>
+  </div>
+
+  <div style="position:relative;margin-top:22px;font-size:9px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:#8A8C8E">Prepared for the owner &middot; The plan for the thirty days ahead</div>
+</section>
+
+<!-- ============================ 02  THE GEOGRAPHY ============================ -->
+<section class="page">
+  <div class="eyebrow">The Geography</div>
+  <h2 class="head" style="margin-top:18px;font-size:40px;max-width:15em">One working city, <em>and the ten areas that feed it.</em></h2>
+  <p class="lede" style="margin-top:14px;max-width:38em;font-size:11.5px;line-height:1.7">The house stands on Otters Way in Hampton Water, on the southern edge of Peterborough. Advertising of this kind is bought by geography rather than by address, so the first question is what geography this house actually belongs to &mdash; and in Britain that answer is not a county line. It is the ground people cross to get to work, to school and to the shops.</p>
+  <p class="lede" style="margin-top:9px;max-width:38em;font-size:11.5px;line-height:1.7">The Office for National Statistics measures exactly that, and calls it a Travel to Work Area: a zone drawn so that most of the people who live in it also work in it. The house sits inside the Peterborough Travel to Work Area, six hundred and seven square miles of it, and that area is the spine of this campaign. Around it we have taken nine further local authority areas that trade daily with Peterborough. The whole footprint is outlined on the map.</p>
+
+  <div style="display:grid;grid-template-columns:2.95in 1fr;column-gap:0.3in;margin-top:14px;align-items:start">
+    <div>
+      <div style="position:relative">
+        <img src="assets-billboard-14ottersway/cambridgeshire-footprint.svg" alt="Peterborough and the surrounding local authority areas of Cambridgeshire, Rutland, Lincolnshire and Northamptonshire, with the city shaded blue, the Peterborough Travel to Work Area shaded, and the whole targeted footprint outlined as a single shape"
+             style="display:block;width:100%;height:auto">
+        <div style="position:absolute;inset:0">
+          <div class="mk subj r" style="left:46.08%;top:50.49%"><i></i><b>14 Otters Way</b></div>
+          <div class="mk l"      style="left:47.12%;top:46.63%"><i></i><b>Peterborough</b></div>
+          <div class="mk l"      style="left:35.13%;top:40.22%"><i></i><b>Stamford</b></div>
+          <div class="mk l"      style="left:51.19%;top:28.48%"><i></i><b>Spalding</b></div>
+          <div class="mk r"      style="left:66.99%;top:38.35%"><i></i><b>Wisbech</b></div>
+          <div class="mk r up"   style="left:63.57%;top:48.28%"><i></i><b>March</b></div>
+          <div class="mk r"      style="left:24.45%;top:54.26%"><i></i><b>Corby</b></div>
+          <div class="mk r"      style="left:50.51%;top:66.88%"><i></i><b>Huntingdon</b></div>
+          <div class="mk l"      style="left:46.46%;top:75.62%"><i></i><b>St Neots</b></div>
+          <div class="mk r"      style="left:66.00%;top:77.02%"><i></i><b>Cambridge</b></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-top:7px;font-size:7.6px;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:#8E8688">
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;background:#B2C6D6"></span>Peterborough</span>
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;background:#DED2C4"></span>Travel To Work Area</span>
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;background:#EDE6DE"></span>The Wider Footprint</span>
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;background:#F7F6F3;border:1px solid #C8BFB8"></span>Not Targeted</span>
+      </div>
+      <div class="body" style="margin-top:10px;font-size:10px;line-height:1.66">The location was established from the postcode&rsquo;s own coordinates rather than taken on trust. PE7&nbsp;8TX resolves, in the ONS Postcode Directory, to 52.526928&deg;N 0.265235&deg;W &mdash; Ordnance Survey grid reference TL&nbsp;17784&nbsp;93529. Tested as a point against the ONS boundary polygons themselves, those coordinates fall inside Peterborough (E06000031), inside the Peterborough Travel to Work Area (E30000108), in the ward of Hargate and Hempsted and the parliamentary constituency of North West Cambridgeshire.</div>
+    </div>
+
+    <div>
+      <div class="hdrow" style="grid-template-columns:1fr auto;column-gap:14px"><span>The Footprint</span><span style="text-align:right">10 Areas</span></div>
+      <div class="cty" style="margin-top:8px">
+        <div><b style="font-weight:500">Peterborough</b> 224,757</div>
+        <div>North Northamptonshire 379,569</div>
+        <div>Huntingdonshire 191,941</div>
+        <div>South Cambridgeshire 174,641</div>
+        <div>Cambridge 149,872</div>
+        <div>South Kesteven 148,069</div>
+        <div>Fenland 105,930</div>
+        <div>South Holland 100,758</div>
+        <div>East Cambridgeshire 94,599</div>
+        <div>Rutland 41,629</div>
+      </div>
+      <div class="rule" style="margin-top:9px"></div>
+      <div class="lining" style="margin-top:8px;display:flex;justify-content:space-between;align-items:baseline;font-size:10px;font-weight:300"><span class="micro" style="letter-spacing:0.18em;color:#0E1113">Residents In The Footprint</span><span style="font-family:'Cormorant Garamond',serif;font-size:19px">1,611,765</span></div>
+      <div class="micro" style="margin-top:7px;line-height:1.75;letter-spacing:0.13em;font-size:8px">ONS mid&#8209;2025 population estimates, released July 2026</div>
+
+      <div class="rule" style="margin-top:11px"></div>
+      <div class="micro" style="margin-top:10px;color:#0E1113;letter-spacing:0.2em">A Point Worth Getting Right</div>
+      <div class="body" style="margin-top:8px;font-size:10px;line-height:1.66">Peterborough is in the ceremonial county of Cambridgeshire, but it is not administered by Cambridgeshire County Council: it is a unitary authority in its own right, and the ONS record returns no administrative county for this postcode at all. We mention it because it changes what &ldquo;Cambridgeshire&rdquo; buys. Targeting the county alone would miss the city the house stands in. The footprint opposite is built from the individual areas instead, so nothing falls through that gap.</div>
+
+      <div class="rule" style="margin-top:11px"></div>
+      <div class="micro" style="margin-top:10px;color:#0E1113;letter-spacing:0.2em">Postcodes, For The Record</div>
+      <div class="body" style="margin-top:8px;font-size:10px;line-height:1.66">The house is in PE7, one of the nine Peterborough postcode districts, PE1 to PE9. The footprint reaches across the rest of the PE area into Huntingdonshire and the Fens, and on into CB for Cambridge and Ely, NN for Corby and Kettering, and LE15 for Rutland.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>14 Otters Way &middot; Digital Billboard Strategy</span><span class="pg">02 / 05</span></div>
+</section>
+
+<!-- ============================ 03  THE ARGUMENT ============================ -->
+<section class="page dark">
+  <div class="eyebrow">The Argument</div>
+  <h2 class="head" style="margin-top:14px;font-size:38px;color:#FFFFFF;max-width:14em">The buyer for this house <em>is already on the road.</em></h2>
+  <p class="lede" style="margin-top:13px;max-width:36em;font-size:11px;line-height:1.68">A million-pound house in central London sells to the world. A million-pound house on the edge of Peterborough does not, and pretending otherwise would waste the month. At this price, in this place, the buyer is a local one: a family already in the city or in the towns around it, moving up rather than moving in. They are in a car most mornings, and they are the reason roadside screens are the right instrument here rather than an afterthought.</p>
+
+  <div class="rule" style="margin-top:15px"></div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">01</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">Local and regional, deliberately</div>
+    <div style="margin-top:6px;font-size:11px;font-weight:300;line-height:1.66;color:rgba(255,255,255,0.7)">There is no national layer in this plan and no international one. Both would put the house in front of an enormous number of people who will never buy it. The whole of the delivery stays inside the footprint on the previous page, which is where a buyer for a five-bedroom house in Hampton Water can realistically be found.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">02</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">The audience here drives</div>
+    <div style="margin-top:6px;font-size:11px;font-weight:300;line-height:1.66;color:rgba(255,255,255,0.7)">Peterborough sits where the A1 and the A47 cross, with the A15, the A605 and the parkway ring carrying the city&rsquo;s own traffic, and the East Coast Main Line running through the station. People in this part of England move between towns by road far more than they move within one town on foot. That is what makes a screen beside a road worth having, and it is the reason the weight of this campaign goes there rather than into a shop window.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">03</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">The garden is the advertisement</div>
+    <div style="margin-top:6px;font-size:11px;font-weight:300;line-height:1.66;color:rgba(255,255,255,0.7)">Five bedrooms on a new development is not, on its own, a scarce thing in this part of England. A garden of this size behind a new house is. The advertising leads with the rear elevation at dusk and the lawn running away from it, because that is the picture that stops the person who has been looking at everything else in Hampton and finding it tight.</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:0.55in 1fr;column-gap:20px;align-items:baseline;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1;color:#FFFFFF">04</span>
+    <div><div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">One idea per screen, one address</div>
+    <div style="margin-top:6px;font-size:11px;font-weight:300;line-height:1.66;color:rgba(255,255,255,0.7)">A driver has a few seconds. Each frame carries the house, the price and the address, and nothing else &mdash; no feature list, no portrait, no competing logos. Every frame ends at the same short web address as the rest of the campaign, so a glance from a car can be picked up again on a phone that evening.</div></div>
+  </div>
+
+  <div class="note" style="margin-top:13px;padding:13px 22px">
+    <div class="micro" style="color:#C8C6C4;letter-spacing:0.24em">The House, In Figures</div>
+    <div class="lining" style="margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);row-gap:12px;column-gap:18px">
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">&pound;1,050,000</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Asking Price</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">2,793</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Sq Ft &middot; 259 Sq M</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">5 &middot; 3</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Bedrooms &middot; Bathrooms</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">2</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Reception Rooms</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">3.3&#8202;mi</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">To Peterborough Centre</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#FFFFFF">10</div><div class="micro" style="margin-top:5px;letter-spacing:0.18em">Areas In The Footprint</div></div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>14 Otters Way &middot; Digital Billboard Strategy</span><span class="pg">03 / 05</span></div>
+</section>
+
+<!-- ============================ 04  THE TARGETING ============================ -->
+<section class="page">
+  <div class="eyebrow">The Targeting</div>
+  <h2 class="head" style="margin-top:10px;font-size:35px">Chosen by area, <em>not by billboard.</em></h2>
+  <p class="lede" style="margin-top:8px;max-width:39em;font-size:11px;line-height:1.64">These screens do not work the way billboards used to. We do not take one sign on one road for a month. They are bought programmatically: we tell the exchange which parts of the country to serve the house into, and it places the advertisement on whatever digital screens are free there while the campaign runs. There is no list of screen addresses in this document, and there will not be one. What we choose is the geography, and it is set out below.</p>
+  <p class="lede" style="margin-top:7px;max-width:39em;font-size:11px;line-height:1.64">Roads are named on these pages to explain where the audience is, never to describe where a screen sits. No road, junction or site is being singled out.</p>
+
+  <div class="hdrow" style="grid-template-columns:0.42in 2.05in 1fr;margin-top:9px;column-gap:14px">
+    <span>Tier</span><span>Targeted Geography</span><span>Why It Is Included</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">01</span>
+    <span style="font-size:10.6px;line-height:1.45">Peterborough &middot; the city and its southern townships &mdash; Hampton, Orton, Woodston, Fletton, Stanground, Yaxley<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:10.6px;line-height:1.55;color:#3A3E41">The city the house is in, and the single most likely origin of its buyer. These are households who already know Hampton, who have watched the water and the new streets go in, and who will recognise the road name without being told where it is. Peterborough holds roughly two hundred and twenty five thousand people on its own.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">02</span>
+    <span style="font-size:10.6px;line-height:1.45">The rest of the Travel to Work Area &middot; Rutland, Stamford, Bourne, the Deepings, Oundle<br><span class="micro" style="letter-spacing:0.16em">Highest priority</span></span>
+    <span style="font-size:10.6px;line-height:1.55;color:#3A3E41">The stone towns west and north of the city, and the most comfortable money in the footprint. Stamford is twelve and a half miles from the house in a straight line and Oakham twenty two; both send people into Peterborough daily. This is the household that wants a modern house with space and good glass instead of another period one that needs work.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">03</span>
+    <span style="font-size:10.6px;line-height:1.45">Huntingdonshire and the Fens &middot; Huntingdon, St Ives, St Neots, Whittlesey, March, Wisbech<br><span class="micro" style="letter-spacing:0.16em">High priority</span></span>
+    <span style="font-size:10.6px;line-height:1.55;color:#3A3E41">The towns south and east along the A1 and the A605, whose residents drive past the southern edge of Peterborough as a matter of routine. Huntingdon is fourteen miles from the house, Whittlesey six. Being seen here is being seen on the ordinary way in.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">04</span>
+    <span style="font-size:10.6px;line-height:1.45">Greater Cambridge &middot; Cambridge, Ely, the South Cambridgeshire villages<br><span class="micro" style="letter-spacing:0.16em">Moderate priority</span></span>
+    <span style="font-size:10.6px;line-height:1.55;color:#3A3E41">Cambridge is twenty seven and a half miles from the house in a straight line, and the most expensive housing in the region. A household priced out of a garden there, but able to keep working there, is a real buyer for this house and an uncommonly good one. Included at a lower weight because that move is a decision, not a drift.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:2px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">05</span>
+    <span style="font-size:10.6px;line-height:1.45">The county towns beyond &middot; Spalding, Corby, Kettering<br><span class="micro" style="letter-spacing:0.16em">Steady presence</span></span>
+    <span style="font-size:10.6px;line-height:1.55;color:#3A3E41">The Lincolnshire and Northamptonshire edges of the footprint, all within twenty two miles of the house. A lower share of delivery, so that the whole footprint is covered for the full thirty days rather than lit in bursts.</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 2.3in;column-gap:0.3in;margin-top:10px;align-items:start">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Where The Emphasis Sits</div>
+      <div class="body" style="margin-top:9px;font-size:10px;line-height:1.6">Tiers 01 and 02 take the largest share of delivery: one is the city itself, the other is where the money in this footprint lives. Huntingdonshire and the Fens take the next share, Greater Cambridge a smaller one, and the outer county towns run at a lower steady share so that nowhere inside the outline is dark.</div>
+      <div class="body" style="margin-top:9px;font-size:10px;line-height:1.6">We would rather run across the whole footprint for the full thirty days at a measured weight than crowd a fortnight and then vanish. One consequence of buying this way is worth saying plainly: we cannot promise you a photograph of your house on a named sign at a named junction. What we can tell you, once the month is out, is which parts of Cambridgeshire, Lincolnshire, Rutland and Northamptonshire saw it, and how often.</div>
+    </div>
+    <div>
+      <img src="assets-billboard-14ottersway/14ottersway-bb-garden.jpg" alt="The rear elevation at dusk with the lawn running away from the terrace"
+           style="display:block;width:100%;height:1.2in;object-fit:cover;border:1px solid #E3DAD1">
+      <div class="micro" style="margin-top:7px;line-height:1.7;letter-spacing:0.16em">The garden at dusk</div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:5px"></div>
+  <div style="display:grid;grid-template-columns:1.35in 1fr;column-gap:20px;align-items:baseline;margin-top:8px">
+    <div class="micro" style="color:#0E1113;letter-spacing:0.2em">In A Straight Line</div>
+    <div class="lining" style="font-size:10.2px;font-weight:300;line-height:1.7;color:#3A3E41">Yaxley 0.7&#8202;mi &middot; Peterborough centre 3.3&#8202;mi &middot; Whittlesey 6.1&#8202;mi &middot; Oundle 9.1&#8202;mi &middot; Stamford 12.5&#8202;mi &middot; Huntingdon 14.0&#8202;mi &middot; March 14.9&#8202;mi &middot; Corby 18.5&#8202;mi &middot; Spalding 18.6&#8202;mi &middot; St Neots 20.7&#8202;mi &middot; Kettering 21.4&#8202;mi &middot; Oakham 21.9&#8202;mi &middot; Ely 23.9&#8202;mi &middot; Cambridge 27.5&#8202;mi &nbsp;&mdash;&nbsp; <span class="micro" style="letter-spacing:0.13em">measured from the postcode&rsquo;s coordinates; straight&#8209;line, not driving times.</span></div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>14 Otters Way &middot; Digital Billboard Strategy</span><span class="pg">04 / 05</span></div>
+</section>
+
+<!-- ============================ 05  WHAT HAPPENS NEXT ============================ -->
+<section class="page">
+  <div class="eyebrow">What Happens Next</div>
+  <h2 class="head" style="margin-top:16px;font-size:38px">The month ahead, <em>in order.</em></h2>
+  <p class="lede" style="margin-top:14px;max-width:38em;font-size:11.5px;line-height:1.7">The footprint, the tiers inside it and where the emphasis sits are decided; the reasoning is on the pages before this one. What follows is the sequence. The steps in black are settled and ours to run. The two in grey are figures that do not exist yet, left blank rather than estimated.</p>
+
+  <div class="rule" style="margin-top:12px"></div>
+
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">01</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">The Advertisement</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Built from the photography of the house at dusk &mdash; the cedar gable lit from within, and the garden behind it &mdash; in the Aperture setting used across the rest of the campaign.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">02</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">Your Sign&#8209;Off</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">You see the advertisement and approve it before a single screen carries it. That one sign-off is yours.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">03</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">At Launch</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">The campaign opens across all ten areas of the footprint at once, weighted to Peterborough and the Travel to Work Area around it.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">04</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">Thirty Days</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Continuous through the month that follows, at a measured weight, with no dark weeks and nowhere inside the outline unlit.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#8E8688">05</span>
+    <span class="micro" style="color:#8E8688;letter-spacing:0.18em">Impressions</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#8E8688">To be confirmed. We will state a figure only once an operator has committed to one in writing, and it will then be the number we are held to.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#8E8688">06</span>
+    <span class="micro" style="color:#8E8688;letter-spacing:0.18em">Performance</span>
+    <span style="font-size:11px;font-weight:300;line-height:1.62;color:#8E8688">Nothing measured. The campaign has not begun, so there is nothing here to read yet.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:0.5in 1.55in 1fr;column-gap:18px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E3DAD1">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1;color:#0E1113">07</span>
+    <span class="micro" style="color:#0E1113;letter-spacing:0.18em">At The Close</span>
+    <span class="lining" style="font-size:11px;font-weight:300;line-height:1.62;color:#3A3E41">Once the thirty days are run, a report: which parts of the footprint saw the house, and how often &mdash; whatever the operators are able to verify.</span>
+  </div>
+
+  <div class="note" style="margin-top:11px;padding:10px 18px">
+    <div class="micro" style="letter-spacing:0.2em;color:#0E1113">Two Things That Will Never Appear</div>
+    <div class="body" style="margin-top:7px;font-size:10.2px;line-height:1.64">No individual screen and no screen count, at any stage. These are not applicable to a campaign bought this way: screens are served programmatically across the targeted areas, and which ones carry the advertisement varies hour by hour with whatever the exchange has available. We cannot promise a photograph of your house on a named sign; we can tell you the geography it ran in.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.34in;margin-top:12px">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The House, Online</div>
+      <div style="margin-top:10px;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;font-variant-numeric:lining-nums"><a href="https://www.apertureglobal.com/14ottersway">apertureglobal.com/14ottersway</a></div>
+      <div class="body" style="margin-top:8px;font-size:10.2px;line-height:1.66;color:#8E8688">Where every screen resolves.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.22em">The Rest Of The Campaign</div>
+      <div class="body" style="margin-top:10px;font-size:10.8px;line-height:1.66;color:#3A3E41">Online advertising runs into the same footprint across the same thirty days, and is set out in its own document.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="rule"></div>
+  <div style="display:grid;grid-template-columns:1fr auto;column-gap:24px;align-items:end;padding-top:19px">
+    <div>
+      <div class="micro" style="letter-spacing:0.24em">Your Agent</div>
+      <div style="margin-top:13px;font-size:12.5px;font-weight:300;letter-spacing:0.01em;color:#0E1113">Krishan Mistry</div>
+      <div class="micro" style="margin-top:8px;letter-spacing:0.22em">Estate Agent &middot; Aperture Global</div>
+      <div class="lining" style="margin-top:10px;font-size:11.5px;font-weight:200;line-height:1.85;color:#3A3E41">+44 7904 644426<br>Krishan.Mistry@ApertureGlobal.com</div>
+    </div>
+    <img src="assets-billboard-14ottersway/aperture-logo-black.svg" alt="Aperture Global"
+         style="display:block;width:1.5in;height:auto">
+  </div>
+
+  <div style="flex:0 0 auto;height:0.16in"></div>
+  <div class="foot"><span>14 Otters Way &middot; Digital Billboard Strategy</span><span class="pg">05 / 05</span></div>
+</section>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Aperture Global · Parque das Nações, Lisbon Market District · HTML5 display ads
+# Aperture Global · Parque das Nações, Lisbon · HTML5 display ads
 
 Six self-contained HTML5 units in the **"faux video"** style: no video file anywhere in the
 package. Each unit is built from 4 listing stills, and a slow CSS pan/zoom (Ken Burns)

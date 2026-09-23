@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aperture Billboard Strategy &mdash; Parque das Na&ccedil;&otilde;es, Lisbon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #55585A; }
+  * { box-sizing: border-box; }
+
+  .page {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    padding: 0.8in 0.85in 0.55in;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+    background: #F7F6F3;
+    color: #0E1113;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-of-type { page-break-after: auto; break-after: auto; }
+  .dark { background: #0E1113; color: #FFFFFF; }
+
+  .num { font-variant-numeric: lining-nums tabular-nums; }
+  .lining { font-variant-numeric: lining-nums; }
+
+  .eyebrow {
+    font-size: 10.5px; font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  h2.head {
+    margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 45px; line-height: 1.07; letter-spacing: -0.012em;
+    font-variant-numeric: lining-nums;
+  }
+  h2.head em { font-style: italic; font-weight: 300; }
+  .lede {
+    margin: 0; font-size: 13px; font-weight: 300; line-height: 1.9;
+    color: #3A3E41; max-width: 31em; text-wrap: pretty;
+  }
+  .dark .lede { color: rgba(255,255,255,0.7); }
+  .micro {
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .rule { height: 1px; background: #E3DAD1; }
+  .dark .rule { background: rgba(255,255,255,0.14); }
+  .spacer { flex: 1 1 auto; min-height: 0; }
+
+  .foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 13px; border-top: 1px solid #E3DAD1;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .foot { border-top-color: rgba(255,255,255,0.14); }
+  .foot .pg { font-variant-numeric: lining-nums tabular-nums; }
+
+  .body { font-size: 12px; font-weight: 300; line-height: 1.72; color: #3A3E41; }
+  .dark .body { color: rgba(255,255,255,0.7); }
+  .ink { color: #0E1113; }
+  .dark .ink { color: #FFFFFF; }
+
+  .hdrow {
+    display: grid; align-items: baseline; column-gap: 18px;
+    padding-bottom: 9px; border-bottom: 1px solid #0E1113;
+    font-size: 9px; font-weight: 400; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #8E8688;
+  }
+  .dark .hdrow { border-bottom-color: rgba(255,255,255,0.55); }
+  .row {
+    display: grid; align-items: baseline; column-gap: 18px;
+    border-bottom: 1px solid #E3DAD1;
+    font-size: 11.5px; font-weight: 300; color: #0E1113;
+  }
+  .dark .row { border-bottom-color: rgba(255,255,255,0.14); color: #FFFFFF; }
+
+  .note {
+    border: 1px solid #E3DAD1; background: #EFEDE8; padding: 16px 22px;
+  }
+  .dark .note { border-color: rgba(255,255,255,0.14); background: #181B1D; }
+
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid #B9B2A8; padding-bottom: 2px; }
+  .dark a { border-bottom-color: rgba(255,255,255,0.3); }
+
+  .mk { position: absolute; width: 0; height: 0; }
+  .mk i {
+    position: absolute; left: -2.6px; top: -2.6px; width: 5.2px; height: 5.2px;
+    border-radius: 50%; background: #B2C6D6; display: none;
+  }
+  .mk b {
+    position: absolute; white-space: nowrap; font-size: 8px; font-weight: 400;
+    letter-spacing: 0.17em; text-transform: uppercase; color: #0E1113;
+  }
+  .mk.r b { left: 9px; top: -4.5px; }
+  .mk.l b { right: 9px; top: -4.5px; }
+  .mk.up b { top: -15px; }
+  .mk.dn b { top: 6px; }
+  .mk.subj i { display: block; left: -3.4px; top: -3.4px; width: 6.8px; height: 6.8px; background: #0E1113; }
+  .mk.subj b { font-weight: 500; letter-spacing: 0.15em; color: #0E1113; }
+
+  .cty {
+    columns: 3; column-gap: 15px;
+    font-size: 9.2px; font-weight: 300; line-height: 1.82; color: #0E1113;
+  }
+  .cty div { break-inside: avoid; }
+  .cty .ky { color: #8E8688; }
+</style>
+</head>
+<body>
+
+<!-- ============================ 01  COVER ============================ -->
+<!-- No photograph is composited into this cover. The panel is flat ink (#0E1113) with no
+     rgba() wash, gradient or hatch, so Chrome emits no /Pattern, /SMask or /Transparency
+     objects here. If a listing photograph is later dropped in, it must be pre-composited
+     to flat RGB (200 dpi, JPEG q88, no alpha) before it is placed. -->
+<section class="page dark" style="padding:0.8in 0.85in 0.6in">
+  <img src="assets-billboard-parquedasnacoes/aperture-logo-white.svg" alt="Aperture Global"
+       style="position:relative;display:block;width:1.75in;height:auto">
+
+  <div class="spacer"></div>
+
+  <div style="position:relative;font-size:10.5px;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#B2B4B5" class="lining">Parque das Na&ccedil;&otilde;es &middot; Digital Billboard Strategy</div>
+
+  <h1 style="position:relative;margin:22px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:75px;line-height:1.0;letter-spacing:-0.016em;max-width:7.5em;text-wrap:pretty;font-variant-numeric:lining-nums">A penthouse above the Tagus, <em style="font-style:italic;font-weight:300">shown across the city it stands in.</em></h1>
+
+  <div style="position:relative;width:56px;height:1px;background:#5B5D5F;margin:34px 0 26px"></div>
+
+  <div style="position:relative;display:grid;grid-template-columns:1.45in 1fr;row-gap:12px;column-gap:20px;align-items:baseline;max-width:5.8in">
+    <div class="micro" style="color:#8A8C8E">Property</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Parque das Na&ccedil;&otilde;es, Lisbon, Portugal &middot; a private gated residential complex</div>
+
+    <div class="micro" style="color:#8A8C8E">Asking Price</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">&euro;4,500,000</div>
+
+    <div class="micro" style="color:#8A8C8E">The Residence</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">416 sqm of private living area &middot; 4 bedrooms &middot; 5 bathrooms</div>
+
+    <div class="micro" style="color:#8A8C8E">Outdoors</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Over 200 sqm of terraces and balconies &middot; skyline and river views</div>
+
+    <div class="micro" style="color:#8A8C8E">Geography</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">The Lisbon Metropolitan Area &middot; eighteen municipalities &middot; the Parque das Na&ccedil;&otilde;es parish at the centre</div>
+
+    <div class="micro" style="color:#8A8C8E">Duration</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Thirty days, continuous</div>
+
+    <div class="micro" style="color:#8A8C8E">Presented By</div>
+    <div class="lining" style="font-size:12.5px;font-weight:300;color:#F0F1F1">Liza Falc&atilde;o de S&aacute; &amp; Charles Andrews &middot; Aperture Global</div>
+  </div>
+
+  <div style="position:relative;margin-top:26px;font-size:9px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:#8A8C8E">Prepared for the owner &middot; The plan for the thirty days ahead</div>
+</section>
+
+<!-- ============================ 02  THE GEOGRAPHY ============================ -->
+<section class="page">
+  <div class="eyebrow">The Geography</div>
+  <h2 class="head" style="margin-top:14px;font-size:41px;max-width:15em">One metropolitan area, <em>eighteen municipalities wide.</em></h2>
+  <p class="lede" style="margin-top:12px;max-width:37em;font-size:11.5px;line-height:1.72">The penthouse stands in Parque das Na&ccedil;&otilde;es, the riverfront district built on the Expo&nbsp;&rsquo;98 grounds, which is a civil parish of the municipality of Lisbon in Lisbon District. Outdoor advertising of this kind is bought by geography rather than by address, and the geography chosen here is the Lisbon Metropolitan Area &mdash; eighteen municipalities either side of the Tagus, from the Atlantic coast at Cascais and Sintra across the city to Vila Franca de Xira, and over the river through Almada and Barreiro down to Set&uacute;bal and Palmela.</p>
+  <p class="lede" style="margin-top:10px;max-width:37em;font-size:11.5px;line-height:1.72">The parish is drawn in solid blue on the map opposite, on the east bank; the municipality of Lisbon around it is shaded blue, the seventeen others are shaded, and the whole area is outlined as one shape. The pale ground beyond that line is reached by the online advertising instead.</p>
+
+  <div style="display:grid;grid-template-columns:2.55in 1fr;column-gap:0.34in;margin-top:9px;align-items:start">
+    <div>
+      <div style="position:relative">
+        <img src="assets-billboard-parquedasnacoes/lisbon-metropolitan-area.svg" alt="The eighteen municipalities of the Lisbon Metropolitan Area outlined as a single shape, with the municipality of Lisbon shaded and the Parque das Nacoes parish marked on the east bank of the Tagus"
+             style="display:block;width:100%;height:auto">
+        <div style="position:absolute;inset:0">
+          <div class="mk subj r" style="left:42.74%;top:46.32%"><i></i><b>Parque das Na&ccedil;&otilde;es</b></div>
+          <div class="mk l"      style="left:25.49%;top:22.76%"><i></i><b>Mafra</b></div>
+          <div class="mk r"      style="left:50.40%;top:20.35%"><i></i><b>Vila Franca de Xira</b></div>
+          <div class="mk l"      style="left:20.73%;top:41.04%"><i></i><b>Sintra</b></div>
+          <div class="mk l"      style="left:37.21%;top:37.24%"><i></i><b>Loures</b></div>
+          <div class="mk l"      style="left:32.64%;top:46.90%"><i></i><b>Amadora</b></div>
+          <div class="mk l"      style="left:18.50%;top:55.29%"><i></i><b>Cascais</b></div>
+          <div class="mk dn r"   style="left:26.74%;top:55.43%"><i></i><b>Oeiras</b></div>
+          <div class="mk l"      style="left:37.97%;top:57.86%"><i></i><b>Almada</b></div>
+          <div class="mk r"      style="left:44.32%;top:59.98%"><i></i><b>Barreiro</b></div>
+          <div class="mk r"      style="left:57.04%;top:72.70%"><i></i><b>Palmela</b></div>
+          <div class="mk r"      style="left:57.65%;top:78.85%"><i></i><b>Set&uacute;bal</b></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:8px;font-size:8px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#8E8688">
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#B2C6D6"></span>Parque das Na&ccedil;&otilde;es &amp; Lisbon</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#DED2C4"></span>Rest of the Metropolitan Area</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;background:#EDE6DE"></span>Outside It</span>
+      </div>
+      <div class="body" style="margin-top:11px;font-size:10.5px;line-height:1.7">The parish was established from boundary data rather than inferred from the postcode. The property&rsquo;s district resolves in the open geocoder to an administrative area of the eighth level &mdash; a <i>freguesia</i> &mdash; named Parque das Na&ccedil;&otilde;es, carrying the national statistics code 110662, inside the municipality of Lisbon, inside Lisbon District. The same code and boundary come back from the Portuguese administrative boundary service built on the official charter of administrative areas, which also gives the parish an area of 543.5 hectares. Every one of the eighteen municipalities drawn here was matched to its own national statistics code before it was shaded.</div>
+    </div>
+
+    <div>
+      <div class="hdrow" style="grid-template-columns:1fr auto;column-gap:14px"><span>The Eighteen Municipalities</span><span style="text-align:right">18</span></div>
+      <div class="cty" style="margin-top:9px">
+        <div><b style="font-weight:500">Lisboa</b></div><div>Amadora</div><div>Cascais</div><div>Loures</div><div>Mafra</div><div>Odivelas</div><div>Oeiras</div><div>Sintra</div><div>Vila Franca de Xira</div>
+        <div class="ky">Alcochete</div><div class="ky">Almada</div><div class="ky">Barreiro</div><div class="ky">Moita</div><div class="ky">Montijo</div><div class="ky">Palmela</div><div class="ky">Seixal</div><div class="ky">Sesimbra</div><div class="ky">Set&uacute;bal</div>
+      </div>
+      <div class="micro" style="margin-top:11px;line-height:1.8;letter-spacing:0.16em">Nine in Lisbon District &middot; nine in Set&uacute;bal District, set in grey</div>
+
+      <div class="rule" style="margin-top:13px"></div>
+      <div class="micro" style="margin-top:12px;color:#0E1113;letter-spacing:0.2em">Why The Whole Metropolitan Area</div>
+      <div class="body" style="margin-top:9px;font-size:10.5px;line-height:1.7">A Portuguese buyer for a riverfront penthouse is not, in the main, driving in from the far side of the country on the strength of a roadside screen. They already move through this ground &mdash; living in Restelo or Alvalade, working in the Avenidas Novas, keeping a weekend place at Cascais &mdash; and the roads and river crossings that carry them run across all eighteen municipalities. The whole area is targeted because that is where the resident buyer already is.</div>
+
+      <div class="rule" style="margin-top:13px"></div>
+      <div class="micro" style="margin-top:12px;color:#0E1113;letter-spacing:0.2em">The Scale Of It</div>
+      <div style="margin-top:10px">
+        <div class="row" style="grid-template-columns:1fr auto;padding:8px 0"><span>Residents of the metropolitan area</span><span class="num" style="font-weight:400">2,871,133</span></div>
+        <div class="row" style="grid-template-columns:1fr auto;padding:8px 0"><span>Residents of the parish itself</span><span class="num" style="font-weight:400">22,382</span></div>
+        <div class="row" style="grid-template-columns:1fr auto;padding:8px 0"><span>Households in the parish</span><span class="num" style="font-weight:400">9,023</span></div>
+      </div>
+      <div class="micro" style="margin-top:10px;line-height:1.75;letter-spacing:0.14em;text-transform:none;font-size:8.5px">All three are 2021 Portuguese census figures. The metropolitan total is the one published by the Lisbon Metropolitan Area itself; the parish figures are the census counts recorded against parish code 110662.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>Parque das Na&ccedil;&otilde;es &middot; Digital Billboard Strategy</span><span class="pg">02 / 05</span></div>
+</section>
+
+<!-- ============================ 03  WHAT THE STREET REACHES ============================ -->
+<section class="page dark">
+  <div class="eyebrow">What The Street Reaches</div>
+  <h2 class="head" style="margin-top:14px;font-size:41px;color:#FFFFFF;max-width:14em">What a screen in Lisbon can reach, <em>and what it cannot.</em></h2>
+  <p class="lede" style="margin-top:12px;max-width:37em;font-size:11.5px;line-height:1.72">A four-and-a-half-million-euro penthouse in Lisbon sells substantially to a buyer from outside Portugal, and a screen in Lisbon does not reach somebody sitting in Paris or New York. We would rather set that out here than leave it unsaid across documents that otherwise all claim the same thing. This part of the campaign does one job; the online campaign does the other.</p>
+
+  <div class="rule" style="margin-top:14px"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:0.3in;margin-top:18px">
+    <div>
+      <div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">01 &nbsp; The Resident Buyer</div>
+      <div style="margin-top:9px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">Nearly two point nine million people live in the eighteen municipalities. Among them are the Portuguese and long-settled households who buy at this level and who rarely meet a Lisbon property first on a foreign website &mdash; they meet it because it is in front of them, on the roads they already drive. This is the audience outdoor advertising reaches best.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">02 &nbsp; The Visitor Already Here</div>
+      <div style="margin-top:9px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">The second audience is international and is reachable from the street because it is standing in the street. Lisbon&rsquo;s airport sits a little over three kilometres from the parish in a straight line, in the same municipality, and the Oriente station, the arena and the Ocean&aacute;rio are inside the parish itself. A buyer who has come to look at Portugal crosses this ground, and while they are here they are as reachable as any resident.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#FFFFFF;letter-spacing:0.2em">03 &nbsp; The Buyer Still Abroad</div>
+      <div style="margin-top:9px;font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">The buyer who has not yet made the trip is not reached here, and nothing in this plan pretends otherwise. That buyer is reached by the online advertising, which is not bound to Portuguese ground and can be pointed at the cities where that money lives. It is set out in its own document. The two are built to be read together, and are deliberately not the same argument twice.</div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:20px"></div>
+
+  <div style="display:grid;grid-template-columns:1.9in 1fr;column-gap:0.34in;margin-top:19px;align-items:start">
+    <div class="micro" style="color:#FFFFFF;letter-spacing:0.2em;line-height:1.7">What The Advertising<br>Leads With</div>
+    <div style="font-size:11.5px;font-weight:300;line-height:1.72;color:rgba(255,255,255,0.7)">A large apartment in Lisbon is not scarce. Four hundred and sixteen square metres of private living area, with more than two hundred square metres of terrace above the Tagus, behind floor-to-ceiling glass in a gated complex on the Parque das Na&ccedil;&otilde;es waterfront, is. Read at a distance from a moving car, a screen carries one idea and no more. The idea it carries is the terrace and the river, and the address that explains where it is.</div>
+  </div>
+
+  <div class="rule" style="margin-top:20px"></div>
+
+  <div style="display:grid;grid-template-columns:1.9in 1fr;column-gap:0.34in;margin-top:19px;align-items:start">
+    <div class="micro" style="color:#FFFFFF;letter-spacing:0.2em;line-height:1.7">Straight-Line<br>Distances</div>
+    <div>
+      <div class="row" style="grid-template-columns:1fr auto;padding:9px 0"><span>Parish to Humberto Delgado Airport</span><span class="num" style="font-weight:300">3.1 km &middot; 1.9 mi</span></div>
+      <div class="row" style="grid-template-columns:1fr auto;padding:9px 0"><span>Parish to the Baixa, central Lisbon</span><span class="num" style="font-weight:300">6.9 km &middot; 4.3 mi</span></div>
+      <div class="row" style="grid-template-columns:1fr auto;padding:9px 0"><span>Parish to Cascais, on the coast</span><span class="num" style="font-weight:300">29.3 km &middot; 18.2 mi</span></div>
+      <div class="row" style="grid-template-columns:1fr auto;padding:9px 0"><span>Parish to Set&uacute;bal, south of the river</span><span class="num" style="font-weight:300">33.0 km &middot; 20.5 mi</span></div>
+      <div class="micro" style="margin-top:12px;line-height:1.75;letter-spacing:0.14em;text-transform:none;font-size:8.5px;color:rgba(255,255,255,0.45)">Measured from a point inside the parish boundary. Straight-line distances, not journey times: we do not quote a driving time we have not measured.</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>Parque das Na&ccedil;&otilde;es &middot; Digital Billboard Strategy</span><span class="pg">03 / 05</span></div>
+</section>
+
+<!-- ============================ 04  THE TARGETING ============================ -->
+<section class="page">
+  <div class="eyebrow">The Targeting</div>
+  <h2 class="head" style="margin-top:10px;font-size:35px">Chosen by area, <em>not by billboard.</em></h2>
+  <p class="lede" style="margin-top:8px;max-width:38em;font-size:11.5px;line-height:1.7">These screens do not work the way billboards used to. We do not take one sign on one road for a month. They are bought programmatically: we set the parts of the metropolitan area the property is served into, and the exchange places the advertisement on whatever digital screens are running there. There is no list of screen addresses in this document, and there will not be one. What we choose is the geography.</p>
+  <p class="lede" style="margin-top:7px;max-width:38em;font-size:11.5px;line-height:1.7">In practice: roadside and public digital screens across the eighteen municipalities on the previous page, weighted towards the five areas below.</p>
+
+  <div class="hdrow" style="grid-template-columns:0.42in 2.05in 1fr;margin-top:9px;column-gap:14px">
+    <span>Area</span><span>Targeted Geography</span><span>Why It Is Included</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:1px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">01</span>
+    <span style="font-size:11px;line-height:1.5">Parque das Na&ccedil;&otilde;es and the east riverfront &middot; the parish itself, with Olivais, Marvila and Beato<br><span class="micro" style="letter-spacing:0.16em">Highest emphasis</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The district the property stands in and the approaches into it &mdash; the ground where the building is recognised on sight, and where the people most likely to mention it to a buyer already live and work.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:1px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">02</span>
+    <span style="font-size:11px;line-height:1.5">Central and northern Lisbon &middot; Avenidas Novas, Alvalade, Areeiro, Santo Ant&oacute;nio, Lumiar, Estrela, Bel&eacute;m<br><span class="micro" style="letter-spacing:0.16em">Highest emphasis</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The wealthiest residential ground inside the city, and the most likely origin of a domestic buyer: the household trading out of a large older apartment into something newer with outdoor space. Alvalade is four kilometres from the parish, the Baixa seven.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:1px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">03</span>
+    <span style="font-size:11px;line-height:1.5">The airport and arena approach &middot; the northern and eastern edge of Lisbon municipality<br><span class="micro" style="letter-spacing:0.16em">High emphasis</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The one place an international buyer is reachable from the street: the ground an arriving visitor crosses, three kilometres out. High emphasis for its size, because of who moves through it rather than who lives in it.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:1px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">04</span>
+    <span style="font-size:11px;line-height:1.5">The western arc &middot; Oeiras, Cascais, Sintra, Amadora, Odivelas, Loures<br><span class="micro" style="letter-spacing:0.16em">Moderate emphasis</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The coastal and northern belt where much of Lisbon&rsquo;s established money lives, and where the household considering a move back into the city is most often found. Cascais is twenty-nine kilometres out, Sintra twenty-six.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 2.05in 1fr;column-gap:14px;padding:1px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">05</span>
+    <span style="font-size:11px;line-height:1.5">The south bank and the outer municipalities &middot; Almada, Seixal, Barreiro, Moita, Montijo, Alcochete, Sesimbra, Palmela, Set&uacute;bal, Mafra, Vila Franca de Xira<br><span class="micro" style="letter-spacing:0.16em">Steady presence</span></span>
+    <span style="font-size:11px;line-height:1.6;color:#3A3E41">The far side of the river and the outer ring, over the two Tagus crossings. A lower share of delivery, so the whole area is covered for the full thirty days rather than in bursts.</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 2.35in;column-gap:0.3in;margin-top:9px;align-items:start">
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Where The Emphasis Sits</div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.68">Areas 01 and 02 take the largest share of delivery: one is the district itself, the other is where a domestic buyer most likely lives today. The airport approach takes the next share despite being small ground, because of who crosses it. The western arc follows, and the south bank and outer municipalities run at a lower, steady share so nowhere is dark.</div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.68">One consequence of working this way is worth saying plainly: we cannot promise you a photograph of your terrace on a named screen at a named junction. What we can say is which parts of the Lisbon metropolitan area saw it, and how often, once the month is over.</div>
+    </div>
+    <div class="note" style="padding:14px 18px">
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">What Is Not Specified</div>
+      <div class="row" style="grid-template-columns:1fr auto;column-gap:12px;padding:6px 0;font-size:10.5px"><span>Individual screens</span><span style="color:#8E8688">Not applicable</span></div>
+      <div class="row" style="grid-template-columns:1fr auto;column-gap:12px;padding:6px 0;font-size:10.5px"><span>Screen count</span><span style="color:#8E8688">Not applicable</span></div>
+      <div class="row" style="grid-template-columns:1fr auto;column-gap:12px;padding:6px 0;font-size:10.5px;border-bottom:none"><span>Named road corridors</span><span style="color:#8E8688">Not applicable</span></div>
+      <div class="micro" style="margin-top:10px;line-height:1.75;letter-spacing:0.14em;text-transform:none;font-size:8.5px">Marked not applicable rather than to be confirmed. Buying by geography means there is no fixed set of screens to name, now or at any later point.</div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:8px"></div>
+  <div style="display:grid;grid-template-columns:1.35in 1fr;column-gap:20px;align-items:baseline;margin-top:7px">
+    <div class="micro" style="color:#0E1113;letter-spacing:0.2em">In A Straight Line</div>
+    <div class="lining" style="font-size:10.5px;font-weight:300;line-height:1.72;color:#3A3E41">Oriente station 0.8&#8202;km &middot; airport 3.1&#8202;km &middot; Alvalade 4.3&#8202;km &middot; the Baixa 6.9&#8202;km &middot; Almada 11.9&#8202;km &middot; Bel&eacute;m 12.7&#8202;km &middot; Oeiras 20.4&#8202;km &middot; Sintra 25.7&#8202;km &middot; Cascais 29.3&#8202;km &middot; Set&uacute;bal 33.0&#8202;km &nbsp;&mdash;&nbsp; <span class="micro" style="letter-spacing:0.14em">from a point inside the parish boundary; straight-line, not driving times.</span></div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>Parque das Na&ccedil;&otilde;es &middot; Digital Billboard Strategy</span><span class="pg">04 / 05</span></div>
+</section>
+
+<!-- ============================ 05  WHAT HAPPENS NEXT ============================ -->
+<section class="page">
+  <div class="eyebrow">What Happens Next</div>
+  <h2 class="head" style="margin-top:17px;font-size:38px">The month ahead, <em>in order.</em></h2>
+  <p class="lede" style="margin-top:14px;max-width:38em;font-size:11.5px;line-height:1.7">This is the sequence, not a list of things for you to decide. The geography on the previous pages is set. What follows is the order in which it happens, and the one figure that is genuinely still to come.</p>
+
+  <div class="hdrow" style="grid-template-columns:0.42in 1.85in 1fr;margin-top:18px;column-gap:16px">
+    <span>Step</span><span>What Happens</span><span>Detail</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 1.85in 1fr;column-gap:16px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">01</span>
+    <span style="font-size:11px;line-height:1.5">The artwork is made</span>
+    <span style="font-size:11px;line-height:1.65;color:#3A3E41">Built from the photography of the terraces and the river view, carrying one idea, legible from a moving car. You will see it and approve it before anything runs.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 1.85in 1fr;column-gap:16px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">02</span>
+    <span style="font-size:11px;line-height:1.5">The geography is loaded</span>
+    <span style="font-size:11px;line-height:1.65;color:#3A3E41">The five areas on the previous page are entered as the targeting, with the emphasis described there. No screens are named, because none are chosen.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 1.85in 1fr;column-gap:16px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">03</span>
+    <span style="font-size:11px;line-height:1.5">Delivery begins</span>
+    <span style="font-size:11px;line-height:1.65;color:#3A3E41">The property starts appearing on digital screens across the eighteen municipalities, continuously, from the first day onward.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 1.85in 1fr;column-gap:16px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">04</span>
+    <span style="font-size:11px;line-height:1.5">The weighting is reviewed</span>
+    <span style="font-size:11px;line-height:1.65;color:#3A3E41">Partway through the thirty days we look at where the property is actually being seen and move emphasis between the five areas accordingly. The geography does not change; the balance within it does.</span>
+  </div>
+  <div class="row" style="grid-template-columns:0.42in 1.85in 1fr;column-gap:16px;padding:9px 0;align-items:start">
+    <span class="num" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.1">05</span>
+    <span style="font-size:11px;line-height:1.5">The month is reported</span>
+    <span style="font-size:11px;line-height:1.65;color:#3A3E41">At the end of the thirty days you receive a written account of where the property was shown, across what geography and how many times it was seen &mdash; measured, not projected.</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.34in;margin-top:20px;align-items:start">
+    <div class="note">
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Still To Come</div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.7;color:#8E8688">The total number of times the advertisement will be shown over the thirty days is not stated in this document. That figure becomes a commitment the moment it is written down, so it is given to you only once an operator has committed to it in writing. Nothing else on these pages is waiting on anything.</div>
+    </div>
+    <div>
+      <div class="micro" style="color:#0E1113;letter-spacing:0.2em">Alongside This</div>
+      <div class="body" style="margin-top:10px;font-size:10.5px;line-height:1.7">The online campaign runs at the same time and is described in its own document. It is the part of the marketing that reaches a buyer who is not in Portugal yet. Read together, the two cover the buyer already here and the buyer still abroad &mdash; which is why they do not make the same claim twice.</div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top:22px"></div>
+
+  <div style="display:grid;grid-template-columns:1.75in 1fr;column-gap:0.34in;margin-top:20px;align-items:start">
+    <div>
+      <img src="assets-billboard-parquedasnacoes/aperture-logo-black.svg" alt="Aperture Global" style="display:block;width:1.45in;height:auto">
+      <div class="micro" style="margin-top:12px;line-height:1.8;letter-spacing:0.18em">Prepared for the owner<br>Parque das Na&ccedil;&otilde;es, Lisbon</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:0.3in">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:22px;line-height:1.2;color:#0E1113">Liza Falc&atilde;o de S&aacute;</div>
+        <div class="micro" style="margin-top:6px;letter-spacing:0.18em">Listing Agent &middot; Aperture Global</div>
+        <div class="lining" style="margin-top:10px;font-size:11px;font-weight:300;line-height:1.85;color:#3A3E41">liza.falcaodesa@apertureglobal.com<br>+351 962 735 212</div>
+      </div>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:22px;line-height:1.2;color:#0E1113">Charles Andrews</div>
+        <div class="micro" style="margin-top:6px;letter-spacing:0.18em">Listing Agent &middot; Aperture Global</div>
+        <div class="lining" style="margin-top:10px;font-size:11px;font-weight:300;line-height:1.85;color:#3A3E41">charles.andrews@apertureglobal.com<br>+1 917 767 1082</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="foot"><span>Parque das Na&ccedil;&otilde;es &middot; Digital Billboard Strategy</span><span class="pg">05 / 05</span></div>
+</section>
+
+</body>
+</html>
