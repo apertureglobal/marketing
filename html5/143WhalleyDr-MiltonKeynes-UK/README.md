@@ -15,12 +15,12 @@ Preview page: **[preview.html](preview.html)**, all twelve units on one page.
 
 | Size | Variant | Unit | Zip | % of 700 KB budget |
 |---|---|---:|---:|---:|
-| 768x1024 | video | 654 KB | 579,595 B | 93% |
-| 1024x768 | video | 657 KB | 582,074 B | 94% |
-| 480x320 | video | 657 KB | 590,244 B | 94% |
-| 970x250 | video | 653 KB | 582,875 B | 93% |
-| 320x480 | video | 658 KB | 588,990 B | 94% |
-| 300x600 | video | 654 KB | 584,990 B | 93% |
+| 768x1024 | video | 659 KB | 584,359 B | 94% |
+| 1024x768 | video | 664 KB | 588,848 B | 95% |
+| 480x320 | video | 654 KB | 587,429 B | 93% |
+| 970x250 | video | 656 KB | 585,899 B | 94% |
+| 320x480 | video | 654 KB | 585,114 B | 93% |
+| 300x600 | video | 655 KB | 586,370 B | 94% |
 | 768x1024 | carousel | 440 KB | 363,284 B | 63% |
 | 1024x768 | carousel | 581 KB | 508,626 B | 83% |
 | 480x320 | carousel | 240 KB | 165,454 B | 34% |
