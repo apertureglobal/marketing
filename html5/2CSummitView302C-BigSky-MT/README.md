@@ -21,7 +21,7 @@ needing a local server.
 | **Sizes** | 768×1024, 1024×768, 480×320, 970×250, 320×480, 300×600 |
 | **Variants** | video — 12 units |
 | **Loop** | 15 seconds, looping continuously |
-| **Weight** | every unit under the 700 KB cap (largest: 1024x768 video, 670 KB) |
+| **Weight** | every unit under the 700 KB cap (largest: 1024x768 video, 665 KB) |
 | **Click-through** | the underlined CTA only — not the whole ad |
 
 **Video** units play the walkthrough as a silent 15-second loop. The four listing photos sit
