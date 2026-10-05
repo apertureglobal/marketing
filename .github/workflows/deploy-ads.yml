@@ -1,0 +1,28 @@
+# Publishes html5/ to Cloudflare Pages whenever ad creative changes on main.
+#
+# Requires two repository secrets (Settings → Secrets → Actions):
+#   CLOUDFLARE_API_TOKEN   — token with "Cloudflare Pages: Edit" permission
+#   CLOUDFLARE_ACCOUNT_ID  — from the Cloudflare dashboard URL
+#
+# This repo is public: never put the token in a file, only in a secret.
+
+name: Deploy ad creative
+
+on:
+  push:
+    branches: [main]
+    paths: ['html5/**']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish html5/ to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy html5 --project-name=aperture-ads

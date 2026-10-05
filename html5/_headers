@@ -1,0 +1,18 @@
+# Cloudflare Pages headers for Aperture ad hosting.
+# This host exists to launch campaigns, not to show clients — keep it out of search.
+
+/*
+  X-Robots-Tag: noindex, nofollow
+  X-Content-Type-Options: nosniff
+
+# Creative zips: this is what gets uploaded to StackAdapt.
+/*.zip
+  Content-Type: application/zip
+  Content-Disposition: attachment
+  Cache-Control: public, max-age=300
+
+# Ad units and backup stills are immutable once built.
+/*.jpg
+  Cache-Control: public, max-age=86400
+/*.js
+  Cache-Control: public, max-age=86400

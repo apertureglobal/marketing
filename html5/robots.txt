@@ -1,0 +1,3 @@
+# Operational ad host. Not for indexing.
+User-agent: *
+Disallow: /
