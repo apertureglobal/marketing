@@ -189,6 +189,15 @@
       "file": "assets/campaigns/display-ad-creative-spring-woods.html",
       "type": "creative",
       "agent": "Caroline De Havillande & Anna Cosio"
+    },
+    {
+      "title": "Display Ad Creative, Cambridge Street",
+      "description": "Twelve display units for the Cambridge Street listing in Pimlico, London, six sizes each built as a video version and a carousel version. The video is a fifteen second pan and zoom across four listing photographs, and the carousel takes over if the video does not load.",
+      "channel": "digital",
+      "updated": "2026-10-09",
+      "file": "assets/campaigns/display-ad-creative-cambridge-street.html",
+      "type": "creative",
+      "agent": "Caroline De Havillande & Anna Cosio"
     }
   ],
   "brand": [
