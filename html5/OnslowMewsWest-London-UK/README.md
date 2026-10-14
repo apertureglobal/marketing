@@ -15,18 +15,18 @@ Preview page: **[preview.html](preview.html)**, all twelve units on one page.
 
 | Size | Variant | Unit | Zip | % of 700 KB budget |
 |---|---|---:|---:|---:|
-| 768x1024 | video | 650 KB | 566,147 | 93% |
-| 1024x768 | video | 660 KB | 575,984 | 94% |
-| 480x320 | video | 644 KB | 568,078 | 92% |
-| 970x250 | video | 655 KB | 575,592 | 94% |
-| 320x480 | video | 651 KB | 572,229 | 93% |
-| 300x600 | video | 642 KB | 563,246 | 92% |
-| 768x1024 | carousel | 452 KB | 365,481 | 65% |
-| 1024x768 | carousel | 569 KB | 487,003 | 81% |
-| 480x320 | carousel | 246 KB | 162,871 | 35% |
-| 970x250 | carousel | 273 KB | 186,288 | 39% |
-| 320x480 | carousel | 210 KB | 122,768 | 30% |
-| 300x600 | carousel | 234 KB | 146,865 | 33% |
+| 768x1024 | video | 651 KB | 563,306 | 93% |
+| 1024x768 | video | 662 KB | 574,143 | 95% |
+| 480x320 | video | 647 KB | 566,445 | 92% |
+| 970x250 | video | 648 KB | 564,925 | 93% |
+| 320x480 | video | 650 KB | 567,555 | 93% |
+| 300x600 | video | 643 KB | 560,461 | 92% |
+| 768x1024 | carousel | 458 KB | 368,013 | 65% |
+| 1024x768 | carousel | 575 KB | 489,378 | 82% |
+| 480x320 | carousel | 252 KB | 164,639 | 36% |
+| 970x250 | carousel | 279 KB | 188,853 | 40% |
+| 320x480 | carousel | 216 KB | 125,251 | 31% |
+| 300x600 | carousel | 240 KB | 149,293 | 34% |
 
 Each folder zips with `index.html` at its root, beside its own background, four photographs and,
 for video units, the mp4. Beside each folder is a backup still, `*_backup.jpg`.
@@ -37,7 +37,7 @@ for video units, the mp4. Beside each folder is a backup still, `*_backup.jpg`.
 - Headline: **Onslow Mews West**
 - Sub 1: **South Kensington, London SW7 3AF**
 - Sub 2: **3 bed | 2 bath | 1,249 sq ft**
-- Sub 3: **Listed by De Havillande Cosio Team**
+- Sub 3: **Listed by Caroline De Havillande & Anna Cosio**
 - CTA: **Schedule a viewing**
 - clickTag: `https://www.apertureglobal.com/onslowmewswest`, overridable per placement with `?clicktag=<url>`
 
